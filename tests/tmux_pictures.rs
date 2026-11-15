@@ -28,8 +28,15 @@ fn tmux_missing() -> bool {
     let missing = Command::new("tmux").arg("-V").output().map_or(true, |o| !o.status.success());
     if missing {
         eprintln!("tmux not installed: skipped");
+        return true;
     }
-    missing
+    // tmux won't start a client whose TERM has no terminfo entry (OpenBSD,
+    // NetBSD: no ghostty-terminfo package); without infocmp, try anyway
+    let no_ghostty = Command::new("infocmp").arg("xterm-ghostty").stdout(Stdio::null()).stderr(Stdio::null()).status().is_ok_and(|s| !s.success());
+    if no_ghostty {
+        eprintln!("no xterm-ghostty terminfo: skipped");
+    }
+    no_ghostty
 }
 
 /// Run the picture game with `args` in a private tmux (with or without
