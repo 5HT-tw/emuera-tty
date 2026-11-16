@@ -1,0 +1,1263 @@
+# emuera-tty interface messages: Spanish.
+# Start from emuera-tty.pot (Poedit: "Update from POT file"); see the README,
+# "Translating emuera-tty".
+msgid ""
+msgstr ""
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "can't work out where to extract (HOME not set?)"
+msgstr "no se sabe dónde extraer (¿HOME no está definido?)"
+
+msgid "no Emuera game (a folder with CSV/ and ERB/) in this archive"
+msgstr "no hay ningún juego de Emuera (una carpeta con CSV/ y ERB/) en este archivo"
+
+msgid "not a readable zip: {error}"
+msgstr "no es un zip legible: {error}"
+
+msgid "not a readable tar: {error}"
+msgstr "no es un tar legible: {error}"
+
+msgid "this archive type needs bsdtar, tar or 7z installed (e.g. `sudo apt install libarchive-tools p7zip-full`)"
+msgstr "este tipo de archivo necesita bsdtar, tar o 7z instalado (p. ej. `sudo apt install libarchive-tools p7zip-full`)"
+
+msgid "extracting {archive} failed ({status})"
+msgstr "la extracción de {archive} falló ({status})"
+
+msgid "Environment"
+msgstr "Entorno"
+
+msgid "Display"
+msgstr "Pantalla"
+
+msgid "Font"
+msgstr "Fuente"
+
+msgid "System2"
+msgstr "Sistema2"
+
+msgid "Clipboard"
+msgstr "Portapapeles"
+
+msgid "Make autosaves"
+msgstr "Hacer guardados automáticos"
+
+msgid "Use keyboard macros (F1…F12; off: other Fn keys take over)"
+msgstr "Usar macros de teclado (F1…F12; desactivado: otras funciones usan las teclas Fn)"
+
+msgid "Lines in history log"
+msgstr "Líneas en el registro del historial"
+
+msgid "Number of save slots"
+msgstr "Número de ranuras de guardado"
+
+msgid "Milliseconds for infinite loop warning"
+msgstr "Milisegundos hasta el aviso de bucle infinito"
+
+msgid "Disable infinite loop detection (useful for games with intentional long-running functions)"
+msgstr "Desactivar la detección de bucles infinitos (útil en juegos con funciones que tardan mucho a propósito)"
+
+msgid "PRINTC items per line"
+msgstr "Elementos PRINTC por línea"
+
+msgid "PRINTC item width"
+msgstr "Ancho de un elemento PRINTC"
+
+msgid "Don't break lines inside a button"
+msgstr "No partir líneas dentro de un botón"
+
+msgid "Text colour"
+msgstr "Color del texto"
+
+msgid "Selected button colour"
+msgstr "Color del botón seleccionado"
+
+msgid "Font (for text drawn into pictures)"
+msgstr "Fuente (para el texto dibujado en imágenes)"
+
+msgid "Compress save data"
+msgstr "Comprimir los datos guardados"
+
+msgid "Copy printed text to the clipboard"
+msgstr "Copiar el texto mostrado al portapapeles"
+
+msgid "Only new lines"
+msgstr "Solo líneas nuevas"
+
+msgid "Lines copied (when not only new ones)"
+msgstr "Líneas copiadas (cuando no son solo las nuevas)"
+
+msgid "Lines remembered"
+msgstr "Líneas recordadas"
+
+msgid "Minimum time between copies (ms)"
+msgstr "Tiempo mínimo entre copias (ms)"
+
+msgid "Replace pictures (<> tags) …"
+msgstr "Reemplazar imágenes (etiquetas <>) …"
+
+msgid "… with this text"
+msgstr "… por este texto"
+
+msgid "Forget lines when the game clears the screen"
+msgstr "Olvidar las líneas cuando el juego borra la pantalla"
+
+msgid "Copy on a left click"
+msgstr "Copiar con clic izquierdo"
+
+msgid "Copy on a middle click"
+msgstr "Copiar con clic central"
+
+msgid "Copy on a double click"
+msgstr "Copiar con doble clic"
+
+msgid "Copy at a WAIT"
+msgstr "Copiar en un WAIT"
+
+msgid "Copy at an input"
+msgstr "Copiar al pedir una entrada"
+
+msgid "YES or NO"
+msgstr "YES o NO"
+
+msgid "a number from {lo} to {hi}"
+msgstr "un número de {lo} a {hi}"
+
+msgid "R,G,B (0-255 each) or #RRGGBB"
+msgstr "R,G,B (0-255 cada uno) o #RRGGBB"
+
+msgid "note: {n} ERB/ERH files in subfolders not loaded: the game's config doesn't turn on サブディレクトリを検索する (Search subfolders), so Emuera skips them too"
+msgstr "nota: no se cargaron {n} archivos ERB/ERH de subcarpetas: la configuración del juego no activa サブディレクトリを検索する (buscar en subcarpetas), así que Emuera también los omite"
+
+msgid "{dir}: no CSV directory found"
+msgstr "{dir}: no se encontró la carpeta CSV"
+
+msgid "this game's settings ask for names that differ only in letter case to be different; emuera-tty always ignores case"
+msgstr "la configuración de este juego pide que los nombres que solo difieren en mayúsculas sean distintos; emuera-tty siempre ignora las mayúsculas"
+
+msgid "inside tmux, pictures in Ghostty or kitty need `set -g allow-passthrough all` (in ~/.tmux.conf, then `tmux source-file ~/.tmux.conf`); `--gfx none` plays without pictures"
+msgstr "dentro de tmux, las imágenes en Ghostty o kitty necesitan `set -g allow-passthrough all` (en ~/.tmux.conf, luego `tmux source-file ~/.tmux.conf`); `--gfx none` juega sin imágenes"
+
+msgid "terminal init failed ({error}); falling back to headless"
+msgstr "falló el inicio de la terminal ({error}); se continúa en modo headless"
+
+msgid "backed up {n} files to {dir}"
+msgstr "se copiaron {n} archivos de respaldo a {dir}"
+
+msgid "saves in {dir}:"
+msgstr "partidas guardadas en {dir}:"
+
+msgid "{n} backups in {dir}"
+msgstr "{n} respaldos en {dir}"
+
+msgid "Extracting {archive}…"
+msgstr "Extrayendo {archive}…"
+
+msgid "Extracting {archive}… {n} files"
+msgstr "Extrayendo {archive}… {n} archivos"
+
+msgid "Game folder: {dir}"
+msgstr "Carpeta del juego: {dir}"
+
+msgid "no game folder given (pass GAME_DIR, or run in a terminal to pick one)"
+msgstr "no se indicó una carpeta de juego (pasa GAME_DIR o ejecútalo en una terminal para elegir una)"
+
+msgid "no translator found: install Ollama, LibreTranslate, translateLocally, Argos Translate or translate-shell (or curl, for DeepL)"
+msgstr "no se encontró ningún traductor: instala Ollama, LibreTranslate, translateLocally, Argos Translate o translate-shell (o curl, para DeepL)"
+
+msgid "translate-shell (trans) isn't installed: get it from your package manager or translate-shell's site"
+msgstr "translate-shell (trans) no está instalado: consíguelo con tu gestor de paquetes o en el sitio de translate-shell"
+
+msgid "DeepL needs curl (or DeepL's deepl tool and DEEPL_AUTH_KEY)"
+msgstr "DeepL necesita curl (o la herramienta deepl de DeepL y DEEPL_AUTH_KEY)"
+
+msgid "Argos Translate isn't installed: pipx install argostranslate, then argospm install translate-ja_en"
+msgstr "Argos Translate no está instalado: pipx install argostranslate, luego argospm install translate-ja_en"
+
+msgid "no translator on this computer: install Ollama, LibreTranslate, translateLocally or argos-translate (or set EMUERA_TRANSLATE_CMD), or choose translate-shell / DeepL"
+msgstr "no hay traductor en este equipo: instala Ollama, LibreTranslate, translateLocally o argos-translate (o define EMUERA_TRANSLATE_CMD), o elige translate-shell / DeepL"
+
+msgid "your command ({program})"
+msgstr "tu comando ({program})"
+
+msgid "translate-shell (online)"
+msgstr "translate-shell (en línea)"
+
+msgid "DeepL, no key (online, unofficial)"
+msgstr "DeepL, sin clave (en línea, no oficial)"
+
+msgid "DeepL's tool (online)"
+msgstr "herramienta de DeepL (en línea)"
+
+msgid "Ollama didn't answer"
+msgstr "Ollama no respondió"
+
+msgid "Ollama gave no translation"
+msgstr "Ollama no dio ninguna traducción"
+
+msgid "LibreTranslate didn't answer"
+msgstr "LibreTranslate no respondió"
+
+msgid "LibreTranslate gave no translation"
+msgstr "LibreTranslate no dio ninguna traducción"
+
+msgid "empty translation"
+msgstr "traducción vacía"
+
+msgid "DeepL is limiting requests without a key: wait a while, or set DEEPL_AUTH_KEY"
+msgstr "DeepL está limitando las peticiones sin clave: espera un rato o define DEEPL_AUTH_KEY"
+
+msgid "DeepL is limiting requests: wait a while"
+msgstr "DeepL está limitando las peticiones: espera un rato"
+
+msgid "DeepL refused the key in DEEPL_AUTH_KEY"
+msgstr "DeepL rechazó la clave de DEEPL_AUTH_KEY"
+
+msgid "DeepL: this key's character quota is used up"
+msgstr "DeepL: se agotó la cuota de caracteres de esta clave"
+
+msgid "DeepL answered HTTP {status}"
+msgstr "DeepL respondió HTTP {status}"
+
+msgid "translator failed ({status})"
+msgstr "el traductor falló ({status})"
+
+msgid "Argos stopped (is argostranslate installed for that Python?)"
+msgstr "Argos se detuvo (¿está argostranslate instalado para ese Python?)"
+
+msgid "{n} lines"
+msgstr "{n} líneas"
+
+msgid "({n} for other languages)"
+msgstr "({n} para otros idiomas)"
+
+msgid "Game debugging enabled; [IF_DEBUG] blocks and ;#; lines WILL run"
+msgstr "Depuración del juego activada; los bloques [IF_DEBUG] y las líneas ;#; SE ejecutarán"
+
+msgid "VM-level debugging/breakpoints enabled; select this option to show a list of what files/functions have an attached breakpoint"
+msgstr "Depuración y puntos de interrupción de la VM activados; elige esta opción para ver qué archivos/funciones tienen un punto de interrupción"
+
+msgid "Emuera game"
+msgstr "Juego de Emuera"
+
+msgid "(folder missing)"
+msgstr "(falta la carpeta)"
+
+msgid "last played"
+msgstr "jugado por última vez"
+
+msgid "(NEW)"
+msgstr "(NUEVO)"
+
+msgid "Add a game (folder or archive)…"
+msgstr "Añadir un juego (carpeta o archivo)…"
+
+msgid "Clone a game from a git repository…"
+msgstr "Clonar un juego desde un repositorio git…"
+
+msgid "Settings"
+msgstr "Ajustes"
+
+msgid "Test dialog boxes…"
+msgstr "Probar cuadros de diálogo…"
+
+msgid "(next start)"
+msgstr "(próximo inicio)"
+
+msgid "Back"
+msgstr "Volver"
+
+msgid "this game"
+msgstr "este juego"
+
+msgid "Play {game}"
+msgstr "Jugar a {game}"
+
+msgid "archive, {size}"
+msgstr "archivo, {size}"
+
+msgid "your games"
+msgstr "tus juegos"
+
+msgid "Enter to play · a add a game · u update (git) · U update all · d remove from the list · s settings"
+msgstr "Enter jugar · a añadir un juego · u actualizar (git) · U actualizar todos · d quitar de la lista · s ajustes"
+
+msgid "Choose an Emuera game folder or archive"
+msgstr "Elige una carpeta o un archivo de juego de Emuera"
+
+msgid "(★ = game, ▣ = archive)"
+msgstr "(★ = juego, ▣ = archivo)"
+
+msgid "(empty)"
+msgstr "(vacío)"
+
+msgid "g git output  ↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "g salida de git  ↑↓ mover  Enter jugar  a añadir  u actualizar  U actualizar todos  d quitar  s ajustes  q salir"
+
+msgid "↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "↑↓ mover  Enter jugar  a añadir  u actualizar  U actualizar todos  d quitar  s ajustes  q salir"
+
+msgid "↑↓ move  ←/→ or Enter change  Esc back"
+msgstr "↑↓ mover  ←/→ o Enter cambiar  Esc volver"
+
+msgid "↑↓ move  Enter details  Esc back"
+msgstr "↑↓ mover  Enter detalles  Esc volver"
+
+msgid "↑↓ move  Enter download  Esc back"
+msgstr "↑↓ mover  Enter descargar  Esc volver"
+
+msgid "↑↓ move  Enter add/open  → open  ← up  ~ home  . hidden  Esc back"
+msgstr "↑↓ mover  Enter añadir/abrir  → abrir  ← subir  ~ inicio  . ocultos  Esc volver"
+
+msgid "↑↓ move  Enter play/open  → open  ← up  ~ home  . hidden  q quit"
+msgstr "↑↓ mover  Enter jugar/abrir  → abrir  ← subir  ~ inicio  . ocultos  q salir"
+
+msgid "Removed {game} from the list (its files are still there)."
+msgstr "Se quitó {game} de la lista (sus archivos siguen ahí)."
+
+msgid "This game isn't a git checkout: nothing to update from."
+msgstr "Este juego no es una copia de git: no hay de dónde actualizarlo."
+
+msgid "Updating {game}"
+msgstr "Actualizando {game}"
+
+msgid "Already up to date."
+msgstr "Ya está al día."
+
+msgid "Updated: {what}."
+msgstr "Actualizado: {what}."
+
+msgid "Update failed: {why}"
+msgstr "Falló la actualización: {why}"
+
+msgid "None of these games is a git checkout: nothing to update from."
+msgstr "Ninguno de estos juegos es una copia de git: no hay de dónde actualizarlos."
+
+msgid "Updating {i} of {n}: {game}"
+msgstr "Actualizando {i} de {n}: {game}"
+
+msgid "updated {games}"
+msgstr "actualizados {games}"
+
+msgid "{n} already up to date"
+msgstr "{n} ya al día"
+
+msgid "failed {games}"
+msgstr "fallaron {games}"
+
+msgid "Update all: {result}."
+msgstr "Actualizar todos: {result}."
+
+msgid "Full git output"
+msgstr "Salida completa de git"
+
+msgid "lines {from}-{to} of {total}"
+msgstr "líneas {from}-{to} de {total}"
+
+msgid "↑↓ PgUp PgDn Home End scroll  q / Esc / Enter / g close"
+msgstr "↑↓ RePág AvPág Inicio Fin desplazar  q / Esc / Enter / g cerrar"
+
+msgid "↑↓←→ choose  Enter pick  Esc cancel"
+msgstr "↑↓←→ elegir  Enter seleccionar  Esc cancelar"
+
+msgid "←→ choose  Enter pick  Esc cancel"
+msgstr "←→ elegir  Enter seleccionar  Esc cancelar"
+
+msgid "Enter accept  Esc cancel  Ctrl-U clear"
+msgstr "Enter aceptar  Esc cancelar  Ctrl-U borrar"
+
+msgid "Enter use the [default]  Tab edit it  Esc cancel"
+msgstr "Enter usar el [predeterminado]  Tab editarlo  Esc cancelar"
+
+msgid "git isn't installed (or isn't on PATH): can't clone."
+msgstr "git no está instalado (o no está en el PATH): no se puede clonar."
+
+msgid "Clone cancelled."
+msgstr "Clonado cancelado."
+
+msgid "Repository to clone (URL or path)"
+msgstr "Repositorio que clonar (URL o ruta)"
+
+msgid "Can't tell a folder name from \"{url}\"."
+msgstr "No se puede sacar un nombre de carpeta de \"{url}\"."
+
+msgid "Folder to store it in (it gets its own \"{name}\" subfolder)"
+msgstr "Carpeta donde guardarlo (tendrá su propia subcarpeta \"{name}\")"
+
+msgid "Branch to use (optional, empty = the repository's default)"
+msgstr "Rama que usar (opcional; vacío = la predeterminada del repositorio)"
+
+msgid "Depth (optional, 1 = latest commit only, empty = all)"
+msgstr "Profundidad (opcional; 1 = solo el último commit; vacío = todo)"
+
+msgid "The depth must be a whole number of 1 or more (or empty for the full history)."
+msgstr "La profundidad debe ser un número entero de 1 o más (o vacío para todo el historial)."
+
+msgid "{folder} already exists and isn't empty."
+msgstr "{folder} ya existe y no está vacía."
+
+msgid "Can't create {folder}: {error}"
+msgstr "No se puede crear {folder}: {error}"
+
+msgid "Cloning {repo}"
+msgstr "Clonando {repo}"
+
+msgid "Esc / Ctrl-C: cancel the clone"
+msgstr "Esc / Ctrl-C: cancelar el clonado"
+
+msgid "Clone cancelled: nothing was added (g: git output)."
+msgstr "Clonado cancelado: no se añadió nada (g: salida de git)."
+
+msgid "Remove the half-cloned \"{name}\" folder? (y/N)"
+msgstr "¿Borrar la carpeta \"{name}\" clonada a medias? (y/N)"
+
+msgid "Clone cancelled: the half-cloned folder was removed, nothing was added (g: git output)."
+msgstr "Clonado cancelado: se borró la carpeta clonada a medias y no se añadió nada (g: salida de git)."
+
+msgid "Clone cancelled: nothing was added; the half-cloned folder is still at {folder}."
+msgstr "Clonado cancelado: no se añadió nada; la carpeta clonada a medias sigue en {folder}."
+
+msgid "Cloned into {folder}, but no Emuera game (CSV and ERB folders) is in it, so it wasn't added."
+msgstr "Se clonó en {folder}, pero no contiene ningún juego de Emuera (carpetas CSV y ERB), así que no se añadió."
+
+msgid "depth {n}"
+msgstr "profundidad {n}"
+
+msgid "Cloned {game}{at}: NEW, Enter to play (g: git output)."
+msgstr "Se clonó {game}{at}: NUEVO, Enter para jugar (g: salida de git)."
+
+msgid "Added {game} — Enter to play."
+msgstr "Se añadió {game} — Enter para jugar."
+
+msgid "{folder} is gone (d removes it from the list)"
+msgstr "{folder} ya no existe (d la quita de la lista)"
+
+msgid "Nothing here: no folders or archives."
+msgstr "Aquí no hay nada: ni carpetas ni archivos."
+
+msgid "Extracting {archive}"
+msgstr "Extrayendo {archive}"
+
+msgid "{n} files"
+msgstr "{n} archivos"
+
+msgid "can't find this program: {error}"
+msgstr "no se encuentra este programa: {error}"
+
+msgid "{file} is already installed."
+msgstr "{file} ya está instalado."
+
+msgid "Installed {file}."
+msgstr "Se instaló {file}."
+
+msgid "Manual page: {file} (man emuera-tty)."
+msgstr "Página del manual: {file} (man emuera-tty)."
+
+msgid "(manual page not installed: {error})"
+msgstr "(página del manual no instalada: {error})"
+
+msgid "{dir} is not on your PATH; add it with (then open a new terminal):"
+msgstr "{dir} no está en tu PATH; añádelo con (luego abre una terminal nueva):"
+
+msgid "{dir} is not on your PATH; add this to ~/.bashrc or ~/.profile:"
+msgstr "{dir} no está en tu PATH; añade esto a ~/.bashrc o ~/.profile:"
+
+msgid "Removed {file}."
+msgstr "Se eliminó {file}."
+
+msgid "{file} is not installed."
+msgstr "{file} no está instalado."
+
+msgid "Removed {dir} (settings and the game list); the next start will ask for a game folder."
+msgstr "Se eliminó {dir} (los ajustes y la lista de juegos); el próximo inicio pedirá una carpeta de juego."
+
+msgid "Nothing to reset."
+msgstr "No hay nada que restablecer."
+
+msgid "{command} failed ({status})"
+msgstr "{command} falló ({status})"
+
+msgid "Clone failed: {why}"
+msgstr "Falló el clonado: {why}"
+
+msgid "git clone didn't work"
+msgstr "git clone no funcionó"
+
+msgid "detached"
+msgstr "desacoplado"
+
+msgid "Pictures (git lfs pull) failed: {error}"
+msgstr "Falló la descarga de imágenes (git lfs pull): {error}"
+
+msgid "Its pictures are in Git LFS: install git-lfs and update again."
+msgstr "Sus imágenes están en Git LFS: instala git-lfs y vuelve a actualizar."
+
+msgid "git pull didn't work"
+msgstr "git pull no funcionó"
+
+msgid "1 new commit"
+msgstr "1 commit nuevo"
+
+msgid "{n} new commits"
+msgstr "{n} commits nuevos"
+
+msgid "slot {n}"
+msgstr "ranura {n}"
+
+msgid "global"
+msgstr "global"
+
+msgid "no saves in {dir}"
+msgstr "no hay partidas guardadas en {dir}"
+
+msgid "that is the game's own save folder"
+msgstr "esa es la carpeta de guardado del propio juego"
+
+msgid "that is the same slot"
+msgstr "esa es la misma ranura"
+
+msgid "that is the save itself"
+msgstr "esa es la propia partida guardada"
+
+msgid "{file} is not an Emuera save"
+msgstr "{file} no es una partida guardada de Emuera"
+
+msgid "that is the game's own global.sav"
+msgstr "ese es el global.sav del propio juego"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "the language of emuera-tty's own menus and messages, not the game's (auto: the system's)"
+msgstr "el idioma de los menús y mensajes de emuera-tty, no el del juego (auto: el del sistema)"
+
+msgid "Images"
+msgstr "Imágenes"
+
+msgid "how pictures are drawn (auto: whatever the terminal supports)"
+msgstr "cómo se dibujan las imágenes (auto: lo que admita la terminal)"
+
+msgid "Colours"
+msgstr "Colores"
+
+msgid "colour depth sent to the terminal"
+msgstr "profundidad de color enviada a la terminal"
+
+msgid "Readable colours"
+msgstr "Colores legibles"
+
+msgid "lighten coloured text too dark to read (e.g. blue in time stop)"
+msgstr "aclarar el texto de color demasiado oscuro para leerse (p. ej. el azul del tiempo detenido)"
+
+msgid "Wide symbols"
+msgstr "Símbolos anchos"
+
+msgid "how box drawing / symbols get Emuera's two columns (auto: measured)"
+msgstr "cómo los caracteres de recuadro y los símbolos ocupan las dos columnas de Emuera (auto: medido)"
+
+msgid "Backslash as ¥"
+msgstr "Barra invertida como ¥"
+
+msgid "draw \\ as ¥ as Japanese fonts do (auto: when the game's font is one, as Emuera's default MS Gothic)"
+msgstr "dibujar \\ como ¥, como hacen las fuentes japonesas (auto: cuando la fuente del juego es una, como MS Gothic, la predeterminada de Emuera)"
+
+msgid "Greek and Cyrillic"
+msgstr "Griego y cirílico"
+
+msgid "two columns each, as Emuera's MS Gothic draws them, or one (auto: as the game's font, but words in those scripts narrow)"
+msgstr "dos columnas cada una, como las dibuja MS Gothic de Emuera, o una (auto: según la fuente del juego, pero las palabras en esas escrituras estrechas)"
+
+msgid "Copy to clipboard"
+msgstr "Copiar al portapapeles"
+
+msgid "put printed text on the clipboard (OSC 52); game: as emuera.config says"
+msgstr "poner el texto mostrado en el portapapeles (OSC 52); game: según emuera.config"
+
+msgid "Bottom bar details"
+msgstr "Detalles de la barra inferior"
+
+msgid "the hovered button's value and the running function"
+msgstr "el valor del botón bajo el puntero y la función en ejecución"
+
+msgid "Show memory"
+msgstr "Mostrar la memoria"
+
+msgid "show the memory in use in the bottom row (it is always on this page's title)"
+msgstr "mostrar la memoria en uso en la fila inferior (siempre aparece en el título de esta página)"
+
+msgid "Translator"
+msgstr "Traductor"
+
+msgid "off: the game shows as it prints itself; auto: whichever is there (this computer's first); local: Ollama, LibreTranslate… only; translate-shell, DeepL: online; file: only the translations read with --translate-load"
+msgstr "off: el juego se muestra tal como lo escribe; auto: el que haya (primero el de este equipo); local: solo Ollama, LibreTranslate…; translate-shell, DeepL: en línea; file: solo las traducciones leídas con --translate-load"
+
+msgid "Translate to"
+msgstr "Traducir a"
+
+msgid "the language to show the game in (needs a Translator other than off)"
+msgstr "el idioma en que mostrar el juego (necesita un Traductor distinto de off)"
+
+msgid "Translate from"
+msgstr "Traducir desde"
+
+msgid "the game's language: auto takes Japanese lines from Japanese and English ones from English"
+msgstr "el idioma del juego: auto toma las líneas japonesas como japonés y las inglesas como inglés"
+
+msgid "Translate what"
+msgstr "Qué traducir"
+
+msgid "dialog: what characters say; all: menus and labels too (never maps); auto: all unless into English"
+msgstr "dialog: lo que dicen los personajes; all: también menús y etiquetas (nunca mapas); auto: all salvo al traducir al inglés"
+
+msgid "Sound"
+msgstr "Sonido"
+
+msgid "PLAYSOUND / PLAYBGM through mpv, ffplay… (auto: not over SSH)"
+msgstr "PLAYSOUND / PLAYBGM con mpv, ffplay… (auto: no por SSH)"
+
+msgid "Keyboard pointer"
+msgstr "Puntero con teclado"
+
+msgid "cursor keys move a pointer, Insert or Shift+Enter click (PgUp/PgDn scroll); auto: on a text console (Linux, Hurd) without a mouse"
+msgstr "las flechas mueven un puntero, Insert o Mayús+Enter hacen clic (RePág/AvPág desplazan); auto: en una consola de texto (Linux, Hurd) sin ratón"
+
+msgid "Gamepad"
+msgstr "Mando"
+
+msgid "Steam Deck, Xbox, PlayStation… pads: d-pad between buttons, stick moves, A click, B skip, X/Y Enter, Start settings, LB/RB page"
+msgstr "mandos de Steam Deck, Xbox, PlayStation…: la cruceta pasa entre botones, la palanca mueve, A clic, B saltar, X/Y Enter, Start ajustes, LB/RB página"
+
+msgid "Wheel scrolls"
+msgstr "Desplazamiento de la rueda"
+
+msgid "lines per mouse-wheel step"
+msgstr "líneas por paso de la rueda del ratón"
+
+msgid "Scroll to end on keyboard input"
+msgstr "Ir al final al pulsar una tecla"
+
+msgid "any key press while scrolled back jumps to the end (off: only mouse clicks and Enter do)"
+msgstr "pulsar cualquier tecla mientras se mira hacia atrás salta al final (desactivado: solo los clics y Enter)"
+
+msgid "Decode last used pictures"
+msgstr "Decodificar las últimas imágenes"
+
+msgid "decode pictures the game used last time in the background at start (auto: on unless headless)"
+msgstr "decodificar al inicio, en segundo plano, las imágenes que el juego usó la última vez (auto: activado salvo en headless)"
+
+msgid "Console mouse"
+msgstr "Ratón de consola"
+
+msgid "gpm / /dev/input/mice on the Linux console"
+msgstr "gpm / /dev/input/mice en la consola de Linux"
+
+msgid "retro: ASCII through terminfo, for old or dumb terminals"
+msgstr "retro: ASCII mediante terminfo, para terminales antiguas o tontas"
+
+msgid "Target EE version"
+msgstr "Versión de EE objetivo"
+
+msgid "which Emuera-EE version to emulate (EEv56: baseline; EEv56-anontw: EEv56 plus AnonTW fixes from Shakes4cc; EEv57: official EEv57)"
+msgstr "qué versión de Emuera-EE emular (EEv56: base; EEv56-anontw: EEv56 con los arreglos de AnonTW de Shakes4cc; EEv57: EEv57 oficial)"
+
+msgid "wide, narrow, single or osc66: how box drawing and symbols get Emuera's two columns"
+msgstr "wide, narrow, single u osc66: cómo los caracteres de recuadro y los símbolos ocupan las dos columnas de Emuera"
+
+msgid "comma-separated list of function:line breakpoints (debugger)"
+msgstr "lista de puntos de interrupción función:línea separados por comas (depurador)"
+
+msgid "milliseconds since 1970 (UTC) the game's clock starts from, moving 1 ms per reading (reproducible runs)"
+msgstr "milisegundos desde 1970 (UTC) desde los que arranca el reloj del juego, avanzando 1 ms en cada lectura (ejecuciones reproducibles)"
+
+msgid "MB compiled functions may take (default: 1/16 of the memory); the least recently called are dropped"
+msgstr "MB que pueden ocupar las funciones compiladas (predeterminado: 1/16 de la memoria); se descartan las llamadas hace más tiempo"
+
+msgid "truecolor, 256 or 16: the colour depth, when detection guesses wrong"
+msgstr "truecolor, 256 o 16: la profundidad de color, cuando la detección se equivoca"
+
+msgid "any value: print each frame drawn (size and picture keys) to stderr (debugging)"
+msgstr "cualquier valor: escribir en stderr cada fotograma dibujado (tamaño y claves de imagen) (depuración)"
+
+msgid "1: completely disable infinite loop detection, ignoring the timeout (useful for games with intentional long-running functions)"
+msgstr "1: desactivar por completo la detección de bucles infinitos, ignorando el tiempo límite (útil en juegos con funciones que tardan mucho a propósito)"
+
+msgid "MB graphics buffers may take unpacked (default: 1/8 of the memory)"
+msgstr "MB que pueden ocupar los búferes gráficos sin empaquetar (predeterminado: 1/8 de la memoria)"
+
+msgid "any value: enable game debugger at start"
+msgstr "cualquier valor: activar el depurador del juego al inicio"
+
+msgid "off: don't read gamepads; /dev/input/eventN: read just that device as a pad"
+msgstr "off: no leer mandos; /dev/input/eventN: leer solo ese dispositivo como mando"
+
+msgid "path of the gpm socket (default /dev/gpmctl), for testing the Linux-console mouse"
+msgstr "ruta del socket de gpm (predeterminada /dev/gpmctl), para probar el ratón de la consola de Linux"
+
+msgid "the virtual console number the gpm mouse is read for (testing)"
+msgstr "el número de consola virtual para la que se lee el ratón de gpm (pruebas)"
+
+msgid "EEv56, EEv56-anontw or EEv57: which Emuera-EE version to emulate for compatibility (default: EEv56)"
+msgstr "EEv56, EEv56-anontw o EEv57: qué versión de Emuera-EE emular por compatibilidad (predeterminada: EEv56)"
+
+msgid "ms before infinite loop warning (0 = disabled, default: 5000)"
+msgstr "ms antes del aviso de bucle infinito (0 = desactivado, predeterminado: 5000)"
+
+msgid "STMT||STMT: statements run just before the EMUERA_INJECT_AT-th input (debugging)"
+msgstr "STMT||STMT: sentencias ejecutadas justo antes de la entrada número EMUERA_INJECT_AT (depuración)"
+
+msgid "the input number EMUERA_INJECT runs before"
+msgstr "el número de la entrada antes de la que se ejecuta EMUERA_INJECT"
+
+msgid "ja, zh-Hans, zh-Hant, ko, es or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
+msgstr "ja, zh-Hans, zh-Hant, ko, es o en: el idioma de la interfaz; x-cjk, x-arab, x-cyrl, x-deva, x-avst: todos los mensajes en esa escritura, para comprobar el diseño"
+
+msgid "host:port of the LibreTranslate server (default 127.0.0.1:5000)"
+msgstr "host:puerto del servidor de LibreTranslate (predeterminado 127.0.0.1:5000)"
+
+msgid "any value, with --check: point at statements the parser may have split wrongly, and string >= / <= (Emuera evaluates them as <)"
+msgstr "cualquier valor, con --check: señalar las sentencias que el analizador puede haber partido mal, y los >= / <= de cadenas (Emuera los evalúa como <)"
+
+msgid "1, with --headless: print the values of the buttons on screen before each input"
+msgstr "1, con --headless: escribir los valores de los botones en pantalla antes de cada entrada"
+
+msgid "emuera: format log output like Emuera.exe (for headless mode)"
+msgstr "emuera: dar a la salida del registro el formato de Emuera.exe (para el modo headless)"
+
+msgid "0 skips measuring how wide the terminal draws ambiguous characters"
+msgstr "0 omite medir cuán anchos dibuja la terminal los caracteres ambiguos"
+
+msgid "file the report of what the memory holds is written to, at every input"
+msgstr "archivo donde se escribe, en cada entrada, el informe de lo que hay en memoria"
+
+msgid "off or term: no console mouse; mice: read /dev/input/mice even outside the Linux console"
+msgstr "off o term: sin ratón de consola; mice: leer /dev/input/mice también fuera de la consola de Linux"
+
+msgid "file the mouse events are logged to (finding out why a pointer misbehaves)"
+msgstr "archivo donde se registran los eventos del ratón (para averiguar por qué falla un puntero)"
+
+msgid "all: compile every function at load instead of on its first call"
+msgstr "all: compilar todas las funciones al cargar en vez de en su primera llamada"
+
+msgid "MB decoded picture files may take (default: 1/8 of the memory)"
+msgstr "MB que pueden ocupar los archivos de imagen decodificados (predeterminado: 1/8 de la memoria)"
+
+msgid "file for the native profile (builds with --features profile; written on a clean exit)"
+msgstr "archivo del perfil nativo (compilaciones con --features profile; se escribe al salir limpiamente)"
+
+msgid "file kept updated with which ERB function runs, sampled every millisecond"
+msgstr "archivo que se mantiene al día con la función ERB en ejecución, muestreada cada milisegundo"
+
+msgid "colour override for headless mode (e.g. 'fg=255,255,255 bg=0,0,0')"
+msgstr "cambio de colores para el modo headless (p. ej. 'fg=255,255,255 bg=0,0,0')"
+
+msgid "0: don't save history log to global.sav"
+msgstr "0: no guardar el registro del historial en global.sav"
+
+msgid "number the random generator starts from (reproducible runs)"
+msgstr "número con el que arranca el generador aleatorio (ejecuciones reproducibles)"
+
+msgid "on or off: play the game's sounds (default: yes, except over SSH)"
+msgstr "on u off: reproducir los sonidos del juego (predeterminado: sí, salvo por SSH)"
+
+msgid "the sound player: mpv, ffplay, mplayer, afplay, pw-play, paplay, aplay or powershell"
+msgstr "el reproductor de sonido: mpv, ffplay, mplayer, afplay, pw-play, paplay, aplay o powershell"
+
+msgid "stack of the script thread in MB (default 512, or the most the system allows)"
+msgstr "pila del hilo del script en MB (predeterminado 512, o lo máximo que permita el sistema)"
+
+msgid "cap on the threads used for loading and picture decoding"
+msgstr "límite de hilos usados para cargar y decodificar imágenes"
+
+msgid "1: print how long each loading phase takes and the memory in use"
+msgstr "1: mostrar cuánto tarda cada fase de la carga y la memoria en uso"
+
+msgid "log calls to functions whose name contains this, with timestamps, to stderr"
+msgstr "registrar en stderr, con marcas de tiempo, las llamadas a funciones cuyo nombre contiene esto"
+
+msgid "a command that reads a line on stdin and prints its translation (instead of the built-in translators)"
+msgstr "un comando que lee una línea por stdin y escribe su traducción (en lugar de los traductores integrados)"
+
+msgid "the Ollama or translateLocally model used for translating"
+msgstr "el modelo de Ollama o translateLocally usado para traducir"
+
+msgid "the engine translate-shell (trans) uses (default: Google)"
+msgstr "el motor que usa translate-shell (trans) (predeterminado: Google)"
+
+msgid "1: enable internal TTY testing hooks"
+msgstr "1: activar los ganchos internos de prueba de la TTY"
+
+msgid "any value: enable VM debugger at start"
+msgstr "cualquier valor: activar el depurador de la VM al inicio"
+
+msgid "1 / 0: decode last session's pictures in the background at start (default: on, off headless)"
+msgstr "1 / 0: decodificar al inicio, en segundo plano, las imágenes de la última sesión (predeterminado: activado, desactivado en headless)"
+
+msgid "default for --gfx: kitty, iterm, sixel, fb or none"
+msgstr "valor predeterminado de --gfx: kitty, iterm, sixel, fb o none"
+
+msgid "Variable watch"
+msgstr "Vigilar variables"
+
+msgid "Stack trace"
+msgstr "Pila de llamadas"
+
+msgid "Console"
+msgstr "Consola"
+
+msgid "Expression (empty: remove):"
+msgstr "Expresión (vacío: quitar):"
+
+msgid "Debug  (Emuera's debug window)"
+msgstr "Depuración  (la ventana de depuración de Emuera)"
+
+msgid "(new: Enter)"
+msgstr "(nueva: Enter)"
+
+msgid "Tab tab  ↑↓ choose  Enter edit  a add  d remove  r refresh  Esc close"
+msgstr "Tab pestaña  ↑↓ elegir  Enter editar  a añadir  d quitar  r actualizar  Esc cerrar"
+
+msgid "Tab tab  ↑↓ PgUp PgDn scroll  r refresh  Esc close"
+msgstr "Tab pestaña  ↑↓ RePág AvPág desplazar  r actualizar  Esc cerrar"
+
+msgid "Tab tab  Enter run  ↑↓ history  PgUp PgDn scroll  Esc close"
+msgstr "Tab pestaña  Enter ejecutar  ↑↓ historial  RePág AvPág desplazar  Esc cerrar"
+
+msgid "Normal users shouldn't need these: they are mostly for debugging and testing. ● set  ○ not set. Enter: what a variable does. They are read when emuera-tty starts, so set them in the shell before launching."
+msgstr "Los usuarios normales no deberían necesitarlas: son sobre todo para depurar y probar. ● definida  ○ sin definir. Enter: qué hace una variable. Se leen al iniciar emuera-tty, así que defínelas en la shell antes de lanzarlo."
+
+msgid "(not set)"
+msgstr "(sin definir)"
+
+msgid "Environment variables (EMUERA_*): for debugging, not normal use"
+msgstr "Variables de entorno (EMUERA_*): para depurar, no para el uso normal"
+
+msgid "{setting}: the game fixes this one (CSV/_fixed.config)"
+msgstr "{setting}: el juego fija este valor (CSV/_fixed.config)"
+
+msgid "A number from {lo} to {hi} (empty: the game's setting):"
+msgstr "Un número de {lo} a {hi} (vacío: el ajuste del juego):"
+
+msgid "R,G,B or #RRGGBB (empty: the game's setting):"
+msgstr "R,G,B o #RRGGBB (vacío: el ajuste del juego):"
+
+msgid "Text (empty: the game's setting):"
+msgstr "Texto (vacío: el ajuste del juego):"
+
+msgid "Game settings  (Emuera's settings window)"
+msgstr "Ajustes del juego  (la ventana de ajustes de Emuera)"
+
+msgctxt "setting source"
+msgid "game"
+msgstr "juego"
+
+msgctxt "setting source"
+msgid "changed"
+msgstr "cambiado"
+
+msgctxt "setting source"
+msgid "fixed"
+msgstr "fijo"
+
+msgid "←→ tab  ↑↓ choose  Enter change  +/- step  d game's value  Esc back"
+msgstr "←→ pestaña  ↑↓ elegir  Enter cambiar  +/- paso  d valor del juego  Esc volver"
+
+msgid "Saved in the game's emuera.config, which Emuera.exe reads too."
+msgstr "Guardado en el emuera.config del juego, que Emuera.exe también lee."
+
+msgid "(no saves yet)"
+msgstr "(aún no hay partidas guardadas)"
+
+msgid "Back up all saves now"
+msgstr "Respaldar ahora todas las partidas"
+
+msgid "Restore a backup…"
+msgstr "Restaurar un respaldo…"
+
+msgid "Import a save file…"
+msgstr "Importar un archivo de partida…"
+
+msgid "Enter: save actions   saves in {dir}"
+msgstr "Enter: acciones de partida   partidas en {dir}"
+
+msgid "Saves"
+msgstr "Partidas guardadas"
+
+msgid "Replace the saves with {backup}? (the current ones are backed up first)"
+msgstr "¿Reemplazar las partidas por {backup}? (antes se respaldan las actuales)"
+
+msgid "restored {n} files; load one from the game's load menu"
+msgstr "se restauraron {n} archivos; carga una desde el menú de carga del juego"
+
+msgid "Import a save"
+msgstr "Importar una partida"
+
+msgid "Into slot:"
+msgstr "En la ranura:"
+
+msgid "imported as {file}"
+msgstr "importada como {file}"
+
+msgid "Copy to slot…"
+msgstr "Copiar a una ranura…"
+
+msgid "Move to slot…"
+msgstr "Mover a una ranura…"
+
+msgid "Export to a file…"
+msgstr "Exportar a un archivo…"
+
+msgid "Delete"
+msgstr "Borrar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "a deleted or overwritten save is kept in the backups"
+msgstr "una partida borrada o sobrescrita se conserva en los respaldos"
+
+msgid "To slot:"
+msgstr "A la ranura:"
+
+msgid "Slot {n} has a save. Overwrite it?"
+msgstr "La ranura {n} tiene una partida. ¿Sobrescribirla?"
+
+msgid "moved {save} to slot {n}"
+msgstr "se movió {save} a la ranura {n}"
+
+msgid "copied {save} to slot {n}"
+msgstr "se copió {save} a la ranura {n}"
+
+msgid "Export {save}"
+msgstr "Exportar {save}"
+
+msgid "Export {save} to {dir}"
+msgstr "Exportar {save} a {dir}"
+
+msgid "File name:"
+msgstr "Nombre del archivo:"
+
+msgid "{file} exists. Overwrite it?"
+msgstr "{file} ya existe. ¿Sobrescribirlo?"
+
+msgid "exported to {file}"
+msgstr "exportada a {file}"
+
+msgid "Delete {save}?"
+msgstr "¿Borrar {save}?"
+
+msgid "deleted {save} (a copy is in {dir})"
+msgstr "se borró {save} (hay una copia en {dir})"
+
+msgid "({n} files)"
+msgstr "({n} archivos)"
+
+msgid "(no backups yet)"
+msgstr "(aún no hay respaldos)"
+
+msgid "backups go to {dir}"
+msgstr "los respaldos van a {dir}"
+
+msgid "in {dir}"
+msgstr "en {dir}"
+
+msgid "Another folder…"
+msgstr "Otra carpeta…"
+
+msgid "Restore a backup"
+msgstr "Restaurar un respaldo"
+
+msgid "Restore saves from a folder"
+msgstr "Restaurar partidas desde una carpeta"
+
+msgid "Enter open/pick  ← up  ~ home  . hidden  / type a path  Esc back"
+msgstr "Enter abrir/elegir  ← subir  ~ inicio  . ocultos  / escribir una ruta  Esc volver"
+
+msgid "Folder or file:"
+msgstr "Carpeta o archivo:"
+
+msgid "no such folder: {dir}"
+msgstr "no existe la carpeta: {dir}"
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "↑↓ choose  Enter pick  Esc back"
+msgstr "↑↓ elegir  Enter seleccionar  Esc volver"
+
+msgid "Export to this folder…"
+msgstr "Exportar a esta carpeta…"
+
+msgid "(nothing to restore here: no saveNN.sav or global.sav)"
+msgstr "(aquí no hay nada que restaurar: ni saveNN.sav ni global.sav)"
+
+msgid "Restore the save in this folder"
+msgstr "Restaurar la partida de esta carpeta"
+
+msgid "Restore the {n} saves in this folder"
+msgstr "Restaurar las {n} partidas de esta carpeta"
+
+msgid "(a new folder: made when the save is written)"
+msgstr "(una carpeta nueva: se crea al escribir la partida)"
+
+msgid "(can't read this folder: {error})"
+msgstr "(no se puede leer esta carpeta: {error})"
+
+msgid "(not an Emuera save)"
+msgstr "(no es una partida de Emuera)"
+
+msgid "(no folders or save files here)"
+msgstr "(aquí no hay carpetas ni archivos de partida)"
+
+msgid "no mouse ({error}): install gpm, or add yourself to the input group"
+msgstr "sin ratón ({error}): instala gpm o añádete al grupo input"
+
+msgid "; fb disabled here: not an actual vt (expected 'linux', 'fbterm*', 'hurd' or 'sun-*' in $TERM)"
+msgstr "; fb desactivado aquí: no es una consola virtual real (se esperaba 'linux', 'fbterm*', 'hurd' o 'sun-*' en $TERM)"
+
+msgid " (/dev/fb0 needs the video group)"
+msgstr " (/dev/fb0 necesita el grupo video)"
+
+msgid "; framebuffer unavailable: {error}{hint}"
+msgstr "; framebuffer no disponible: {error}{hint}"
+
+msgid "graphics backend: {name}"
+msgstr "motor gráfico: {name}"
+
+msgid "; inside GNU screen there are no pictures (tmux can show them)"
+msgstr "; dentro de GNU screen no hay imágenes (tmux sí puede mostrarlas)"
+
+msgid "; inside tmux, kitty-graphics terminals (Ghostty, kitty) need `set -g allow-passthrough all` for pictures"
+msgstr "; dentro de tmux, las terminales con gráficos de kitty (Ghostty, kitty) necesitan `set -g allow-passthrough all` para las imágenes"
+
+msgid "F{n} stored"
+msgstr "F{n} guardada"
+
+msgid "scroll -{n}"
+msgstr "desplazado -{n}"
+
+msgid "Back to the title screen? Unsaved progress is lost."
+msgstr "¿Volver a la pantalla de título? Se pierde el progreso sin guardar."
+
+msgid "Restart the game? Unsaved progress is lost."
+msgstr "¿Reiniciar el juego? Se pierde el progreso sin guardar."
+
+msgid "Restart the game in debug mode? Unsaved progress is lost."
+msgstr "¿Reiniciar el juego en modo de depuración? Se pierde el progreso sin guardar."
+
+msgid "Restart the game without debug mode? Unsaved progress is lost."
+msgstr "¿Reiniciar el juego sin el modo de depuración? Se pierde el progreso sin guardar."
+
+msgid "Random seed"
+msgstr "Semilla aleatoria"
+
+msgid "(read-only)"
+msgstr "(solo lectura)"
+
+msgid "Initial seed"
+msgstr "Semilla inicial"
+
+msgid "Environment variables…  (the EMUERA_* ones emuera-tty reads)"
+msgstr "Variables de entorno…  (las EMUERA_* que lee emuera-tty)"
+
+msgid "Game settings…  (Emuera's settings window: emuera.config)"
+msgstr "Ajustes del juego…  (la ventana de ajustes de Emuera: emuera.config)"
+
+msgid "Manage saves…  (copy, export, back up, restore)"
+msgstr "Gestionar partidas…  (copiar, exportar, respaldar, restaurar)"
+
+msgid "Test the translator…  (translates a sample line)"
+msgstr "Probar el traductor…  (traduce una línea de ejemplo)"
+
+msgid "Clear the translation cache  (translate the screen again)"
+msgstr "Vaciar la caché de traducción  (traducir de nuevo la pantalla)"
+
+msgid "Export translation cache…  (save translations to a file)"
+msgstr "Exportar la caché de traducción…  (guardar las traducciones en un archivo)"
+
+msgid "Clear the picture cache  (frees decoded sprites; they load again when shown)"
+msgstr "Vaciar la caché de imágenes  (libera los sprites decodificados; se vuelven a cargar al mostrarse)"
+
+msgid "Recolor…  (draw a colour of the game's as another)"
+msgstr "Cambiar colores…  (dibujar un color del juego como otro)"
+
+msgid "Back to the title"
+msgstr "Volver al título"
+
+msgid "Restart the game"
+msgstr "Reiniciar el juego"
+
+msgid "Restart without debug mode"
+msgstr "Reiniciar sin el modo de depuración"
+
+msgid "Restart in debug mode  ([IF_DEBUG] and ;#; lines run)"
+msgstr "Reiniciar en modo de depuración  (se ejecutan [IF_DEBUG] y las líneas ;#;)"
+
+msgid "Reload ERB files"
+msgstr "Recargar los archivos ERB"
+
+msgid "Switch game…  (unsaved progress is lost)"
+msgstr "Cambiar de juego…  (se pierde el progreso sin guardar)"
+
+msgid "Quit emuera-tty"
+msgstr "Salir de emuera-tty"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "works ({secs} s, {what}): {result}"
+msgstr "funciona ({secs} s, {what}): {result}"
+
+msgid "failed ({secs} s, {what}): {error}"
+msgstr "falló ({secs} s, {what}): {error}"
+
+msgid "testing {what}… {secs} s"
+msgstr "probando {what}… {secs} s"
+
+msgid "{what} stopped"
+msgstr "{what} se detuvo"
+
+msgid "sound on"
+msgstr "sonido activado"
+
+msgid "sound off"
+msgstr "sonido desactivado"
+
+msgid "{setting} takes effect the next time emuera-tty starts"
+msgstr "{setting} se aplica la próxima vez que se inicie emuera-tty"
+
+msgid "Restarts the game with the same initial seed. This is primarily for debugging in reproducible runs; restart normally if you aren't doing any of that."
+msgstr "Reinicia el juego con la misma semilla inicial. Sirve sobre todo para depurar ejecuciones reproducibles; si no haces nada de eso, reinicia normalmente."
+
+msgid "restart cancelled"
+msgstr "reinicio cancelado"
+
+msgid "initial seed copied to clipboard (click again quickly to restart with this seed)"
+msgstr "semilla inicial copiada al portapapeles (haz clic de nuevo rápido para reiniciar con esta semilla)"
+
+msgid "the seed can't be changed here: set EMUERA_SEED=N before starting emuera-tty"
+msgstr "la semilla no se puede cambiar aquí: define EMUERA_SEED=N antes de iniciar emuera-tty"
+
+msgid "no game folder known here"
+msgstr "aquí no se conoce ninguna carpeta de juego"
+
+msgid "the Translator is off: choose one to test it"
+msgstr "el Traductor está en off: elige uno para probarlo"
+
+msgid "the Translator is file: no translator is used, so there is nothing to test"
+msgstr "el Traductor está en file: no se usa ningún traductor, así que no hay nada que probar"
+
+msgid "testing {what}…"
+msgstr "probando {what}…"
+
+msgid "translation cache cleared ({lines} lines): what is on screen is translated again"
+msgstr "caché de traducción vaciada ({lines} líneas): lo que hay en pantalla se traduce de nuevo"
+
+msgid "translation is off: no cache to clear"
+msgstr "la traducción está desactivada: no hay caché que vaciar"
+
+msgid "picture cache cleared ({mb} MB freed)"
+msgstr "caché de imágenes vaciada ({mb} MB liberados)"
+
+msgid "from:to pairs of hex colours, comma separated (e.g. 01183c:111d3b turns AnonTW's time-stop navy into a softer blue; empty: none)"
+msgstr "pares origen:destino de colores hexadecimales, separados por comas (p. ej. 01183c:111d3b convierte el azul marino del tiempo detenido de AnonTW en un azul más suave; vacío: ninguno)"
+
+msgid "Recolor"
+msgstr "Cambiar colores"
+
+msgid "recolouring off"
+msgstr "cambio de colores desactivado"
+
+msgid "no colour pairs understood in \"{value}\" (write from:to, e.g. 01183c:111d3b)"
+msgstr "no se entendió ningún par de colores en \"{value}\" (escribe origen:destino, p. ej. 01183c:111d3b)"
+
+msgid "1 colour recoloured (the game still sees its own colours)"
+msgstr "1 color cambiado (el juego sigue viendo sus propios colores)"
+
+msgid "{n} colours recoloured (the game still sees its own colours)"
+msgstr "{n} colores cambiados (el juego sigue viendo sus propios colores)"
+
+msgid "the game shows as it prints itself"
+msgstr "el juego se muestra tal como lo escribe"
+
+msgid "the Translator is file: no translator is used"
+msgstr "el Traductor está en file: no se usa ningún traductor"
+
+msgctxt "translating"
+msgid "the game"
+msgstr "el juego"
+
+msgctxt "translating"
+msgid "dialog"
+msgstr "los diálogos"
+
+msgid "translating {what} into {lang} from {files}, else with {engine}"
+msgstr "traduciendo {what} al {lang} desde {files}, si no, con {engine}"
+
+msgid "translating {what} into {lang} with {engine}"
+msgstr "traduciendo {what} al {lang} con {engine}"
+
+msgid "translating {what} into {lang} with {engine} (--translate-load: {files})"
+msgstr "traduciendo {what} al {lang} con {engine} (--translate-load: {files})"
+
+msgid "translating {what} into {lang} from {files} (no translator)"
+msgstr "traduciendo {what} al {lang} desde {files} (sin traductor)"
+
+msgid "the Translator is file, but no translation file was given: start with --translate-load (or --translate-storage) and a translation log"
+msgstr "el Traductor está en file, pero no se dio ningún archivo de traducción: inicia con --translate-load (o --translate-storage) y un registro de traducciones"
+
+msgid "the Translator is file, but --translate-load gave nothing: {files}"
+msgstr "el Traductor está en file, pero --translate-load no aportó nada: {files}"
+
+msgid "last translation failed: {error}"
+msgstr "la última traducción falló: {error}"
+
+msgid "the number the random generator started from (read-only); set EMUERA_SEED=N before starting for repeatable runs; RANDOMIZE / INITRAND in the game change it"
+msgstr "el número con el que arrancó el generador aleatorio (solo lectura); define EMUERA_SEED=N antes de iniciar para ejecuciones repetibles; RANDOMIZE / INITRAND en el juego lo cambian"
+
+msgid "the seed at startup (read-only); never changes even when the game calls RANDOMIZE or INITRAND"
+msgstr "la semilla al inicio (solo lectura); nunca cambia, aunque el juego llame a RANDOMIZE o INITRAND"
+
+msgid "↑↓ choose  ←→ / Enter change  Esc close"
+msgstr "↑↓ elegir  ←→ / Enter cambiar  Esc cerrar"
+
+msgid "emuera-tty settings"
+msgstr "ajustes de emuera-tty"
+
+msgid "memory"
+msgstr "memoria"
+
+msgid "translating {queued}, failed {failed}, cached {cached}"
+msgstr "traduciendo {queued}, fallidas {failed}, en caché {cached}"
+
+msgid "settings"
+msgstr "ajustes"
+
+msgid "working"
+msgstr "trabajando"
+
+msgid "can't write {file}: {error}"
+msgstr "no se puede escribir {file}: {error}"
+
+msgid "Infinite loop detected"
+msgstr "Bucle infinito detectado"
+
+msgid "Confirm exit"
+msgstr "Confirmar salida"
+
+msgid "Exit anyway"
+msgstr "Salir de todos modos"
+
+msgid "Wait for the line to finish"
+msgstr "Esperar a que termine la línea"
+
+msgid "Now running line {line} of {file} (@{func}).\n{ms} ms have passed since the last input.\nStop the script? (unsaved progress is lost)"
+msgstr "Ahora se ejecuta la línea {line} de {file} (@{func}).\nHan pasado {ms} ms desde la última entrada.\n¿Detener el script? (se pierde el progreso sin guardar)"
+
+msgid "Are you sure? You may also wait for the line to finish (lines may occasionally freeze up)."
+msgstr "¿Seguro? También puedes esperar a que termine la línea (a veces las líneas se quedan colgadas)."
+
+msgid "stopped by the player: a possible infinite loop"
+msgstr "detenido por el jugador: un posible bucle infinito"

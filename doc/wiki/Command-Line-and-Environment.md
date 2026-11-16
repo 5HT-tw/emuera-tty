@@ -78,7 +78,7 @@ over the saved setting.
   characters are fitted to Emuera's two columns (detected at startup:
   terminals that draw them wide need nothing, others are padded; `osc66`
   tries kitty's text-sizing protocol instead, which some may prefer).
-- `EMUERA_LANG=ja|zh-Hans|zh-Hant|ko|en` sets the interface language, over
+- `EMUERA_LANG=ja|zh-Hans|zh-Hant|ko|es|en` sets the interface language, over
   the setting and the system's. `x-cjk`, `x-arab`, `x-cyrl`, `x-deva` and
   `x-avst` show every message rewritten in CJK, Arabic, Cyrillic, Devanagari
   or Old Avestan letters and made longer, to check the layout holds in any

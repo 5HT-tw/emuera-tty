@@ -34,7 +34,7 @@ thousands of random choices through them without errors. What it has
   downloader** (the games of the eraGames wiki), a settings page, save
   management, and readable script errors with the call stack.
 - Menus and messages in English, Japanese, Simplified and Traditional
-  Chinese or Korean.
+  Chinese, Korean or Spanish.
 - **Gamepads** on Linux, the **Steam Deck** included (see
   [Gamepads and the Steam Deck](https://github.com/astartes-gaming/emuera-tty/wiki/Gamepads-and-Steam-Deck)).
 - Linux first; its test suite also passes on macOS, Windows, FreeBSD,

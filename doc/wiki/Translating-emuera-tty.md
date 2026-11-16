@@ -1,14 +1,14 @@
 emuera-tty's own menus and messages (the settings, launcher, save manager,
 prompts and its errors; never the game's text) can be translated without
 touching the code. They are translated into Japanese, Simplified Chinese,
-Traditional Chinese and Korean (all but the `--help` text). The
+Traditional Chinese, Korean and Spanish (all but the `--help` text). The
 translations were written with an AI (Claude) and haven't been reviewed
 by native speakers, so corrections are welcome. A message nobody has
 translated yet shows in English.
 
 - **The files:** `i18n/emuera-tty.pot` lists every message (it is made from
   the source, so it is always complete); each language has its own
-  `i18n/<language>.po`: `ja.po`, `zh-Hans.po`, `zh-Hant.po`, `ko.po`.
+  `i18n/<language>.po`: `ja.po`, `zh-Hans.po`, `zh-Hant.po`, `ko.po`, `es.po`.
   These are gettext catalogues, the usual format for translating programs.
 - **The tools:** [Poedit](https://poedit.net) opens a `.po` file and, with
   *Translation → Update from POT file*, adds the messages that are new in

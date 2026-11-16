@@ -708,8 +708,8 @@ msgstr "STMT||STMT: EMUERA_INJECT_AT번째 입력 바로 전에 실행할 문(�
 msgid "the input number EMUERA_INJECT runs before"
 msgstr "EMUERA_INJECT를 실행할 입력 번호"
 
-msgid "ja, zh-Hans, zh-Hant, ko or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
-msgstr "ja, zh-Hans, zh-Hant, ko 또는 en: 인터페이스 언어. x-cjk, x-arab, x-cyrl, x-deva, x-avst: 모든 메시지를 그 문자로(레이아웃 확인용)"
+msgid "ja, zh-Hans, zh-Hant, ko, es or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
+msgstr "ja, zh-Hans, zh-Hant, ko, es 또는 en: 인터페이스 언어. x-cjk, x-arab, x-cyrl, x-deva, x-avst: 모든 메시지를 그 문자로(레이아웃 확인용)"
 
 msgid "host:port of the LibreTranslate server (default 127.0.0.1:5000)"
 msgstr "LibreTranslate 서버의 host:port(기본 127.0.0.1:5000)"

@@ -708,8 +708,8 @@ msgstr "STMT||STMT：在第 EMUERA_INJECT_AT 次输入之前运行的语句（�
 msgid "the input number EMUERA_INJECT runs before"
 msgstr "EMUERA_INJECT 在其之前运行的输入编号"
 
-msgid "ja, zh-Hans, zh-Hant, ko or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
-msgstr "ja、zh-Hans、zh-Hant、ko 或 en：界面语言；x-cjk、x-arab、x-cyrl、x-deva、x-avst：所有消息用该文字显示，以检查布局"
+msgid "ja, zh-Hans, zh-Hant, ko, es or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
+msgstr "ja、zh-Hans、zh-Hant、ko、es 或 en：界面语言；x-cjk、x-arab、x-cyrl、x-deva、x-avst：所有消息用该文字显示，以检查布局"
 
 msgid "host:port of the LibreTranslate server (default 127.0.0.1:5000)"
 msgstr "LibreTranslate 服务器的 host:port（默认 127.0.0.1:5000）"

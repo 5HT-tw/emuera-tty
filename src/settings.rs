@@ -38,7 +38,7 @@ pub const ITEMS: &[Item] = &[
     Item {
         key: "language",
         label: n!("Language"),
-        choices: &["auto", "en", "ja", "zh-Hans", "zh-Hant", "ko"],
+        choices: &["auto", "en", "ja", "zh-Hans", "zh-Hant", "ko", "es"],
         live: true,
         help: n!("the language of emuera-tty's own menus and messages, not the game's (auto: the system's)"),
     },
@@ -192,7 +192,7 @@ pub const ENV_VARS: &[(&str, &str)] = &[
     ("EMUERA_INJECT_AT", n!("the input number EMUERA_INJECT runs before")),
     (
         "EMUERA_LANG",
-        n!("ja, zh-Hans, zh-Hant, ko or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"),
+        n!("ja, zh-Hans, zh-Hant, ko, es or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"),
     ),
     ("EMUERA_LIBRETRANSLATE", n!("host:port of the LibreTranslate server (default 127.0.0.1:5000)")),
     ("EMUERA_LINT", n!("any value, with --check: point at statements the parser may have split wrongly, and string >= / <= (Emuera evaluates them as <)")),

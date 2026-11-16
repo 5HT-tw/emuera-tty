@@ -28,6 +28,7 @@ pub const LANGUAGES: &[(&str, &str, &str)] = &[
     ("zh-Hans", "简体中文", include_str!("../i18n/zh-Hans.po")),
     ("zh-Hant", "繁體中文", include_str!("../i18n/zh-Hant.po")),
     ("ko", "한국어", include_str!("../i18n/ko.po")),
+    ("es", "Español", include_str!("../i18n/es.po")),
 ];
 
 /// Translations keyed by (context, English text).
@@ -103,7 +104,7 @@ fn choose(env: &str, setting: &str, locale: &str) -> String {
 }
 
 /// A language code from [`LANGUAGES`] for a locale or language name
-/// (`ja_JP.UTF-8`, `zh_TW`, `zh-Hant`, `ko`), or None (`C`, `POSIX`,
+/// (`ja_JP.UTF-8`, `zh_TW`, `zh-Hant`, `ko`, `es_MX`), or None (`C`, `POSIX`,
 /// empty, or a language without a catalogue). Chinese goes by script:
 /// Taiwan, Hong Kong and Macau, or an explicit `Hant`, are Traditional.
 fn from_locale(name: &str) -> Option<&'static str> {
@@ -116,6 +117,7 @@ fn from_locale(name: &str) -> Option<&'static str> {
         "en" => "en",
         "ja" => "ja",
         "ko" => "ko",
+        "es" => "es",
         "zh" => {
             if rest.iter().any(|p| matches!(p.as_str(), "hant" | "tw" | "hk" | "mo")) {
                 "zh-Hant"
@@ -841,6 +843,8 @@ msgstr "未確認"
             ("zh-Hans-SG", Some("zh-Hans")),
             ("zh", Some("zh-Hans")),
             ("ko_KR.UTF-8", Some("ko")),
+            ("es_ES.UTF-8", Some("es")),
+            ("es_MX", Some("es")),
             ("en_US.UTF-8", Some("en")),
             ("de_DE.UTF-8@euro", None),
             ("C", None),
