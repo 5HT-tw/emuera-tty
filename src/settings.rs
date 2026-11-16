@@ -73,10 +73,10 @@ pub const ITEMS: &[Item] = &[
     },
     Item {
         key: "letters",
-        label: "Greek and Cyrillic",
+        label: n!("Greek and Cyrillic"),
         choices: &["auto", "wide", "narrow"],
         live: true,
-        help: "two columns each, as Emuera's MS Gothic draws them, or one (auto: as the game's font, but words in those scripts narrow)",
+        help: n!("two columns each, as Emuera's MS Gothic draws them, or one (auto: as the game's font, but words in those scripts narrow)"),
     },
     Item {
         key: "clipboard",

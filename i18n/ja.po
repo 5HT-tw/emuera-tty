@@ -5,3 +5,1259 @@ msgid ""
 msgstr ""
 "Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "can't work out where to extract (HOME not set?)"
+msgstr "展開先が決められません（HOME が未設定？）"
+
+msgid "no Emuera game (a folder with CSV/ and ERB/) in this archive"
+msgstr "このアーカイブには Emuera のゲーム（CSV/ と ERB/ のあるフォルダ）がありません"
+
+msgid "not a readable zip: {error}"
+msgstr "zip として読めません: {error}"
+
+msgid "not a readable tar: {error}"
+msgstr "tar として読めません: {error}"
+
+msgid "this archive type needs bsdtar, tar or 7z installed (e.g. `sudo apt install libarchive-tools p7zip-full`)"
+msgstr "この形式のアーカイブには bsdtar、tar、7z のどれかが必要です（例: `sudo apt install libarchive-tools p7zip-full`）"
+
+msgid "extracting {archive} failed ({status})"
+msgstr "{archive} の展開に失敗しました（{status}）"
+
+msgid "Environment"
+msgstr "環境"
+
+msgid "Display"
+msgstr "表示"
+
+msgid "Font"
+msgstr "フォント"
+
+msgid "System2"
+msgstr "システム2"
+
+msgid "Clipboard"
+msgstr "クリップボード"
+
+msgid "Make autosaves"
+msgstr "オートセーブを行う"
+
+msgid "Use keyboard macros (F1…F12; off: other Fn keys take over)"
+msgstr "キーボードマクロを使う（F1…F12。オフ: 他の機能が Fn キーを使う）"
+
+msgid "Lines in history log"
+msgstr "履歴ログの行数"
+
+msgid "Number of save slots"
+msgstr "セーブデータの数"
+
+msgid "Milliseconds for infinite loop warning"
+msgstr "無限ループ警告までのミリ秒数"
+
+msgid "Disable infinite loop detection (useful for games with intentional long-running functions)"
+msgstr "無限ループの検出をしない（わざと長く動く関数のあるゲーム向け）"
+
+msgid "PRINTC items per line"
+msgstr "PRINTC を並べる数"
+
+msgid "PRINTC item width"
+msgstr "PRINTC の文字数"
+
+msgid "Don't break lines inside a button"
+msgstr "ボタンの途中で行を折りかえさない"
+
+msgid "Text colour"
+msgstr "文字色"
+
+msgid "Selected button colour"
+msgstr "選択中文字色"
+
+msgid "Font (for text drawn into pictures)"
+msgstr "フォント（画像に描く文字用）"
+
+msgid "Compress save data"
+msgstr "セーブデータを圧縮して保存する"
+
+msgid "Copy printed text to the clipboard"
+msgstr "表示した文字をクリップボードにコピーする"
+
+msgid "Only new lines"
+msgstr "新しい行だけ"
+
+msgid "Lines copied (when not only new ones)"
+msgstr "コピーする行数（新しい行だけでないとき）"
+
+msgid "Lines remembered"
+msgstr "覚えておく行数"
+
+msgid "Minimum time between copies (ms)"
+msgstr "コピーの最小間隔（ミリ秒）"
+
+msgid "Replace pictures (<> tags) …"
+msgstr "画像（<> タグ）を置き換える…"
+
+msgid "… with this text"
+msgstr "…この文字列で"
+
+msgid "Forget lines when the game clears the screen"
+msgstr "ゲームが画面を消したら行を忘れる"
+
+msgid "Copy on a left click"
+msgstr "左クリックでコピー"
+
+msgid "Copy on a middle click"
+msgstr "中クリックでコピー"
+
+msgid "Copy on a double click"
+msgstr "ダブルクリックでコピー"
+
+msgid "Copy at a WAIT"
+msgstr "WAIT でコピー"
+
+msgid "Copy at an input"
+msgstr "入力待ちでコピー"
+
+msgid "YES or NO"
+msgstr "YES か NO"
+
+msgid "a number from {lo} to {hi}"
+msgstr "{lo}～{hi} の数"
+
+msgid "R,G,B (0-255 each) or #RRGGBB"
+msgstr "R,G,B（それぞれ 0-255）か #RRGGBB"
+
+msgid "note: {n} ERB/ERH files in subfolders not loaded: the game's config doesn't turn on サブディレクトリを検索する (Search subfolders), so Emuera skips them too"
+msgstr "注意: サブフォルダの ERB/ERH ファイル {n} 個を読み込んでいません。ゲームの設定で「サブディレクトリを検索する」がオフなので、Emuera も読み飛ばします"
+
+msgid "{dir}: no CSV directory found"
+msgstr "{dir}: CSV フォルダが見つかりません"
+
+msgid "this game's settings ask for names that differ only in letter case to be different; emuera-tty always ignores case"
+msgstr "このゲームの設定は大文字・小文字だけが違う名前を区別するよう求めていますが、emuera-tty は常に区別しません"
+
+msgid "inside tmux, pictures in Ghostty or kitty need `set -g allow-passthrough all` (in ~/.tmux.conf, then `tmux source-file ~/.tmux.conf`); `--gfx none` plays without pictures"
+msgstr "tmux の中で Ghostty や kitty に画像を出すには `set -g allow-passthrough all` が必要です（~/.tmux.conf に書いて `tmux source-file ~/.tmux.conf`）。`--gfx none` なら画像なしで遊べます"
+
+msgid "terminal init failed ({error}); falling back to headless"
+msgstr "端末の初期化に失敗しました（{error}）。headless で続けます"
+
+msgid "backed up {n} files to {dir}"
+msgstr "{n} 個のファイルを {dir} にバックアップしました"
+
+msgid "saves in {dir}:"
+msgstr "{dir} のセーブ:"
+
+msgid "{n} backups in {dir}"
+msgstr "{dir} のバックアップ {n} 個"
+
+msgid "Extracting {archive}…"
+msgstr "{archive} を展開中…"
+
+msgid "Extracting {archive}… {n} files"
+msgstr "{archive} を展開中… {n} ファイル"
+
+msgid "Game folder: {dir}"
+msgstr "ゲームフォルダ: {dir}"
+
+msgid "no game folder given (pass GAME_DIR, or run in a terminal to pick one)"
+msgstr "ゲームフォルダが指定されていません（GAME_DIR を渡すか、端末で起動して選んでください）"
+
+msgid "no translator found: install Ollama, LibreTranslate, translateLocally, Argos Translate or translate-shell (or curl, for DeepL)"
+msgstr "翻訳ソフトが見つかりません: Ollama、LibreTranslate、translateLocally、Argos Translate、translate-shell のどれか（DeepL なら curl）を入れてください"
+
+msgid "translate-shell (trans) isn't installed: get it from your package manager or translate-shell's site"
+msgstr "translate-shell（trans）が入っていません: パッケージマネージャか translate-shell のサイトから入手してください"
+
+msgid "DeepL needs curl (or DeepL's deepl tool and DEEPL_AUTH_KEY)"
+msgstr "DeepL には curl（または DeepL の deepl ツールと DEEPL_AUTH_KEY）が必要です"
+
+msgid "Argos Translate isn't installed: pipx install argostranslate, then argospm install translate-ja_en"
+msgstr "Argos Translate が入っていません: pipx install argostranslate のあと argospm install translate-ja_en"
+
+msgid "no translator on this computer: install Ollama, LibreTranslate, translateLocally or argos-translate (or set EMUERA_TRANSLATE_CMD), or choose translate-shell / DeepL"
+msgstr "このコンピュータに翻訳ソフトがありません: Ollama、LibreTranslate、translateLocally、argos-translate のどれかを入れる（か EMUERA_TRANSLATE_CMD を設定する）か、translate-shell / DeepL を選んでください"
+
+msgid "your command ({program})"
+msgstr "あなたのコマンド（{program}）"
+
+msgid "translate-shell (online)"
+msgstr "translate-shell（オンライン）"
+
+msgid "DeepL, no key (online, unofficial)"
+msgstr "DeepL、キーなし（オンライン、非公式）"
+
+msgid "DeepL's tool (online)"
+msgstr "DeepL のツール（オンライン）"
+
+msgid "Ollama didn't answer"
+msgstr "Ollama が応答しません"
+
+msgid "Ollama gave no translation"
+msgstr "Ollama が翻訳を返しません"
+
+msgid "LibreTranslate didn't answer"
+msgstr "LibreTranslate が応答しません"
+
+msgid "LibreTranslate gave no translation"
+msgstr "LibreTranslate が翻訳を返しません"
+
+msgid "empty translation"
+msgstr "翻訳が空です"
+
+msgid "DeepL is limiting requests without a key: wait a while, or set DEEPL_AUTH_KEY"
+msgstr "DeepL がキーなしのリクエストを制限しています: しばらく待つか DEEPL_AUTH_KEY を設定してください"
+
+msgid "DeepL is limiting requests: wait a while"
+msgstr "DeepL がリクエストを制限しています: しばらく待ってください"
+
+msgid "DeepL refused the key in DEEPL_AUTH_KEY"
+msgstr "DeepL が DEEPL_AUTH_KEY のキーを拒否しました"
+
+msgid "DeepL: this key's character quota is used up"
+msgstr "DeepL: このキーの文字数の上限に達しました"
+
+msgid "DeepL answered HTTP {status}"
+msgstr "DeepL が HTTP {status} を返しました"
+
+msgid "translator failed ({status})"
+msgstr "翻訳ソフトが失敗しました（{status}）"
+
+msgid "Argos stopped (is argostranslate installed for that Python?)"
+msgstr "Argos が止まりました（その Python に argostranslate は入っていますか？）"
+
+msgid "{n} lines"
+msgstr "{n} 行"
+
+msgid "({n} for other languages)"
+msgstr "（他の言語に {n}）"
+
+msgid "Game debugging enabled; [IF_DEBUG] blocks and ;#; lines WILL run"
+msgstr "ゲームのデバッグが有効: [IF_DEBUG] ブロックと ;#; 行が実行されます"
+
+msgid "VM-level debugging/breakpoints enabled; select this option to show a list of what files/functions have an attached breakpoint"
+msgstr "VM レベルのデバッグ・ブレークポイントが有効: 選ぶとブレークポイントのあるファイル・関数の一覧を表示します"
+
+msgid "Emuera game"
+msgstr "Emuera のゲーム"
+
+msgid "(folder missing)"
+msgstr "（フォルダがありません）"
+
+msgid "last played"
+msgstr "前回プレイ"
+
+msgid "(NEW)"
+msgstr "（新規）"
+
+msgid "Add a game (folder or archive)…"
+msgstr "ゲームを追加（フォルダかアーカイブ）…"
+
+msgid "Clone a game from a git repository…"
+msgstr "git リポジトリからゲームをクローン…"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Test dialog boxes…"
+msgstr "ダイアログボックスのテスト…"
+
+msgid "(next start)"
+msgstr "（次回起動時）"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "this game"
+msgstr "このゲーム"
+
+msgid "Play {game}"
+msgstr "{game} をプレイ"
+
+msgid "archive, {size}"
+msgstr "アーカイブ、{size}"
+
+msgid "your games"
+msgstr "あなたのゲーム"
+
+msgid "Enter to play · a add a game · u update (git) · U update all · d remove from the list · s settings"
+msgstr "Enter プレイ · a ゲーム追加 · u 更新（git） · U すべて更新 · d 一覧から削除 · s 設定"
+
+msgid "Choose an Emuera game folder or archive"
+msgstr "Emuera のゲームフォルダかアーカイブを選んでください"
+
+msgid "(★ = game, ▣ = archive)"
+msgstr "（★ = ゲーム、▣ = アーカイブ）"
+
+msgid "(empty)"
+msgstr "（空）"
+
+msgid "g git output  ↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "g git の出力  ↑↓ 移動  Enter プレイ  a 追加  u 更新  U すべて更新  d 削除  s 設定  q 終了"
+
+msgid "↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "↑↓ 移動  Enter プレイ  a 追加  u 更新  U すべて更新  d 削除  s 設定  q 終了"
+
+msgid "↑↓ move  ←/→ or Enter change  Esc back"
+msgstr "↑↓ 移動  ←/→ か Enter 変更  Esc 戻る"
+
+msgid "↑↓ move  Enter details  Esc back"
+msgstr "↑↓ 移動  Enter 詳細  Esc 戻る"
+
+msgid "↑↓ move  Enter download  Esc back"
+msgstr "↑↓ 移動  Enter ダウンロード  Esc 戻る"
+
+msgid "↑↓ move  Enter add/open  → open  ← up  ~ home  . hidden  Esc back"
+msgstr "↑↓ 移動  Enter 追加/開く  → 開く  ← 上へ  ~ ホーム  . 隠しファイル  Esc 戻る"
+
+msgid "↑↓ move  Enter play/open  → open  ← up  ~ home  . hidden  q quit"
+msgstr "↑↓ 移動  Enter プレイ/開く  → 開く  ← 上へ  ~ ホーム  . 隠しファイル  q 終了"
+
+msgid "Removed {game} from the list (its files are still there)."
+msgstr "{game} を一覧から外しました（ファイルは残っています）。"
+
+msgid "This game isn't a git checkout: nothing to update from."
+msgstr "このゲームは git のチェックアウトではないので、更新元がありません。"
+
+msgid "Updating {game}"
+msgstr "{game} を更新中"
+
+msgid "Already up to date."
+msgstr "すでに最新です。"
+
+msgid "Updated: {what}."
+msgstr "更新しました: {what}。"
+
+msgid "Update failed: {why}"
+msgstr "更新に失敗しました: {why}"
+
+msgid "None of these games is a git checkout: nothing to update from."
+msgstr "git のチェックアウトであるゲームがないので、更新元がありません。"
+
+msgid "Updating {i} of {n}: {game}"
+msgstr "{n} 個中 {i} 個目を更新中: {game}"
+
+msgid "updated {games}"
+msgstr "更新: {games}"
+
+msgid "{n} already up to date"
+msgstr "{n} 個はすでに最新"
+
+msgid "failed {games}"
+msgstr "失敗: {games}"
+
+msgid "Update all: {result}."
+msgstr "すべて更新: {result}。"
+
+msgid "Full git output"
+msgstr "git の出力（全文）"
+
+msgid "lines {from}-{to} of {total}"
+msgstr "{total} 行中 {from}-{to} 行"
+
+msgid "↑↓ PgUp PgDn Home End scroll  q / Esc / Enter / g close"
+msgstr "↑↓ PgUp PgDn Home End スクロール  q / Esc / Enter / g 閉じる"
+
+msgid "↑↓←→ choose  Enter pick  Esc cancel"
+msgstr "↑↓←→ 選択  Enter 決定  Esc キャンセル"
+
+msgid "←→ choose  Enter pick  Esc cancel"
+msgstr "←→ 選択  Enter 決定  Esc キャンセル"
+
+msgid "Enter accept  Esc cancel  Ctrl-U clear"
+msgstr "Enter 決定  Esc キャンセル  Ctrl-U 消去"
+
+msgid "Enter use the [default]  Tab edit it  Esc cancel"
+msgstr "Enter [既定値] を使う  Tab 編集  Esc キャンセル"
+
+msgid "git isn't installed (or isn't on PATH): can't clone."
+msgstr "git が入っていない（か PATH にない）ので、クローンできません。"
+
+msgid "Clone cancelled."
+msgstr "クローンを中止しました。"
+
+msgid "Repository to clone (URL or path)"
+msgstr "クローンするリポジトリ（URL かパス）"
+
+msgid "Can't tell a folder name from \"{url}\"."
+msgstr "「{url}」からフォルダ名を決められません。"
+
+msgid "Folder to store it in (it gets its own \"{name}\" subfolder)"
+msgstr "保存先のフォルダ（中に「{name}」フォルダが作られます）"
+
+msgid "Branch to use (optional, empty = the repository's default)"
+msgstr "使うブランチ（任意。空 = リポジトリの既定）"
+
+msgid "Depth (optional, 1 = latest commit only, empty = all)"
+msgstr "深さ（任意。1 = 最新のコミットだけ、空 = すべて）"
+
+msgid "The depth must be a whole number of 1 or more (or empty for the full history)."
+msgstr "深さは 1 以上の整数にしてください（全履歴なら空）。"
+
+msgid "{folder} already exists and isn't empty."
+msgstr "{folder} はすでにあり、空ではありません。"
+
+msgid "Can't create {folder}: {error}"
+msgstr "{folder} を作れません: {error}"
+
+msgid "Cloning {repo}"
+msgstr "{repo} をクローン中"
+
+msgid "Esc / Ctrl-C: cancel the clone"
+msgstr "Esc / Ctrl-C: クローンを中止"
+
+msgid "Clone cancelled: nothing was added (g: git output)."
+msgstr "クローンを中止しました: 何も追加していません（g: git の出力）。"
+
+msgid "Remove the half-cloned \"{name}\" folder? (y/N)"
+msgstr "途中までクローンした「{name}」フォルダを消しますか？（y/N）"
+
+msgid "Clone cancelled: the half-cloned folder was removed, nothing was added (g: git output)."
+msgstr "クローンを中止しました: 途中のフォルダは消し、何も追加していません（g: git の出力）。"
+
+msgid "Clone cancelled: nothing was added; the half-cloned folder is still at {folder}."
+msgstr "クローンを中止しました: 何も追加していません。途中のフォルダは {folder} に残っています。"
+
+msgid "Cloned into {folder}, but no Emuera game (CSV and ERB folders) is in it, so it wasn't added."
+msgstr "{folder} にクローンしましたが、Emuera のゲーム（CSV と ERB フォルダ）がないので追加していません。"
+
+msgid "depth {n}"
+msgstr "深さ {n}"
+
+msgid "Cloned {game}{at}: NEW, Enter to play (g: git output)."
+msgstr "{game}{at} をクローンしました: 新規、Enter でプレイ（g: git の出力）。"
+
+msgid "Added {game} — Enter to play."
+msgstr "{game} を追加しました — Enter でプレイ。"
+
+msgid "{folder} is gone (d removes it from the list)"
+msgstr "{folder} がありません（d で一覧から外せます）"
+
+msgid "Nothing here: no folders or archives."
+msgstr "ここには何もありません: フォルダもアーカイブもありません。"
+
+msgid "Extracting {archive}"
+msgstr "{archive} を展開中"
+
+msgid "{n} files"
+msgstr "{n} ファイル"
+
+msgid "can't find this program: {error}"
+msgstr "このプログラムが見つかりません: {error}"
+
+msgid "{file} is already installed."
+msgstr "{file} はすでにインストールされています。"
+
+msgid "Installed {file}."
+msgstr "{file} をインストールしました。"
+
+msgid "Manual page: {file} (man emuera-tty)."
+msgstr "マニュアル: {file}（man emuera-tty）。"
+
+msgid "(manual page not installed: {error})"
+msgstr "（マニュアルはインストールされていません: {error}）"
+
+msgid "{dir} is not on your PATH; add it with (then open a new terminal):"
+msgstr "{dir} が PATH にありません。次のように追加してください（そのあと新しい端末を開く）:"
+
+msgid "{dir} is not on your PATH; add this to ~/.bashrc or ~/.profile:"
+msgstr "{dir} が PATH にありません。~/.bashrc か ~/.profile にこれを追加してください:"
+
+msgid "Removed {file}."
+msgstr "{file} を削除しました。"
+
+msgid "{file} is not installed."
+msgstr "{file} はインストールされていません。"
+
+msgid "Removed {dir} (settings and the game list); the next start will ask for a game folder."
+msgstr "{dir}（設定とゲーム一覧）を削除しました。次回の起動でゲームフォルダを尋ねます。"
+
+msgid "Nothing to reset."
+msgstr "リセットするものはありません。"
+
+msgid "{command} failed ({status})"
+msgstr "{command} が失敗しました（{status}）"
+
+msgid "Clone failed: {why}"
+msgstr "クローンに失敗しました: {why}"
+
+msgid "git clone didn't work"
+msgstr "git clone がうまくいきませんでした"
+
+msgid "detached"
+msgstr "detached"
+
+msgid "Pictures (git lfs pull) failed: {error}"
+msgstr "画像（git lfs pull）に失敗しました: {error}"
+
+msgid "Its pictures are in Git LFS: install git-lfs and update again."
+msgstr "画像は Git LFS にあります: git-lfs を入れてもう一度更新してください。"
+
+msgid "git pull didn't work"
+msgstr "git pull がうまくいきませんでした"
+
+msgid "1 new commit"
+msgstr "新しいコミット 1 個"
+
+msgid "{n} new commits"
+msgstr "新しいコミット {n} 個"
+
+msgid "slot {n}"
+msgstr "スロット {n}"
+
+msgid "global"
+msgstr "グローバル"
+
+msgid "no saves in {dir}"
+msgstr "{dir} にセーブがありません"
+
+msgid "that is the game's own save folder"
+msgstr "それはゲーム自身のセーブフォルダです"
+
+msgid "that is the same slot"
+msgstr "それは同じスロットです"
+
+msgid "that is the save itself"
+msgstr "それはそのセーブ自身です"
+
+msgid "{file} is not an Emuera save"
+msgstr "{file} は Emuera のセーブではありません"
+
+msgid "that is the game's own global.sav"
+msgstr "それはゲーム自身の global.sav です"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "the language of emuera-tty's own menus and messages, not the game's (auto: the system's)"
+msgstr "emuera-tty 自身のメニューとメッセージの言語。ゲームの言語ではありません（auto: システムの言語）"
+
+msgid "Images"
+msgstr "画像"
+
+msgid "how pictures are drawn (auto: whatever the terminal supports)"
+msgstr "画像の描き方（auto: 端末が対応しているもの）"
+
+msgid "Colours"
+msgstr "色"
+
+msgid "colour depth sent to the terminal"
+msgstr "端末に送る色数"
+
+msgid "Readable colours"
+msgstr "読みやすい色"
+
+msgid "lighten coloured text too dark to read (e.g. blue in time stop)"
+msgstr "暗すぎて読めない色の文字を明るくする（例: 時間停止中の青）"
+
+msgid "Wide symbols"
+msgstr "幅の広い記号"
+
+msgid "how box drawing / symbols get Emuera's two columns (auto: measured)"
+msgstr "罫線・記号を Emuera の 2 桁にする方法（auto: 測定）"
+
+msgid "Backslash as ¥"
+msgstr "バックスラッシュを ¥ に"
+
+msgid "draw \\ as ¥ as Japanese fonts do (auto: when the game's font is one, as Emuera's default MS Gothic)"
+msgstr "日本語フォントのように \\ を ¥ で描く（auto: ゲームのフォントが日本語のとき。Emuera 既定の MS ゴシックなど）"
+
+msgid "Greek and Cyrillic"
+msgstr "ギリシャ文字とキリル文字"
+
+msgid "two columns each, as Emuera's MS Gothic draws them, or one (auto: as the game's font, but words in those scripts narrow)"
+msgstr "各 2 桁（Emuera の MS ゴシックの描き方）か 1 桁（auto: ゲームのフォントのとおり。ただしその文字の単語は狭く）"
+
+msgid "Copy to clipboard"
+msgstr "クリップボードにコピー"
+
+msgid "put printed text on the clipboard (OSC 52); game: as emuera.config says"
+msgstr "表示した文字をクリップボードに入れる（OSC 52）。game: emuera.config のとおり"
+
+msgid "Bottom bar details"
+msgstr "下の行の詳細"
+
+msgid "the hovered button's value and the running function"
+msgstr "カーソルのあるボタンの値と実行中の関数"
+
+msgid "Show memory"
+msgstr "メモリを表示"
+
+msgid "show the memory in use in the bottom row (it is always on this page's title)"
+msgstr "使用中のメモリを最下行に表示する（このページのタイトルには常に出ます）"
+
+msgid "Translator"
+msgstr "翻訳ソフト"
+
+msgid "off: the game shows as it prints itself; auto: whichever is there (this computer's first); local: Ollama, LibreTranslate… only; translate-shell, DeepL: online; file: only the translations read with --translate-load"
+msgstr "off: ゲームが表示したまま。auto: あるもの（このコンピュータのものを優先）。local: Ollama、LibreTranslate… のみ。translate-shell、DeepL: オンライン。file: --translate-load で読んだ翻訳だけ"
+
+msgid "Translate to"
+msgstr "翻訳先"
+
+msgid "the language to show the game in (needs a Translator other than off)"
+msgstr "ゲームを表示する言語（off 以外の翻訳ソフトが必要）"
+
+msgid "Translate from"
+msgstr "翻訳元"
+
+msgid "the game's language: auto takes Japanese lines from Japanese and English ones from English"
+msgstr "ゲームの言語。auto: 日本語の行は日本語から、英語の行は英語から"
+
+msgid "Translate what"
+msgstr "翻訳するもの"
+
+msgid "dialog: what characters say; all: menus and labels too (never maps); auto: all unless into English"
+msgstr "dialog: キャラクターのせりふ。all: メニューとラベルも（マップは除く）。auto: 英語へ以外なら all"
+
+msgid "Sound"
+msgstr "サウンド"
+
+msgid "PLAYSOUND / PLAYBGM through mpv, ffplay… (auto: not over SSH)"
+msgstr "PLAYSOUND / PLAYBGM を mpv、ffplay… で鳴らす（auto: SSH 越しでは鳴らさない）"
+
+msgid "Keyboard pointer"
+msgstr "キーボードポインタ"
+
+msgid "cursor keys move a pointer, Insert or Shift+Enter click (PgUp/PgDn scroll); auto: on a text console (Linux, Hurd) without a mouse"
+msgstr "カーソルキーでポインタを動かし、Insert か Shift+Enter でクリック（PgUp/PgDn でスクロール）。auto: マウスのないテキストコンソール（Linux、Hurd）で"
+
+msgid "Gamepad"
+msgstr "ゲームパッド"
+
+msgid "Steam Deck, Xbox, PlayStation… pads: d-pad between buttons, stick moves, A click, B skip, X/Y Enter, Start settings, LB/RB page"
+msgstr "Steam Deck、Xbox、PlayStation… のパッド: 十字キーでボタン間を移動、スティックで移動、A クリック、B スキップ、X/Y Enter、Start 設定、LB/RB ページ"
+
+msgid "Wheel scrolls"
+msgstr "ホイールのスクロール"
+
+msgid "lines per mouse-wheel step"
+msgstr "マウスホイール 1 回あたりの行数"
+
+msgid "Scroll to end on keyboard input"
+msgstr "キー入力で末尾までスクロール"
+
+msgid "any key press while scrolled back jumps to the end (off: only mouse clicks and Enter do)"
+msgstr "さかのぼって見ているときにキーを押すと末尾に戻る（オフ: マウスのクリックと Enter だけ）"
+
+msgid "Decode last used pictures"
+msgstr "前回使った画像をデコード"
+
+msgid "decode pictures the game used last time in the background at start (auto: on unless headless)"
+msgstr "起動時に、前回ゲームが使った画像を裏でデコードする（auto: headless 以外ではオン）"
+
+msgid "Console mouse"
+msgstr "コンソールのマウス"
+
+msgid "gpm / /dev/input/mice on the Linux console"
+msgstr "Linux コンソールで gpm / /dev/input/mice"
+
+msgid "retro: ASCII through terminfo, for old or dumb terminals"
+msgstr "retro: terminfo 経由の ASCII。古い端末・dumb 端末向け"
+
+msgid "Target EE version"
+msgstr "対象の EE バージョン"
+
+msgid "which Emuera-EE version to emulate (EEv56: baseline; EEv56-anontw: EEv56 plus AnonTW fixes from Shakes4cc; EEv57: official EEv57)"
+msgstr "まねる Emuera-EE のバージョン（EEv56: 基本。EEv56-anontw: EEv56 に Shakes4cc の AnonTW 修正を加えたもの。EEv57: 公式の EEv57）"
+
+msgid "wide, narrow, single or osc66: how box drawing and symbols get Emuera's two columns"
+msgstr "wide、narrow、single、osc66: 罫線と記号を Emuera の 2 桁にする方法"
+
+msgid "comma-separated list of function:line breakpoints (debugger)"
+msgstr "関数:行 のブレークポイントのカンマ区切り一覧（デバッガ）"
+
+msgid "milliseconds since 1970 (UTC) the game's clock starts from, moving 1 ms per reading (reproducible runs)"
+msgstr "ゲームの時計が始まる 1970 年（UTC）からのミリ秒。読むたびに 1 ミリ秒進む（再現できる実行用）"
+
+msgid "MB compiled functions may take (default: 1/16 of the memory); the least recently called are dropped"
+msgstr "コンパイル済み関数に使える MB（既定: メモリの 1/16）。最後に呼ばれたのが古いものから捨てます"
+
+msgid "truecolor, 256 or 16: the colour depth, when detection guesses wrong"
+msgstr "truecolor、256、16: 検出が間違うときの色数"
+
+msgid "any value: print each frame drawn (size and picture keys) to stderr (debugging)"
+msgstr "何か値を設定: 描いたフレームごとに（大きさと画像のキー）stderr に出す（デバッグ）"
+
+msgid "1: completely disable infinite loop detection, ignoring the timeout (useful for games with intentional long-running functions)"
+msgstr "1: タイムアウトを無視し、無限ループの検出を完全にやめる（わざと長く動く関数のあるゲーム向け）"
+
+msgid "MB graphics buffers may take unpacked (default: 1/8 of the memory)"
+msgstr "展開したままのグラフィックバッファに使える MB（既定: メモリの 1/8）"
+
+msgid "any value: enable game debugger at start"
+msgstr "何か値を設定: 起動時にゲームのデバッガを有効にする"
+
+msgid "off: don't read gamepads; /dev/input/eventN: read just that device as a pad"
+msgstr "off: ゲームパッドを読まない。/dev/input/eventN: そのデバイスだけをパッドとして読む"
+
+msgid "path of the gpm socket (default /dev/gpmctl), for testing the Linux-console mouse"
+msgstr "gpm のソケットのパス（既定 /dev/gpmctl）。Linux コンソールのマウスのテスト用"
+
+msgid "the virtual console number the gpm mouse is read for (testing)"
+msgstr "gpm のマウスを読む仮想コンソールの番号（テスト用）"
+
+msgid "EEv56, EEv56-anontw or EEv57: which Emuera-EE version to emulate for compatibility (default: EEv56)"
+msgstr "EEv56、EEv56-anontw、EEv57: 互換性のためにまねる Emuera-EE のバージョン（既定: EEv56）"
+
+msgid "ms before infinite loop warning (0 = disabled, default: 5000)"
+msgstr "無限ループ警告までのミリ秒（0 = 無効、既定: 5000）"
+
+msgid "STMT||STMT: statements run just before the EMUERA_INJECT_AT-th input (debugging)"
+msgstr "STMT||STMT: EMUERA_INJECT_AT 番目の入力の直前に実行する文（デバッグ）"
+
+msgid "the input number EMUERA_INJECT runs before"
+msgstr "EMUERA_INJECT を実行する前の入力の番号"
+
+msgid "ja, zh-Hans, zh-Hant, ko or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
+msgstr "ja、zh-Hans、zh-Hant、ko、en: インターフェースの言語。x-cjk、x-arab、x-cyrl、x-deva、x-avst: すべてのメッセージをその文字で（レイアウトの確認用）"
+
+msgid "host:port of the LibreTranslate server (default 127.0.0.1:5000)"
+msgstr "LibreTranslate サーバーの host:port（既定 127.0.0.1:5000）"
+
+msgid "any value, with --check: point at statements the parser may have split wrongly, and string >= / <= (Emuera evaluates them as <)"
+msgstr "何か値を設定、--check と一緒に: パーサーが分け間違えたかもしれない文と、文字列の >= / <=（Emuera は < として評価）を指摘する"
+
+msgid "1, with --headless: print the values of the buttons on screen before each input"
+msgstr "1、--headless と一緒に: 入力のたびに、その前に画面上のボタンの値を表示する"
+
+msgid "emuera: format log output like Emuera.exe (for headless mode)"
+msgstr "emuera: ログ出力を Emuera.exe の形式にする（headless モード用）"
+
+msgid "0 skips measuring how wide the terminal draws ambiguous characters"
+msgstr "0: 端末が曖昧な幅の文字をどう描くかの測定をしない"
+
+msgid "file the report of what the memory holds is written to, at every input"
+msgstr "入力のたびに、メモリの中身の報告を書くファイル"
+
+msgid "off or term: no console mouse; mice: read /dev/input/mice even outside the Linux console"
+msgstr "off か term: コンソールのマウスなし。mice: Linux コンソール以外でも /dev/input/mice を読む"
+
+msgid "file the mouse events are logged to (finding out why a pointer misbehaves)"
+msgstr "マウスイベントを記録するファイル（ポインタがおかしい理由を調べる）"
+
+msgid "all: compile every function at load instead of on its first call"
+msgstr "all: 初回の呼び出し時ではなく、読み込み時に全関数をコンパイルする"
+
+msgid "MB decoded picture files may take (default: 1/8 of the memory)"
+msgstr "デコードした画像ファイルに使える MB（既定: メモリの 1/8）"
+
+msgid "file for the native profile (builds with --features profile; written on a clean exit)"
+msgstr "ネイティブプロファイルのファイル（--features profile のビルドのみ。正常終了時に書く）"
+
+msgid "file kept updated with which ERB function runs, sampled every millisecond"
+msgstr "実行中の ERB 関数を 1 ミリ秒ごとに記録し続けるファイル"
+
+msgid "colour override for headless mode (e.g. 'fg=255,255,255 bg=0,0,0')"
+msgstr "headless モードの色の上書き（例: 'fg=255,255,255 bg=0,0,0'）"
+
+msgid "0: don't save history log to global.sav"
+msgstr "0: 履歴ログを global.sav に保存しない"
+
+msgid "number the random generator starts from (reproducible runs)"
+msgstr "乱数生成の初期値（再現できる実行用）"
+
+msgid "on or off: play the game's sounds (default: yes, except over SSH)"
+msgstr "on か off: ゲームの音を鳴らす（既定: はい。SSH 越しを除く）"
+
+msgid "the sound player: mpv, ffplay, mplayer, afplay, pw-play, paplay, aplay or powershell"
+msgstr "音のプレーヤー: mpv、ffplay、mplayer、afplay、pw-play、paplay、aplay、powershell"
+
+msgid "stack of the script thread in MB (default 512, or the most the system allows)"
+msgstr "スクリプトスレッドのスタック（MB。既定 512、またはシステムが許す最大）"
+
+msgid "cap on the threads used for loading and picture decoding"
+msgstr "読み込みと画像デコードに使うスレッド数の上限"
+
+msgid "1: print how long each loading phase takes and the memory in use"
+msgstr "1: 読み込みの各段階にかかった時間と使用中のメモリを表示する"
+
+msgid "log calls to functions whose name contains this, with timestamps, to stderr"
+msgstr "名前にこれを含む関数の呼び出しを、時刻つきで stderr に記録する"
+
+msgid "a command that reads a line on stdin and prints its translation (instead of the built-in translators)"
+msgstr "標準入力から 1 行読み、その翻訳を出力するコマンド（組み込みの翻訳ソフトの代わり）"
+
+msgid "the Ollama or translateLocally model used for translating"
+msgstr "翻訳に使う Ollama か translateLocally のモデル"
+
+msgid "the engine translate-shell (trans) uses (default: Google)"
+msgstr "translate-shell（trans）が使うエンジン（既定: Google）"
+
+msgid "1: enable internal TTY testing hooks"
+msgstr "1: 内部の TTY テスト用フックを有効にする"
+
+msgid "any value: enable VM debugger at start"
+msgstr "何か値を設定: 起動時に VM デバッガを有効にする"
+
+msgid "1 / 0: decode last session's pictures in the background at start (default: on, off headless)"
+msgstr "1 / 0: 起動時に前回の画像を裏でデコードする（既定: オン、headless ではオフ）"
+
+msgid "default for --gfx: kitty, iterm, sixel, fb or none"
+msgstr "--gfx の既定値: kitty、iterm、sixel、fb、none"
+
+msgid "Variable watch"
+msgstr "変数ウォッチ"
+
+msgid "Stack trace"
+msgstr "スタックトレース"
+
+msgid "Console"
+msgstr "コンソール"
+
+msgid "Expression (empty: remove):"
+msgstr "式（空: 削除）:"
+
+msgid "Debug  (Emuera's debug window)"
+msgstr "デバッグ  （Emuera のデバッグウィンドウ）"
+
+msgid "(new: Enter)"
+msgstr "（新規: Enter）"
+
+msgid "Tab tab  ↑↓ choose  Enter edit  a add  d remove  r refresh  Esc close"
+msgstr "Tab タブ  ↑↓ 選択  Enter 編集  a 追加  d 削除  r 更新  Esc 閉じる"
+
+msgid "Tab tab  ↑↓ PgUp PgDn scroll  r refresh  Esc close"
+msgstr "Tab タブ  ↑↓ PgUp PgDn スクロール  r 更新  Esc 閉じる"
+
+msgid "Tab tab  Enter run  ↑↓ history  PgUp PgDn scroll  Esc close"
+msgstr "Tab タブ  Enter 実行  ↑↓ 履歴  PgUp PgDn スクロール  Esc 閉じる"
+
+msgid "Normal users shouldn't need these: they are mostly for debugging and testing. ● set  ○ not set. Enter: what a variable does. They are read when emuera-tty starts, so set them in the shell before launching."
+msgstr "普通の利用者には不要です。主にデバッグとテスト用です。● 設定済み  ○ 未設定。Enter: 変数の説明。emuera-tty の起動時に読まれるので、起動前にシェルで設定してください。"
+
+msgid "(not set)"
+msgstr "（未設定）"
+
+msgid "Environment variables (EMUERA_*): for debugging, not normal use"
+msgstr "環境変数（EMUERA_*）: デバッグ用。普段は使いません"
+
+msgid "{setting}: the game fixes this one (CSV/_fixed.config)"
+msgstr "{setting}: この項目はゲームが固定しています（CSV/_fixed.config）"
+
+msgid "A number from {lo} to {hi} (empty: the game's setting):"
+msgstr "{lo}～{hi} の数（空: ゲームの設定）:"
+
+msgid "R,G,B or #RRGGBB (empty: the game's setting):"
+msgstr "R,G,B か #RRGGBB（空: ゲームの設定）:"
+
+msgid "Text (empty: the game's setting):"
+msgstr "文字列（空: ゲームの設定）:"
+
+msgid "Game settings  (Emuera's settings window)"
+msgstr "ゲームの設定  （Emuera の設定ウィンドウ）"
+
+msgctxt "setting source"
+msgid "game"
+msgstr "ゲーム"
+
+msgctxt "setting source"
+msgid "changed"
+msgstr "変更"
+
+msgctxt "setting source"
+msgid "fixed"
+msgstr "固定"
+
+msgid "←→ tab  ↑↓ choose  Enter change  +/- step  d game's value  Esc back"
+msgstr "←→ タブ  ↑↓ 選択  Enter 変更  +/- 増減  d ゲームの値  Esc 戻る"
+
+msgid "Saved in the game's emuera.config, which Emuera.exe reads too."
+msgstr "ゲームの emuera.config に保存しました。Emuera.exe もこれを読みます。"
+
+msgid "(no saves yet)"
+msgstr "（セーブはまだありません）"
+
+msgid "Back up all saves now"
+msgstr "今すぐ全セーブをバックアップ"
+
+msgid "Restore a backup…"
+msgstr "バックアップから戻す…"
+
+msgid "Import a save file…"
+msgstr "セーブファイルを取り込む…"
+
+msgid "Enter: save actions   saves in {dir}"
+msgstr "Enter: セーブの操作   セーブは {dir}"
+
+msgid "Saves"
+msgstr "セーブ"
+
+msgid "Replace the saves with {backup}? (the current ones are backed up first)"
+msgstr "セーブを {backup} で置き換えますか？（今のセーブは先にバックアップします）"
+
+msgid "restored {n} files; load one from the game's load menu"
+msgstr "{n} 個のファイルを戻しました。ゲームのロードメニューから読み込んでください"
+
+msgid "Import a save"
+msgstr "セーブを取り込む"
+
+msgid "Into slot:"
+msgstr "取り込み先のスロット:"
+
+msgid "imported as {file}"
+msgstr "{file} として取り込みました"
+
+msgid "Copy to slot…"
+msgstr "スロットへコピー…"
+
+msgid "Move to slot…"
+msgstr "スロットへ移動…"
+
+msgid "Export to a file…"
+msgstr "ファイルへ書き出す…"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "a deleted or overwritten save is kept in the backups"
+msgstr "削除・上書きしたセーブはバックアップに残ります"
+
+msgid "To slot:"
+msgstr "移動先のスロット:"
+
+msgid "Slot {n} has a save. Overwrite it?"
+msgstr "スロット {n} にはセーブがあります。上書きしますか？"
+
+msgid "moved {save} to slot {n}"
+msgstr "{save} をスロット {n} へ移動しました"
+
+msgid "copied {save} to slot {n}"
+msgstr "{save} をスロット {n} へコピーしました"
+
+msgid "Export {save}"
+msgstr "{save} を書き出す"
+
+msgid "Export {save} to {dir}"
+msgstr "{save} を {dir} へ書き出す"
+
+msgid "File name:"
+msgstr "ファイル名:"
+
+msgid "{file} exists. Overwrite it?"
+msgstr "{file} はすでにあります。上書きしますか？"
+
+msgid "exported to {file}"
+msgstr "{file} へ書き出しました"
+
+msgid "Delete {save}?"
+msgstr "{save} を削除しますか？"
+
+msgid "deleted {save} (a copy is in {dir})"
+msgstr "{save} を削除しました（コピーは {dir} にあります）"
+
+msgid "({n} files)"
+msgstr "（{n} ファイル）"
+
+msgid "(no backups yet)"
+msgstr "（バックアップはまだありません）"
+
+msgid "backups go to {dir}"
+msgstr "バックアップは {dir} に作られます"
+
+msgid "in {dir}"
+msgstr "{dir} 内"
+
+msgid "Another folder…"
+msgstr "別のフォルダ…"
+
+msgid "Restore a backup"
+msgstr "バックアップから戻す"
+
+msgid "Restore saves from a folder"
+msgstr "フォルダからセーブを戻す"
+
+msgid "Enter open/pick  ← up  ~ home  . hidden  / type a path  Esc back"
+msgstr "Enter 開く/選ぶ  ← 上へ  ~ ホーム  . 隠しファイル  / パスを入力  Esc 戻る"
+
+msgid "Folder or file:"
+msgstr "フォルダかファイル:"
+
+msgid "no such folder: {dir}"
+msgstr "フォルダがありません: {dir}"
+
+msgid "Yes"
+msgstr "はい"
+
+msgid "No"
+msgstr "いいえ"
+
+msgid "↑↓ choose  Enter pick  Esc back"
+msgstr "↑↓ 選択  Enter 決定  Esc 戻る"
+
+msgid "Export to this folder…"
+msgstr "このフォルダへ書き出す…"
+
+msgid "(nothing to restore here: no saveNN.sav or global.sav)"
+msgstr "（ここには戻せるものがありません: saveNN.sav も global.sav もありません）"
+
+msgid "Restore the save in this folder"
+msgstr "このフォルダのセーブを戻す"
+
+msgid "Restore the {n} saves in this folder"
+msgstr "このフォルダのセーブ {n} 個を戻す"
+
+msgid "(a new folder: made when the save is written)"
+msgstr "（新しいフォルダ: セーブを書くときに作られます）"
+
+msgid "(can't read this folder: {error})"
+msgstr "（このフォルダを読めません: {error}）"
+
+msgid "(not an Emuera save)"
+msgstr "（Emuera のセーブではありません）"
+
+msgid "(no folders or save files here)"
+msgstr "（ここにはフォルダもセーブファイルもありません）"
+
+msgid "no mouse ({error}): install gpm, or add yourself to the input group"
+msgstr "マウスがありません（{error}）: gpm を入れるか、自分を input グループに加えてください"
+
+msgid "; fb disabled here: not an actual vt (expected 'linux', 'fbterm*', 'hurd' or 'sun-*' in $TERM)"
+msgstr "。ここでは fb は無効: 本物の仮想端末ではありません（$TERM は 'linux'、'fbterm*'、'hurd'、'sun-*' のはず）"
+
+msgid " (/dev/fb0 needs the video group)"
+msgstr "（/dev/fb0 には video グループが必要）"
+
+msgid "; framebuffer unavailable: {error}{hint}"
+msgstr "。フレームバッファを使えません: {error}{hint}"
+
+msgid "graphics backend: {name}"
+msgstr "画像の方式: {name}"
+
+msgid "; inside GNU screen there are no pictures (tmux can show them)"
+msgstr "。GNU screen の中では画像を出せません（tmux なら出せます）"
+
+msgid "; inside tmux, kitty-graphics terminals (Ghostty, kitty) need `set -g allow-passthrough all` for pictures"
+msgstr "。tmux の中で kitty グラフィックスの端末（Ghostty、kitty）に画像を出すには `set -g allow-passthrough all` が必要です"
+
+msgid "F{n} stored"
+msgstr "F{n} に記憶しました"
+
+msgid "scroll -{n}"
+msgstr "スクロール -{n}"
+
+msgid "Back to the title screen? Unsaved progress is lost."
+msgstr "タイトル画面に戻りますか？ セーブしていない進行は失われます。"
+
+msgid "Restart the game? Unsaved progress is lost."
+msgstr "ゲームを再起動しますか？ セーブしていない進行は失われます。"
+
+msgid "Restart the game in debug mode? Unsaved progress is lost."
+msgstr "デバッグモードでゲームを再起動しますか？ セーブしていない進行は失われます。"
+
+msgid "Restart the game without debug mode? Unsaved progress is lost."
+msgstr "デバッグモードなしでゲームを再起動しますか？ セーブしていない進行は失われます。"
+
+msgid "Random seed"
+msgstr "乱数のシード"
+
+msgid "(read-only)"
+msgstr "（読み取り専用）"
+
+msgid "Initial seed"
+msgstr "最初のシード"
+
+msgid "Environment variables…  (the EMUERA_* ones emuera-tty reads)"
+msgstr "環境変数…  （emuera-tty が読む EMUERA_* のもの）"
+
+msgid "Game settings…  (Emuera's settings window: emuera.config)"
+msgstr "ゲームの設定…  （Emuera の設定ウィンドウ: emuera.config）"
+
+msgid "Manage saves…  (copy, export, back up, restore)"
+msgstr "セーブの管理…  （コピー、書き出し、バックアップ、復元）"
+
+msgid "Test the translator…  (translates a sample line)"
+msgstr "翻訳ソフトのテスト…  （見本の 1 行を翻訳）"
+
+msgid "Clear the translation cache  (translate the screen again)"
+msgstr "翻訳キャッシュを消す  （画面を翻訳し直す）"
+
+msgid "Export translation cache…  (save translations to a file)"
+msgstr "翻訳キャッシュを書き出す…  （翻訳をファイルに保存）"
+
+msgid "Clear the picture cache  (frees decoded sprites; they load again when shown)"
+msgstr "画像キャッシュを消す  （デコードしたスプライトを解放。表示するとまた読み込む）"
+
+msgid "Recolor…  (draw a colour of the game's as another)"
+msgstr "色の置き換え…  （ゲームの色を別の色で描く）"
+
+msgid "Back to the title"
+msgstr "タイトルに戻る"
+
+msgid "Restart the game"
+msgstr "ゲームを再起動"
+
+msgid "Restart without debug mode"
+msgstr "デバッグモードなしで再起動"
+
+msgid "Restart in debug mode  ([IF_DEBUG] and ;#; lines run)"
+msgstr "デバッグモードで再起動  （[IF_DEBUG] と ;#; 行が動く）"
+
+msgid "Reload ERB files"
+msgstr "ERB ファイルを読み込み直す"
+
+msgid "Switch game…  (unsaved progress is lost)"
+msgstr "ゲームを切り替える…  （セーブしていない進行は失われます）"
+
+msgid "Quit emuera-tty"
+msgstr "emuera-tty を終了"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "works ({secs} s, {what}): {result}"
+msgstr "動作しました（{secs} 秒、{what}）: {result}"
+
+msgid "failed ({secs} s, {what}): {error}"
+msgstr "失敗しました（{secs} 秒、{what}）: {error}"
+
+msgid "testing {what}… {secs} s"
+msgstr "{what} をテスト中… {secs} 秒"
+
+msgid "{what} stopped"
+msgstr "{what} を止めました"
+
+msgid "sound on"
+msgstr "サウンド オン"
+
+msgid "sound off"
+msgstr "サウンド オフ"
+
+msgid "{setting} takes effect the next time emuera-tty starts"
+msgstr "{setting} は次回 emuera-tty を起動したときに有効になります"
+
+msgid "Restarts the game with the same initial seed. This is primarily for debugging in reproducible runs; restart normally if you aren't doing any of that."
+msgstr "同じ最初のシードでゲームを再起動します。主に再現できる実行でのデバッグ用です。そうでなければ普通に再起動してください。"
+
+msgid "restart cancelled"
+msgstr "再起動を中止しました"
+
+msgid "initial seed copied to clipboard (click again quickly to restart with this seed)"
+msgstr "最初のシードをクリップボードにコピーしました（すぐにもう一度クリックするとこのシードで再起動）"
+
+msgid "the seed can't be changed here: set EMUERA_SEED=N before starting emuera-tty"
+msgstr "ここではシードを変えられません: emuera-tty の起動前に EMUERA_SEED=N を設定してください"
+
+msgid "no game folder known here"
+msgstr "ここで分かるゲームフォルダがありません"
+
+msgid "the Translator is off: choose one to test it"
+msgstr "翻訳ソフトがオフです: テストするには選んでください"
+
+msgid "the Translator is file: no translator is used, so there is nothing to test"
+msgstr "翻訳ソフトが file です: 翻訳ソフトを使わないので、テストするものがありません"
+
+msgid "testing {what}…"
+msgstr "{what} をテスト中…"
+
+msgid "translation cache cleared ({lines} lines): what is on screen is translated again"
+msgstr "翻訳キャッシュを消しました（{lines} 行）: 画面のものを翻訳し直します"
+
+msgid "translation is off: no cache to clear"
+msgstr "翻訳がオフです: 消すキャッシュはありません"
+
+msgid "picture cache cleared ({mb} MB freed)"
+msgstr "画像キャッシュを消しました（{mb} MB 解放）"
+
+msgid "from:to pairs of hex colours, comma separated (e.g. 01183c:111d3b turns AnonTW's time-stop navy into a softer blue; empty: none)"
+msgstr "16 進の色の 元:先 の組をカンマ区切りで（例: 01183c:111d3b で AnonTW の時間停止の紺を柔らかい青に。空: なし）"
+
+msgid "Recolor"
+msgstr "色の置き換え"
+
+msgid "recolouring off"
+msgstr "色の置き換え オフ"
+
+msgid "no colour pairs understood in \"{value}\" (write from:to, e.g. 01183c:111d3b)"
+msgstr "「{value}」に分かる色の組がありません（元:先 の形で。例: 01183c:111d3b）"
+
+msgid "1 colour recoloured (the game still sees its own colours)"
+msgstr "1 色を置き換えました（ゲームには元の色のままです）"
+
+msgid "{n} colours recoloured (the game still sees its own colours)"
+msgstr "{n} 色を置き換えました（ゲームには元の色のままです）"
+
+msgid "the game shows as it prints itself"
+msgstr "ゲームが表示したまま"
+
+msgid "the Translator is file: no translator is used"
+msgstr "翻訳ソフトが file です: 翻訳ソフトは使いません"
+
+msgctxt "translating"
+msgid "the game"
+msgstr "ゲーム"
+
+msgctxt "translating"
+msgid "dialog"
+msgstr "せりふ"
+
+msgid "translating {what} into {lang} from {files}, else with {engine}"
+msgstr "{what}を {lang} に翻訳中: {files} から。なければ {engine} で"
+
+msgid "translating {what} into {lang} with {engine}"
+msgstr "{what}を {lang} に翻訳中: {engine} で"
+
+msgid "translating {what} into {lang} with {engine} (--translate-load: {files})"
+msgstr "{what}を {lang} に翻訳中: {engine} で（--translate-load: {files}）"
+
+msgid "translating {what} into {lang} from {files} (no translator)"
+msgstr "{what}を {lang} に翻訳中: {files} から（翻訳ソフトなし）"
+
+msgid "the Translator is file, but no translation file was given: start with --translate-load (or --translate-storage) and a translation log"
+msgstr "翻訳ソフトが file ですが、翻訳ファイルが指定されていません: --translate-load（か --translate-storage）と翻訳ログを付けて起動してください"
+
+msgid "the Translator is file, but --translate-load gave nothing: {files}"
+msgstr "翻訳ソフトが file ですが、--translate-load から何も読めませんでした: {files}"
+
+msgid "last translation failed: {error}"
+msgstr "前回の翻訳に失敗しました: {error}"
+
+msgid "the number the random generator started from (read-only); set EMUERA_SEED=N before starting for repeatable runs; RANDOMIZE / INITRAND in the game change it"
+msgstr "乱数生成が始まった値（読み取り専用）。繰り返せる実行には起動前に EMUERA_SEED=N を設定してください。ゲームの RANDOMIZE / INITRAND で変わります"
+
+msgid "the seed at startup (read-only); never changes even when the game calls RANDOMIZE or INITRAND"
+msgstr "起動時のシード（読み取り専用）。ゲームが RANDOMIZE や INITRAND を呼んでも変わりません"
+
+msgid "↑↓ choose  ←→ / Enter change  Esc close"
+msgstr "↑↓ 選択  ←→ / Enter 変更  Esc 閉じる"
+
+msgid "emuera-tty settings"
+msgstr "emuera-tty の設定"
+
+msgid "memory"
+msgstr "メモリ"
+
+msgid "translating {queued}, failed {failed}, cached {cached}"
+msgstr "翻訳中 {queued}、失敗 {failed}、キャッシュ {cached}"
+
+msgid "settings"
+msgstr "設定"
+
+msgid "working"
+msgstr "処理中"
+
+msgid "can't write {file}: {error}"
+msgstr "{file} に書き込めません: {error}"
+
+msgid "Infinite loop detected"
+msgstr "無限ループを検出しました"
+
+msgid "Confirm exit"
+msgstr "終了の確認"
+
+msgid "Exit anyway"
+msgstr "それでも終了"
+
+msgid "Wait for the line to finish"
+msgstr "行が終わるのを待つ"
+
+msgid "Now running line {line} of {file} (@{func}).\n{ms} ms have passed since the last input.\nStop the script? (unsaved progress is lost)"
+msgstr "{file} の {line} 行目（@{func}）を実行中です。\n前回の入力から {ms} ミリ秒たちました。\nスクリプトを止めますか？（セーブしていない進行は失われます）"
+
+msgid "Are you sure? You may also wait for the line to finish (lines may occasionally freeze up)."
+msgstr "よろしいですか？ 行が終わるのを待つこともできます（行がまれに固まることがあります）。"
+
+msgid "stopped by the player: a possible infinite loop"
+msgstr "プレイヤーが止めました: 無限ループの可能性"

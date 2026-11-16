@@ -5,3 +5,1259 @@ msgid ""
 msgstr ""
 "Language: zh-Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "can't work out where to extract (HOME not set?)"
+msgstr "无法确定解压位置（未设置 HOME？）"
+
+msgid "no Emuera game (a folder with CSV/ and ERB/) in this archive"
+msgstr "此压缩包中没有 Emuera 游戏（含 CSV/ 和 ERB/ 的文件夹）"
+
+msgid "not a readable zip: {error}"
+msgstr "不是可读取的 zip：{error}"
+
+msgid "not a readable tar: {error}"
+msgstr "不是可读取的 tar：{error}"
+
+msgid "this archive type needs bsdtar, tar or 7z installed (e.g. `sudo apt install libarchive-tools p7zip-full`)"
+msgstr "此类压缩包需要安装 bsdtar、tar 或 7z（例如 `sudo apt install libarchive-tools p7zip-full`）"
+
+msgid "extracting {archive} failed ({status})"
+msgstr "解压 {archive} 失败（{status}）"
+
+msgid "Environment"
+msgstr "环境"
+
+msgid "Display"
+msgstr "显示"
+
+msgid "Font"
+msgstr "字体"
+
+msgid "System2"
+msgstr "系统2"
+
+msgid "Clipboard"
+msgstr "剪贴板"
+
+msgid "Make autosaves"
+msgstr "自动存档"
+
+msgid "Use keyboard macros (F1…F12; off: other Fn keys take over)"
+msgstr "使用键盘宏（F1…F12；关闭：其他功能使用 Fn 键）"
+
+msgid "Lines in history log"
+msgstr "历史日志行数"
+
+msgid "Number of save slots"
+msgstr "存档栏位数"
+
+msgid "Milliseconds for infinite loop warning"
+msgstr "无限循环警告前的毫秒数"
+
+msgid "Disable infinite loop detection (useful for games with intentional long-running functions)"
+msgstr "禁用无限循环检测（适用于有意长时间运行函数的游戏）"
+
+msgid "PRINTC items per line"
+msgstr "每行 PRINTC 项数"
+
+msgid "PRINTC item width"
+msgstr "PRINTC 项宽度"
+
+msgid "Don't break lines inside a button"
+msgstr "不在按钮中间换行"
+
+msgid "Text colour"
+msgstr "文字颜色"
+
+msgid "Selected button colour"
+msgstr "选中按钮颜色"
+
+msgid "Font (for text drawn into pictures)"
+msgstr "字体（用于画进图片的文字）"
+
+msgid "Compress save data"
+msgstr "压缩存档数据"
+
+msgid "Copy printed text to the clipboard"
+msgstr "将输出的文字复制到剪贴板"
+
+msgid "Only new lines"
+msgstr "仅新行"
+
+msgid "Lines copied (when not only new ones)"
+msgstr "复制的行数（不只新行时）"
+
+msgid "Lines remembered"
+msgstr "记住的行数"
+
+msgid "Minimum time between copies (ms)"
+msgstr "两次复制的最短间隔（毫秒）"
+
+msgid "Replace pictures (<> tags) …"
+msgstr "替换图片（<> 标签）…"
+
+msgid "… with this text"
+msgstr "…为此文字"
+
+msgid "Forget lines when the game clears the screen"
+msgstr "游戏清屏时忘记这些行"
+
+msgid "Copy on a left click"
+msgstr "左键单击时复制"
+
+msgid "Copy on a middle click"
+msgstr "中键单击时复制"
+
+msgid "Copy on a double click"
+msgstr "双击时复制"
+
+msgid "Copy at a WAIT"
+msgstr "WAIT 时复制"
+
+msgid "Copy at an input"
+msgstr "等待输入时复制"
+
+msgid "YES or NO"
+msgstr "YES 或 NO"
+
+msgid "a number from {lo} to {hi}"
+msgstr "{lo} 到 {hi} 之间的数字"
+
+msgid "R,G,B (0-255 each) or #RRGGBB"
+msgstr "R,G,B（各 0-255）或 #RRGGBB"
+
+msgid "note: {n} ERB/ERH files in subfolders not loaded: the game's config doesn't turn on サブディレクトリを検索する (Search subfolders), so Emuera skips them too"
+msgstr "注意：子文件夹中有 {n} 个 ERB/ERH 文件未加载：游戏配置未开启“サブディレクトリを検索する”（搜索子文件夹），Emuera 也会跳过它们"
+
+msgid "{dir}: no CSV directory found"
+msgstr "{dir}：找不到 CSV 文件夹"
+
+msgid "this game's settings ask for names that differ only in letter case to be different; emuera-tty always ignores case"
+msgstr "此游戏的设置要求仅大小写不同的名称视为不同；emuera-tty 总是忽略大小写"
+
+msgid "inside tmux, pictures in Ghostty or kitty need `set -g allow-passthrough all` (in ~/.tmux.conf, then `tmux source-file ~/.tmux.conf`); `--gfx none` plays without pictures"
+msgstr "在 tmux 中，Ghostty 或 kitty 显示图片需要 `set -g allow-passthrough all`（写入 ~/.tmux.conf，然后 `tmux source-file ~/.tmux.conf`）；`--gfx none` 可不显示图片游玩"
+
+msgid "terminal init failed ({error}); falling back to headless"
+msgstr "终端初始化失败（{error}）；改用 headless 模式"
+
+msgid "backed up {n} files to {dir}"
+msgstr "已将 {n} 个文件备份到 {dir}"
+
+msgid "saves in {dir}:"
+msgstr "{dir} 中的存档："
+
+msgid "{n} backups in {dir}"
+msgstr "{dir} 中有 {n} 个备份"
+
+msgid "Extracting {archive}…"
+msgstr "正在解压 {archive}…"
+
+msgid "Extracting {archive}… {n} files"
+msgstr "正在解压 {archive}… {n} 个文件"
+
+msgid "Game folder: {dir}"
+msgstr "游戏文件夹：{dir}"
+
+msgid "no game folder given (pass GAME_DIR, or run in a terminal to pick one)"
+msgstr "未指定游戏文件夹（传入 GAME_DIR，或在终端中运行以选择）"
+
+msgid "no translator found: install Ollama, LibreTranslate, translateLocally, Argos Translate or translate-shell (or curl, for DeepL)"
+msgstr "找不到翻译器：请安装 Ollama、LibreTranslate、translateLocally、Argos Translate 或 translate-shell（DeepL 需 curl）"
+
+msgid "translate-shell (trans) isn't installed: get it from your package manager or translate-shell's site"
+msgstr "未安装 translate-shell（trans）：请从软件包管理器或 translate-shell 网站获取"
+
+msgid "DeepL needs curl (or DeepL's deepl tool and DEEPL_AUTH_KEY)"
+msgstr "DeepL 需要 curl（或 DeepL 的 deepl 工具和 DEEPL_AUTH_KEY）"
+
+msgid "Argos Translate isn't installed: pipx install argostranslate, then argospm install translate-ja_en"
+msgstr "未安装 Argos Translate：pipx install argostranslate，然后 argospm install translate-ja_en"
+
+msgid "no translator on this computer: install Ollama, LibreTranslate, translateLocally or argos-translate (or set EMUERA_TRANSLATE_CMD), or choose translate-shell / DeepL"
+msgstr "此电脑上没有翻译器：请安装 Ollama、LibreTranslate、translateLocally 或 argos-translate（或设置 EMUERA_TRANSLATE_CMD），或选择 translate-shell / DeepL"
+
+msgid "your command ({program})"
+msgstr "你的命令（{program}）"
+
+msgid "translate-shell (online)"
+msgstr "translate-shell（在线）"
+
+msgid "DeepL, no key (online, unofficial)"
+msgstr "DeepL，无密钥（在线，非官方）"
+
+msgid "DeepL's tool (online)"
+msgstr "DeepL 工具（在线）"
+
+msgid "Ollama didn't answer"
+msgstr "Ollama 没有响应"
+
+msgid "Ollama gave no translation"
+msgstr "Ollama 没有给出翻译"
+
+msgid "LibreTranslate didn't answer"
+msgstr "LibreTranslate 没有响应"
+
+msgid "LibreTranslate gave no translation"
+msgstr "LibreTranslate 没有给出翻译"
+
+msgid "empty translation"
+msgstr "翻译为空"
+
+msgid "DeepL is limiting requests without a key: wait a while, or set DEEPL_AUTH_KEY"
+msgstr "DeepL 正在限制无密钥的请求：请稍候，或设置 DEEPL_AUTH_KEY"
+
+msgid "DeepL is limiting requests: wait a while"
+msgstr "DeepL 正在限制请求：请稍候"
+
+msgid "DeepL refused the key in DEEPL_AUTH_KEY"
+msgstr "DeepL 拒绝了 DEEPL_AUTH_KEY 中的密钥"
+
+msgid "DeepL: this key's character quota is used up"
+msgstr "DeepL：此密钥的字符额度已用完"
+
+msgid "DeepL answered HTTP {status}"
+msgstr "DeepL 返回了 HTTP {status}"
+
+msgid "translator failed ({status})"
+msgstr "翻译器失败（{status}）"
+
+msgid "Argos stopped (is argostranslate installed for that Python?)"
+msgstr "Argos 已停止（该 Python 是否安装了 argostranslate？）"
+
+msgid "{n} lines"
+msgstr "{n} 行"
+
+msgid "({n} for other languages)"
+msgstr "（其他语言 {n}）"
+
+msgid "Game debugging enabled; [IF_DEBUG] blocks and ;#; lines WILL run"
+msgstr "已启用游戏调试；[IF_DEBUG] 块和 ;#; 行将会运行"
+
+msgid "VM-level debugging/breakpoints enabled; select this option to show a list of what files/functions have an attached breakpoint"
+msgstr "已启用 VM 级调试/断点；选择此项可列出设有断点的文件/函数"
+
+msgid "Emuera game"
+msgstr "Emuera 游戏"
+
+msgid "(folder missing)"
+msgstr "（文件夹不存在）"
+
+msgid "last played"
+msgstr "上次游玩"
+
+msgid "(NEW)"
+msgstr "（新）"
+
+msgid "Add a game (folder or archive)…"
+msgstr "添加游戏（文件夹或压缩包）…"
+
+msgid "Clone a game from a git repository…"
+msgstr "从 git 仓库克隆游戏…"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Test dialog boxes…"
+msgstr "测试对话框…"
+
+msgid "(next start)"
+msgstr "（下次启动）"
+
+msgid "Back"
+msgstr "返回"
+
+msgid "this game"
+msgstr "此游戏"
+
+msgid "Play {game}"
+msgstr "游玩 {game}"
+
+msgid "archive, {size}"
+msgstr "压缩包，{size}"
+
+msgid "your games"
+msgstr "你的游戏"
+
+msgid "Enter to play · a add a game · u update (git) · U update all · d remove from the list · s settings"
+msgstr "Enter 游玩 · a 添加游戏 · u 更新（git） · U 全部更新 · d 从列表移除 · s 设置"
+
+msgid "Choose an Emuera game folder or archive"
+msgstr "选择一个 Emuera 游戏文件夹或压缩包"
+
+msgid "(★ = game, ▣ = archive)"
+msgstr "（★ = 游戏，▣ = 压缩包）"
+
+msgid "(empty)"
+msgstr "（空）"
+
+msgid "g git output  ↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "g git 输出  ↑↓ 移动  Enter 游玩  a 添加  u 更新  U 全部更新  d 移除  s 设置  q 退出"
+
+msgid "↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "↑↓ 移动  Enter 游玩  a 添加  u 更新  U 全部更新  d 移除  s 设置  q 退出"
+
+msgid "↑↓ move  ←/→ or Enter change  Esc back"
+msgstr "↑↓ 移动  ←/→ 或 Enter 更改  Esc 返回"
+
+msgid "↑↓ move  Enter details  Esc back"
+msgstr "↑↓ 移动  Enter 详情  Esc 返回"
+
+msgid "↑↓ move  Enter download  Esc back"
+msgstr "↑↓ 移动  Enter 下载  Esc 返回"
+
+msgid "↑↓ move  Enter add/open  → open  ← up  ~ home  . hidden  Esc back"
+msgstr "↑↓ 移动  Enter 添加/打开  → 打开  ← 上级  ~ 主目录  . 隐藏文件  Esc 返回"
+
+msgid "↑↓ move  Enter play/open  → open  ← up  ~ home  . hidden  q quit"
+msgstr "↑↓ 移动  Enter 游玩/打开  → 打开  ← 上级  ~ 主目录  . 隐藏文件  q 退出"
+
+msgid "Removed {game} from the list (its files are still there)."
+msgstr "已从列表中移除 {game}（文件仍在）。"
+
+msgid "This game isn't a git checkout: nothing to update from."
+msgstr "此游戏不是 git 检出：没有可更新的来源。"
+
+msgid "Updating {game}"
+msgstr "正在更新 {game}"
+
+msgid "Already up to date."
+msgstr "已是最新。"
+
+msgid "Updated: {what}."
+msgstr "已更新：{what}。"
+
+msgid "Update failed: {why}"
+msgstr "更新失败：{why}"
+
+msgid "None of these games is a git checkout: nothing to update from."
+msgstr "这些游戏都不是 git 检出：没有可更新的来源。"
+
+msgid "Updating {i} of {n}: {game}"
+msgstr "正在更新第 {i} 个，共 {n} 个：{game}"
+
+msgid "updated {games}"
+msgstr "已更新 {games}"
+
+msgid "{n} already up to date"
+msgstr "{n} 个已是最新"
+
+msgid "failed {games}"
+msgstr "失败 {games}"
+
+msgid "Update all: {result}."
+msgstr "全部更新：{result}。"
+
+msgid "Full git output"
+msgstr "完整 git 输出"
+
+msgid "lines {from}-{to} of {total}"
+msgstr "第 {from}-{to} 行，共 {total} 行"
+
+msgid "↑↓ PgUp PgDn Home End scroll  q / Esc / Enter / g close"
+msgstr "↑↓ PgUp PgDn Home End 滚动  q / Esc / Enter / g 关闭"
+
+msgid "↑↓←→ choose  Enter pick  Esc cancel"
+msgstr "↑↓←→ 选择  Enter 确定  Esc 取消"
+
+msgid "←→ choose  Enter pick  Esc cancel"
+msgstr "←→ 选择  Enter 确定  Esc 取消"
+
+msgid "Enter accept  Esc cancel  Ctrl-U clear"
+msgstr "Enter 确认  Esc 取消  Ctrl-U 清空"
+
+msgid "Enter use the [default]  Tab edit it  Esc cancel"
+msgstr "Enter 使用[默认值]  Tab 编辑  Esc 取消"
+
+msgid "git isn't installed (or isn't on PATH): can't clone."
+msgstr "未安装 git（或不在 PATH 中）：无法克隆。"
+
+msgid "Clone cancelled."
+msgstr "已取消克隆。"
+
+msgid "Repository to clone (URL or path)"
+msgstr "要克隆的仓库（URL 或路径）"
+
+msgid "Can't tell a folder name from \"{url}\"."
+msgstr "无法从“{url}”得出文件夹名。"
+
+msgid "Folder to store it in (it gets its own \"{name}\" subfolder)"
+msgstr "存放的文件夹（其中会建立“{name}”子文件夹）"
+
+msgid "Branch to use (optional, empty = the repository's default)"
+msgstr "使用的分支（可选，留空 = 仓库默认）"
+
+msgid "Depth (optional, 1 = latest commit only, empty = all)"
+msgstr "深度（可选，1 = 仅最新提交，留空 = 全部）"
+
+msgid "The depth must be a whole number of 1 or more (or empty for the full history)."
+msgstr "深度必须是 1 或以上的整数（完整历史则留空）。"
+
+msgid "{folder} already exists and isn't empty."
+msgstr "{folder} 已存在且不为空。"
+
+msgid "Can't create {folder}: {error}"
+msgstr "无法创建 {folder}：{error}"
+
+msgid "Cloning {repo}"
+msgstr "正在克隆 {repo}"
+
+msgid "Esc / Ctrl-C: cancel the clone"
+msgstr "Esc / Ctrl-C：取消克隆"
+
+msgid "Clone cancelled: nothing was added (g: git output)."
+msgstr "已取消克隆：未添加任何内容（g：git 输出）。"
+
+msgid "Remove the half-cloned \"{name}\" folder? (y/N)"
+msgstr "删除克隆了一半的“{name}”文件夹？（y/N）"
+
+msgid "Clone cancelled: the half-cloned folder was removed, nothing was added (g: git output)."
+msgstr "已取消克隆：克隆了一半的文件夹已删除，未添加任何内容（g：git 输出）。"
+
+msgid "Clone cancelled: nothing was added; the half-cloned folder is still at {folder}."
+msgstr "已取消克隆：未添加任何内容；克隆了一半的文件夹仍在 {folder}。"
+
+msgid "Cloned into {folder}, but no Emuera game (CSV and ERB folders) is in it, so it wasn't added."
+msgstr "已克隆到 {folder}，但其中没有 Emuera 游戏（CSV 和 ERB 文件夹），因此未添加。"
+
+msgid "depth {n}"
+msgstr "深度 {n}"
+
+msgid "Cloned {game}{at}: NEW, Enter to play (g: git output)."
+msgstr "已克隆 {game}{at}：新，按 Enter 游玩（g：git 输出）。"
+
+msgid "Added {game} — Enter to play."
+msgstr "已添加 {game} — 按 Enter 游玩。"
+
+msgid "{folder} is gone (d removes it from the list)"
+msgstr "{folder} 已不存在（d 将其从列表移除）"
+
+msgid "Nothing here: no folders or archives."
+msgstr "这里什么都没有：没有文件夹或压缩包。"
+
+msgid "Extracting {archive}"
+msgstr "正在解压 {archive}"
+
+msgid "{n} files"
+msgstr "{n} 个文件"
+
+msgid "can't find this program: {error}"
+msgstr "找不到此程序：{error}"
+
+msgid "{file} is already installed."
+msgstr "{file} 已安装。"
+
+msgid "Installed {file}."
+msgstr "已安装 {file}。"
+
+msgid "Manual page: {file} (man emuera-tty)."
+msgstr "手册页：{file}（man emuera-tty）。"
+
+msgid "(manual page not installed: {error})"
+msgstr "（手册页未安装：{error}）"
+
+msgid "{dir} is not on your PATH; add it with (then open a new terminal):"
+msgstr "{dir} 不在你的 PATH 中；用以下命令添加（然后打开新终端）："
+
+msgid "{dir} is not on your PATH; add this to ~/.bashrc or ~/.profile:"
+msgstr "{dir} 不在你的 PATH 中；把这行加入 ~/.bashrc 或 ~/.profile："
+
+msgid "Removed {file}."
+msgstr "已删除 {file}。"
+
+msgid "{file} is not installed."
+msgstr "{file} 未安装。"
+
+msgid "Removed {dir} (settings and the game list); the next start will ask for a game folder."
+msgstr "已删除 {dir}（设置和游戏列表）；下次启动时会询问游戏文件夹。"
+
+msgid "Nothing to reset."
+msgstr "没有需要重置的内容。"
+
+msgid "{command} failed ({status})"
+msgstr "{command} 失败（{status}）"
+
+msgid "Clone failed: {why}"
+msgstr "克隆失败：{why}"
+
+msgid "git clone didn't work"
+msgstr "git clone 没有成功"
+
+msgid "detached"
+msgstr "detached"
+
+msgid "Pictures (git lfs pull) failed: {error}"
+msgstr "图片（git lfs pull）失败：{error}"
+
+msgid "Its pictures are in Git LFS: install git-lfs and update again."
+msgstr "其图片在 Git LFS 中：请安装 git-lfs 后再次更新。"
+
+msgid "git pull didn't work"
+msgstr "git pull 没有成功"
+
+msgid "1 new commit"
+msgstr "1 个新提交"
+
+msgid "{n} new commits"
+msgstr "{n} 个新提交"
+
+msgid "slot {n}"
+msgstr "栏位 {n}"
+
+msgid "global"
+msgstr "全局"
+
+msgid "no saves in {dir}"
+msgstr "{dir} 中没有存档"
+
+msgid "that is the game's own save folder"
+msgstr "那是游戏自己的存档文件夹"
+
+msgid "that is the same slot"
+msgstr "那是同一个栏位"
+
+msgid "that is the save itself"
+msgstr "那就是该存档本身"
+
+msgid "{file} is not an Emuera save"
+msgstr "{file} 不是 Emuera 存档"
+
+msgid "that is the game's own global.sav"
+msgstr "那是游戏自己的 global.sav"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "the language of emuera-tty's own menus and messages, not the game's (auto: the system's)"
+msgstr "emuera-tty 自身菜单和消息的语言，而非游戏的语言（auto：系统语言）"
+
+msgid "Images"
+msgstr "图片"
+
+msgid "how pictures are drawn (auto: whatever the terminal supports)"
+msgstr "图片的绘制方式（auto：终端支持的方式）"
+
+msgid "Colours"
+msgstr "颜色"
+
+msgid "colour depth sent to the terminal"
+msgstr "发送给终端的色深"
+
+msgid "Readable colours"
+msgstr "易读颜色"
+
+msgid "lighten coloured text too dark to read (e.g. blue in time stop)"
+msgstr "把太暗而难以阅读的彩色文字调亮（例如时间停止中的蓝色）"
+
+msgid "Wide symbols"
+msgstr "宽符号"
+
+msgid "how box drawing / symbols get Emuera's two columns (auto: measured)"
+msgstr "制表符/符号如何占 Emuera 的两列（auto：测量）"
+
+msgid "Backslash as ¥"
+msgstr "反斜杠显示为 ¥"
+
+msgid "draw \\ as ¥ as Japanese fonts do (auto: when the game's font is one, as Emuera's default MS Gothic)"
+msgstr "像日文字体那样把 \\ 画成 ¥（auto：游戏字体为日文字体时，如 Emuera 默认的 MS Gothic）"
+
+msgid "Greek and Cyrillic"
+msgstr "希腊字母和西里尔字母"
+
+msgid "two columns each, as Emuera's MS Gothic draws them, or one (auto: as the game's font, but words in those scripts narrow)"
+msgstr "各占两列（按 Emuera 的 MS Gothic 绘制方式）或一列（auto：按游戏字体，但这些文字的单词用窄宽度）"
+
+msgid "Copy to clipboard"
+msgstr "复制到剪贴板"
+
+msgid "put printed text on the clipboard (OSC 52); game: as emuera.config says"
+msgstr "把输出的文字放到剪贴板（OSC 52）；game：按 emuera.config"
+
+msgid "Bottom bar details"
+msgstr "底栏详情"
+
+msgid "the hovered button's value and the running function"
+msgstr "悬停按钮的值和正在运行的函数"
+
+msgid "Show memory"
+msgstr "显示内存"
+
+msgid "show the memory in use in the bottom row (it is always on this page's title)"
+msgstr "在最底行显示使用中的内存（本页标题中总会显示）"
+
+msgid "Translator"
+msgstr "翻译器"
+
+msgid "off: the game shows as it prints itself; auto: whichever is there (this computer's first); local: Ollama, LibreTranslate… only; translate-shell, DeepL: online; file: only the translations read with --translate-load"
+msgstr "off：游戏按原样显示；auto：使用现有的（优先本机）；local：仅 Ollama、LibreTranslate…；translate-shell、DeepL：在线；file：仅用 --translate-load 读入的翻译"
+
+msgid "Translate to"
+msgstr "翻译为"
+
+msgid "the language to show the game in (needs a Translator other than off)"
+msgstr "显示游戏所用的语言（需要非 off 的翻译器）"
+
+msgid "Translate from"
+msgstr "翻译自"
+
+msgid "the game's language: auto takes Japanese lines from Japanese and English ones from English"
+msgstr "游戏的语言：auto 对日文行按日文、英文行按英文处理"
+
+msgid "Translate what"
+msgstr "翻译内容"
+
+msgid "dialog: what characters say; all: menus and labels too (never maps); auto: all unless into English"
+msgstr "dialog：角色的台词；all：菜单和标签也翻译（地图除外）；auto：除译成英文外均为 all"
+
+msgid "Sound"
+msgstr "声音"
+
+msgid "PLAYSOUND / PLAYBGM through mpv, ffplay… (auto: not over SSH)"
+msgstr "通过 mpv、ffplay… 播放 PLAYSOUND / PLAYBGM（auto：SSH 下不播放）"
+
+msgid "Keyboard pointer"
+msgstr "键盘指针"
+
+msgid "cursor keys move a pointer, Insert or Shift+Enter click (PgUp/PgDn scroll); auto: on a text console (Linux, Hurd) without a mouse"
+msgstr "方向键移动指针，Insert 或 Shift+Enter 单击（PgUp/PgDn 滚动）；auto：在没有鼠标的文本控制台（Linux、Hurd）上"
+
+msgid "Gamepad"
+msgstr "手柄"
+
+msgid "Steam Deck, Xbox, PlayStation… pads: d-pad between buttons, stick moves, A click, B skip, X/Y Enter, Start settings, LB/RB page"
+msgstr "Steam Deck、Xbox、PlayStation… 手柄：十字键在按钮间移动，摇杆移动，A 单击，B 跳过，X/Y Enter，Start 设置，LB/RB 翻页"
+
+msgid "Wheel scrolls"
+msgstr "滚轮滚动"
+
+msgid "lines per mouse-wheel step"
+msgstr "鼠标滚轮每格的行数"
+
+msgid "Scroll to end on keyboard input"
+msgstr "键盘输入时滚动到末尾"
+
+msgid "any key press while scrolled back jumps to the end (off: only mouse clicks and Enter do)"
+msgstr "回看时按任意键跳到末尾（关闭：仅鼠标单击和 Enter）"
+
+msgid "Decode last used pictures"
+msgstr "解码上次使用的图片"
+
+msgid "decode pictures the game used last time in the background at start (auto: on unless headless)"
+msgstr "启动时在后台解码游戏上次使用的图片（auto：非 headless 时开启）"
+
+msgid "Console mouse"
+msgstr "控制台鼠标"
+
+msgid "gpm / /dev/input/mice on the Linux console"
+msgstr "Linux 控制台上的 gpm / /dev/input/mice"
+
+msgid "retro: ASCII through terminfo, for old or dumb terminals"
+msgstr "retro：通过 terminfo 的 ASCII，适用于老式或 dumb 终端"
+
+msgid "Target EE version"
+msgstr "目标 EE 版本"
+
+msgid "which Emuera-EE version to emulate (EEv56: baseline; EEv56-anontw: EEv56 plus AnonTW fixes from Shakes4cc; EEv57: official EEv57)"
+msgstr "要模拟的 Emuera-EE 版本（EEv56：基准；EEv56-anontw：EEv56 加上 Shakes4cc 的 AnonTW 修正；EEv57：官方 EEv57）"
+
+msgid "wide, narrow, single or osc66: how box drawing and symbols get Emuera's two columns"
+msgstr "wide、narrow、single 或 osc66：制表符和符号如何占 Emuera 的两列"
+
+msgid "comma-separated list of function:line breakpoints (debugger)"
+msgstr "以逗号分隔的 函数:行 断点列表（调试器）"
+
+msgid "milliseconds since 1970 (UTC) the game's clock starts from, moving 1 ms per reading (reproducible runs)"
+msgstr "游戏时钟起始的 1970 年（UTC）以来的毫秒数，每次读取前进 1 毫秒（可重现的运行）"
+
+msgid "MB compiled functions may take (default: 1/16 of the memory); the least recently called are dropped"
+msgstr "已编译函数可占用的 MB（默认：内存的 1/16）；最久未调用的会被丢弃"
+
+msgid "truecolor, 256 or 16: the colour depth, when detection guesses wrong"
+msgstr "truecolor、256 或 16：检测有误时的色深"
+
+msgid "any value: print each frame drawn (size and picture keys) to stderr (debugging)"
+msgstr "任意值：把每个绘制的帧（大小和图片键）输出到 stderr（调试）"
+
+msgid "1: completely disable infinite loop detection, ignoring the timeout (useful for games with intentional long-running functions)"
+msgstr "1：完全禁用无限循环检测，忽略超时（适用于有意长时间运行函数的游戏）"
+
+msgid "MB graphics buffers may take unpacked (default: 1/8 of the memory)"
+msgstr "未压缩的图形缓冲可占用的 MB（默认：内存的 1/8）"
+
+msgid "any value: enable game debugger at start"
+msgstr "任意值：启动时启用游戏调试器"
+
+msgid "off: don't read gamepads; /dev/input/eventN: read just that device as a pad"
+msgstr "off：不读取手柄；/dev/input/eventN：只把该设备作为手柄读取"
+
+msgid "path of the gpm socket (default /dev/gpmctl), for testing the Linux-console mouse"
+msgstr "gpm 套接字的路径（默认 /dev/gpmctl），用于测试 Linux 控制台鼠标"
+
+msgid "the virtual console number the gpm mouse is read for (testing)"
+msgstr "读取 gpm 鼠标的虚拟控制台编号（测试用）"
+
+msgid "EEv56, EEv56-anontw or EEv57: which Emuera-EE version to emulate for compatibility (default: EEv56)"
+msgstr "EEv56、EEv56-anontw 或 EEv57：为兼容性模拟的 Emuera-EE 版本（默认：EEv56）"
+
+msgid "ms before infinite loop warning (0 = disabled, default: 5000)"
+msgstr "无限循环警告前的毫秒数（0 = 禁用，默认：5000）"
+
+msgid "STMT||STMT: statements run just before the EMUERA_INJECT_AT-th input (debugging)"
+msgstr "STMT||STMT：在第 EMUERA_INJECT_AT 次输入之前运行的语句（调试）"
+
+msgid "the input number EMUERA_INJECT runs before"
+msgstr "EMUERA_INJECT 在其之前运行的输入编号"
+
+msgid "ja, zh-Hans, zh-Hant, ko or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
+msgstr "ja、zh-Hans、zh-Hant、ko 或 en：界面语言；x-cjk、x-arab、x-cyrl、x-deva、x-avst：所有消息用该文字显示，以检查布局"
+
+msgid "host:port of the LibreTranslate server (default 127.0.0.1:5000)"
+msgstr "LibreTranslate 服务器的 host:port（默认 127.0.0.1:5000）"
+
+msgid "any value, with --check: point at statements the parser may have split wrongly, and string >= / <= (Emuera evaluates them as <)"
+msgstr "任意值，配合 --check：指出解析器可能拆分错误的语句，以及字符串 >= / <=（Emuera 按 < 计算）"
+
+msgid "1, with --headless: print the values of the buttons on screen before each input"
+msgstr "1，配合 --headless：每次输入前打印屏幕上按钮的值"
+
+msgid "emuera: format log output like Emuera.exe (for headless mode)"
+msgstr "emuera：日志输出格式与 Emuera.exe 相同（headless 模式用）"
+
+msgid "0 skips measuring how wide the terminal draws ambiguous characters"
+msgstr "0：不测量终端绘制宽度不明确字符的宽度"
+
+msgid "file the report of what the memory holds is written to, at every input"
+msgstr "每次输入时写入内存内容报告的文件"
+
+msgid "off or term: no console mouse; mice: read /dev/input/mice even outside the Linux console"
+msgstr "off 或 term：无控制台鼠标；mice：在 Linux 控制台之外也读取 /dev/input/mice"
+
+msgid "file the mouse events are logged to (finding out why a pointer misbehaves)"
+msgstr "记录鼠标事件的文件（查明指针异常的原因）"
+
+msgid "all: compile every function at load instead of on its first call"
+msgstr "all：在加载时编译所有函数，而不是在首次调用时"
+
+msgid "MB decoded picture files may take (default: 1/8 of the memory)"
+msgstr "已解码图片文件可占用的 MB（默认：内存的 1/8）"
+
+msgid "file for the native profile (builds with --features profile; written on a clean exit)"
+msgstr "原生性能分析文件（需用 --features profile 构建；正常退出时写入）"
+
+msgid "file kept updated with which ERB function runs, sampled every millisecond"
+msgstr "持续更新正在运行的 ERB 函数的文件，每毫秒采样一次"
+
+msgid "colour override for headless mode (e.g. 'fg=255,255,255 bg=0,0,0')"
+msgstr "headless 模式的颜色覆盖（例如 'fg=255,255,255 bg=0,0,0'）"
+
+msgid "0: don't save history log to global.sav"
+msgstr "0：不把历史日志保存到 global.sav"
+
+msgid "number the random generator starts from (reproducible runs)"
+msgstr "随机数生成器的起始数（可重现的运行）"
+
+msgid "on or off: play the game's sounds (default: yes, except over SSH)"
+msgstr "on 或 off：播放游戏的声音（默认：是，SSH 下除外）"
+
+msgid "the sound player: mpv, ffplay, mplayer, afplay, pw-play, paplay, aplay or powershell"
+msgstr "声音播放器：mpv、ffplay、mplayer、afplay、pw-play、paplay、aplay 或 powershell"
+
+msgid "stack of the script thread in MB (default 512, or the most the system allows)"
+msgstr "脚本线程的栈大小（MB，默认 512，或系统允许的最大值）"
+
+msgid "cap on the threads used for loading and picture decoding"
+msgstr "加载和图片解码所用线程数的上限"
+
+msgid "1: print how long each loading phase takes and the memory in use"
+msgstr "1：打印每个加载阶段的耗时和使用中的内存"
+
+msgid "log calls to functions whose name contains this, with timestamps, to stderr"
+msgstr "把名称中含此内容的函数调用连同时间戳记录到 stderr"
+
+msgid "a command that reads a line on stdin and prints its translation (instead of the built-in translators)"
+msgstr "从标准输入读一行并输出其翻译的命令（代替内置翻译器）"
+
+msgid "the Ollama or translateLocally model used for translating"
+msgstr "翻译所用的 Ollama 或 translateLocally 模型"
+
+msgid "the engine translate-shell (trans) uses (default: Google)"
+msgstr "translate-shell（trans）使用的引擎（默认：Google）"
+
+msgid "1: enable internal TTY testing hooks"
+msgstr "1：启用内部 TTY 测试钩子"
+
+msgid "any value: enable VM debugger at start"
+msgstr "任意值：启动时启用 VM 调试器"
+
+msgid "1 / 0: decode last session's pictures in the background at start (default: on, off headless)"
+msgstr "1 / 0：启动时在后台解码上次会话的图片（默认：开启，headless 时关闭）"
+
+msgid "default for --gfx: kitty, iterm, sixel, fb or none"
+msgstr "--gfx 的默认值：kitty、iterm、sixel、fb 或 none"
+
+msgid "Variable watch"
+msgstr "变量监视"
+
+msgid "Stack trace"
+msgstr "堆栈跟踪"
+
+msgid "Console"
+msgstr "控制台"
+
+msgid "Expression (empty: remove):"
+msgstr "表达式（留空：删除）："
+
+msgid "Debug  (Emuera's debug window)"
+msgstr "调试  （Emuera 的调试窗口）"
+
+msgid "(new: Enter)"
+msgstr "（新建：Enter）"
+
+msgid "Tab tab  ↑↓ choose  Enter edit  a add  d remove  r refresh  Esc close"
+msgstr "Tab 标签页  ↑↓ 选择  Enter 编辑  a 添加  d 删除  r 刷新  Esc 关闭"
+
+msgid "Tab tab  ↑↓ PgUp PgDn scroll  r refresh  Esc close"
+msgstr "Tab 标签页  ↑↓ PgUp PgDn 滚动  r 刷新  Esc 关闭"
+
+msgid "Tab tab  Enter run  ↑↓ history  PgUp PgDn scroll  Esc close"
+msgstr "Tab 标签页  Enter 运行  ↑↓ 历史  PgUp PgDn 滚动  Esc 关闭"
+
+msgid "Normal users shouldn't need these: they are mostly for debugging and testing. ● set  ○ not set. Enter: what a variable does. They are read when emuera-tty starts, so set them in the shell before launching."
+msgstr "普通用户不需要这些：它们主要用于调试和测试。● 已设置  ○ 未设置。Enter：变量的作用。emuera-tty 启动时读取，所以请在启动前在 shell 中设置。"
+
+msgid "(not set)"
+msgstr "（未设置）"
+
+msgid "Environment variables (EMUERA_*): for debugging, not normal use"
+msgstr "环境变量（EMUERA_*）：用于调试，非日常使用"
+
+msgid "{setting}: the game fixes this one (CSV/_fixed.config)"
+msgstr "{setting}：此项由游戏固定（CSV/_fixed.config）"
+
+msgid "A number from {lo} to {hi} (empty: the game's setting):"
+msgstr "{lo} 到 {hi} 之间的数字（留空：游戏的设置）："
+
+msgid "R,G,B or #RRGGBB (empty: the game's setting):"
+msgstr "R,G,B 或 #RRGGBB（留空：游戏的设置）："
+
+msgid "Text (empty: the game's setting):"
+msgstr "文字（留空：游戏的设置）："
+
+msgid "Game settings  (Emuera's settings window)"
+msgstr "游戏设置  （Emuera 的设置窗口）"
+
+msgctxt "setting source"
+msgid "game"
+msgstr "游戏"
+
+msgctxt "setting source"
+msgid "changed"
+msgstr "已更改"
+
+msgctxt "setting source"
+msgid "fixed"
+msgstr "固定"
+
+msgid "←→ tab  ↑↓ choose  Enter change  +/- step  d game's value  Esc back"
+msgstr "←→ 标签页  ↑↓ 选择  Enter 更改  +/- 增减  d 游戏的值  Esc 返回"
+
+msgid "Saved in the game's emuera.config, which Emuera.exe reads too."
+msgstr "已保存到游戏的 emuera.config，Emuera.exe 也会读取它。"
+
+msgid "(no saves yet)"
+msgstr "（还没有存档）"
+
+msgid "Back up all saves now"
+msgstr "立即备份所有存档"
+
+msgid "Restore a backup…"
+msgstr "恢复备份…"
+
+msgid "Import a save file…"
+msgstr "导入存档文件…"
+
+msgid "Enter: save actions   saves in {dir}"
+msgstr "Enter：存档操作   存档位于 {dir}"
+
+msgid "Saves"
+msgstr "存档"
+
+msgid "Replace the saves with {backup}? (the current ones are backed up first)"
+msgstr "用 {backup} 替换存档？（会先备份当前存档）"
+
+msgid "restored {n} files; load one from the game's load menu"
+msgstr "已恢复 {n} 个文件；请从游戏的读档菜单读取"
+
+msgid "Import a save"
+msgstr "导入存档"
+
+msgid "Into slot:"
+msgstr "导入到栏位："
+
+msgid "imported as {file}"
+msgstr "已导入为 {file}"
+
+msgid "Copy to slot…"
+msgstr "复制到栏位…"
+
+msgid "Move to slot…"
+msgstr "移动到栏位…"
+
+msgid "Export to a file…"
+msgstr "导出到文件…"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "a deleted or overwritten save is kept in the backups"
+msgstr "被删除或覆盖的存档会保留在备份中"
+
+msgid "To slot:"
+msgstr "到栏位："
+
+msgid "Slot {n} has a save. Overwrite it?"
+msgstr "栏位 {n} 已有存档。要覆盖吗？"
+
+msgid "moved {save} to slot {n}"
+msgstr "已将 {save} 移动到栏位 {n}"
+
+msgid "copied {save} to slot {n}"
+msgstr "已将 {save} 复制到栏位 {n}"
+
+msgid "Export {save}"
+msgstr "导出 {save}"
+
+msgid "Export {save} to {dir}"
+msgstr "将 {save} 导出到 {dir}"
+
+msgid "File name:"
+msgstr "文件名："
+
+msgid "{file} exists. Overwrite it?"
+msgstr "{file} 已存在。要覆盖吗？"
+
+msgid "exported to {file}"
+msgstr "已导出到 {file}"
+
+msgid "Delete {save}?"
+msgstr "删除 {save}？"
+
+msgid "deleted {save} (a copy is in {dir})"
+msgstr "已删除 {save}（副本在 {dir}）"
+
+msgid "({n} files)"
+msgstr "（{n} 个文件）"
+
+msgid "(no backups yet)"
+msgstr "（还没有备份）"
+
+msgid "backups go to {dir}"
+msgstr "备份保存在 {dir}"
+
+msgid "in {dir}"
+msgstr "在 {dir} 中"
+
+msgid "Another folder…"
+msgstr "其他文件夹…"
+
+msgid "Restore a backup"
+msgstr "恢复备份"
+
+msgid "Restore saves from a folder"
+msgstr "从文件夹恢复存档"
+
+msgid "Enter open/pick  ← up  ~ home  . hidden  / type a path  Esc back"
+msgstr "Enter 打开/选择  ← 上级  ~ 主目录  . 隐藏文件  / 输入路径  Esc 返回"
+
+msgid "Folder or file:"
+msgstr "文件夹或文件："
+
+msgid "no such folder: {dir}"
+msgstr "没有这个文件夹：{dir}"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+msgid "↑↓ choose  Enter pick  Esc back"
+msgstr "↑↓ 选择  Enter 确定  Esc 返回"
+
+msgid "Export to this folder…"
+msgstr "导出到此文件夹…"
+
+msgid "(nothing to restore here: no saveNN.sav or global.sav)"
+msgstr "（这里没有可恢复的内容：没有 saveNN.sav 或 global.sav）"
+
+msgid "Restore the save in this folder"
+msgstr "恢复此文件夹中的存档"
+
+msgid "Restore the {n} saves in this folder"
+msgstr "恢复此文件夹中的 {n} 个存档"
+
+msgid "(a new folder: made when the save is written)"
+msgstr "（新文件夹：写入存档时创建）"
+
+msgid "(can't read this folder: {error})"
+msgstr "（无法读取此文件夹：{error}）"
+
+msgid "(not an Emuera save)"
+msgstr "（不是 Emuera 存档）"
+
+msgid "(no folders or save files here)"
+msgstr "（这里没有文件夹或存档文件）"
+
+msgid "no mouse ({error}): install gpm, or add yourself to the input group"
+msgstr "没有鼠标（{error}）：请安装 gpm，或把自己加入 input 组"
+
+msgid "; fb disabled here: not an actual vt (expected 'linux', 'fbterm*', 'hurd' or 'sun-*' in $TERM)"
+msgstr "；此处已禁用 fb：不是真正的虚拟终端（$TERM 应为 'linux'、'fbterm*'、'hurd' 或 'sun-*'）"
+
+msgid " (/dev/fb0 needs the video group)"
+msgstr "（/dev/fb0 需要 video 组）"
+
+msgid "; framebuffer unavailable: {error}{hint}"
+msgstr "；无法使用帧缓冲：{error}{hint}"
+
+msgid "graphics backend: {name}"
+msgstr "图形后端：{name}"
+
+msgid "; inside GNU screen there are no pictures (tmux can show them)"
+msgstr "；在 GNU screen 中无法显示图片（tmux 可以）"
+
+msgid "; inside tmux, kitty-graphics terminals (Ghostty, kitty) need `set -g allow-passthrough all` for pictures"
+msgstr "；在 tmux 中，kitty 图形协议的终端（Ghostty、kitty）显示图片需要 `set -g allow-passthrough all`"
+
+msgid "F{n} stored"
+msgstr "已记录 F{n}"
+
+msgid "scroll -{n}"
+msgstr "滚动 -{n}"
+
+msgid "Back to the title screen? Unsaved progress is lost."
+msgstr "返回标题画面？未保存的进度会丢失。"
+
+msgid "Restart the game? Unsaved progress is lost."
+msgstr "重新开始游戏？未保存的进度会丢失。"
+
+msgid "Restart the game in debug mode? Unsaved progress is lost."
+msgstr "以调试模式重新开始游戏？未保存的进度会丢失。"
+
+msgid "Restart the game without debug mode? Unsaved progress is lost."
+msgstr "不用调试模式重新开始游戏？未保存的进度会丢失。"
+
+msgid "Random seed"
+msgstr "随机种子"
+
+msgid "(read-only)"
+msgstr "（只读）"
+
+msgid "Initial seed"
+msgstr "初始种子"
+
+msgid "Environment variables…  (the EMUERA_* ones emuera-tty reads)"
+msgstr "环境变量…  （emuera-tty 读取的 EMUERA_* 变量）"
+
+msgid "Game settings…  (Emuera's settings window: emuera.config)"
+msgstr "游戏设置…  （Emuera 的设置窗口：emuera.config）"
+
+msgid "Manage saves…  (copy, export, back up, restore)"
+msgstr "管理存档…  （复制、导出、备份、恢复）"
+
+msgid "Test the translator…  (translates a sample line)"
+msgstr "测试翻译器…  （翻译一行示例）"
+
+msgid "Clear the translation cache  (translate the screen again)"
+msgstr "清除翻译缓存  （重新翻译屏幕）"
+
+msgid "Export translation cache…  (save translations to a file)"
+msgstr "导出翻译缓存…  （把翻译保存到文件）"
+
+msgid "Clear the picture cache  (frees decoded sprites; they load again when shown)"
+msgstr "清除图片缓存  （释放已解码的精灵；显示时会再次加载）"
+
+msgid "Recolor…  (draw a colour of the game's as another)"
+msgstr "重新着色…  （把游戏的某种颜色画成另一种）"
+
+msgid "Back to the title"
+msgstr "返回标题"
+
+msgid "Restart the game"
+msgstr "重新开始游戏"
+
+msgid "Restart without debug mode"
+msgstr "不用调试模式重新开始"
+
+msgid "Restart in debug mode  ([IF_DEBUG] and ;#; lines run)"
+msgstr "以调试模式重新开始  （[IF_DEBUG] 和 ;#; 行会运行）"
+
+msgid "Reload ERB files"
+msgstr "重新加载 ERB 文件"
+
+msgid "Switch game…  (unsaved progress is lost)"
+msgstr "切换游戏…  （未保存的进度会丢失）"
+
+msgid "Quit emuera-tty"
+msgstr "退出 emuera-tty"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "works ({secs} s, {what}): {result}"
+msgstr "可用（{secs} 秒，{what}）：{result}"
+
+msgid "failed ({secs} s, {what}): {error}"
+msgstr "失败（{secs} 秒，{what}）：{error}"
+
+msgid "testing {what}… {secs} s"
+msgstr "正在测试 {what}… {secs} 秒"
+
+msgid "{what} stopped"
+msgstr "{what} 已停止"
+
+msgid "sound on"
+msgstr "声音开"
+
+msgid "sound off"
+msgstr "声音关"
+
+msgid "{setting} takes effect the next time emuera-tty starts"
+msgstr "{setting} 将在下次启动 emuera-tty 时生效"
+
+msgid "Restarts the game with the same initial seed. This is primarily for debugging in reproducible runs; restart normally if you aren't doing any of that."
+msgstr "以相同的初始种子重新开始游戏。主要用于可重现运行中的调试；若非如此，请正常重新开始。"
+
+msgid "restart cancelled"
+msgstr "已取消重新开始"
+
+msgid "initial seed copied to clipboard (click again quickly to restart with this seed)"
+msgstr "初始种子已复制到剪贴板（快速再次单击可用此种子重新开始）"
+
+msgid "the seed can't be changed here: set EMUERA_SEED=N before starting emuera-tty"
+msgstr "此处无法更改种子：请在启动 emuera-tty 前设置 EMUERA_SEED=N"
+
+msgid "no game folder known here"
+msgstr "这里没有已知的游戏文件夹"
+
+msgid "the Translator is off: choose one to test it"
+msgstr "翻译器已关闭：请选择一个以测试"
+
+msgid "the Translator is file: no translator is used, so there is nothing to test"
+msgstr "翻译器为 file：不使用翻译器，因此没有可测试的内容"
+
+msgid "testing {what}…"
+msgstr "正在测试 {what}…"
+
+msgid "translation cache cleared ({lines} lines): what is on screen is translated again"
+msgstr "已清除翻译缓存（{lines} 行）：屏幕上的内容会重新翻译"
+
+msgid "translation is off: no cache to clear"
+msgstr "翻译已关闭：没有可清除的缓存"
+
+msgid "picture cache cleared ({mb} MB freed)"
+msgstr "已清除图片缓存（释放 {mb} MB）"
+
+msgid "from:to pairs of hex colours, comma separated (e.g. 01183c:111d3b turns AnonTW's time-stop navy into a softer blue; empty: none)"
+msgstr "以逗号分隔的十六进制颜色 原:新 对（例如 01183c:111d3b 把 AnonTW 时间停止的深蓝变成柔和的蓝色；留空：无）"
+
+msgid "Recolor"
+msgstr "重新着色"
+
+msgid "recolouring off"
+msgstr "重新着色关闭"
+
+msgid "no colour pairs understood in \"{value}\" (write from:to, e.g. 01183c:111d3b)"
+msgstr "“{value}”中没有可识别的颜色对（写成 原:新，例如 01183c:111d3b）"
+
+msgid "1 colour recoloured (the game still sees its own colours)"
+msgstr "已重新着色 1 种颜色（游戏看到的仍是原来的颜色）"
+
+msgid "{n} colours recoloured (the game still sees its own colours)"
+msgstr "已重新着色 {n} 种颜色（游戏看到的仍是原来的颜色）"
+
+msgid "the game shows as it prints itself"
+msgstr "游戏按原样显示"
+
+msgid "the Translator is file: no translator is used"
+msgstr "翻译器为 file：不使用翻译器"
+
+msgctxt "translating"
+msgid "the game"
+msgstr "游戏"
+
+msgctxt "translating"
+msgid "dialog"
+msgstr "台词"
+
+msgid "translating {what} into {lang} from {files}, else with {engine}"
+msgstr "正在把{what}译成 {lang}：来自 {files}，否则用 {engine}"
+
+msgid "translating {what} into {lang} with {engine}"
+msgstr "正在把{what}译成 {lang}：用 {engine}"
+
+msgid "translating {what} into {lang} with {engine} (--translate-load: {files})"
+msgstr "正在把{what}译成 {lang}：用 {engine}（--translate-load：{files}）"
+
+msgid "translating {what} into {lang} from {files} (no translator)"
+msgstr "正在把{what}译成 {lang}：来自 {files}（无翻译器）"
+
+msgid "the Translator is file, but no translation file was given: start with --translate-load (or --translate-storage) and a translation log"
+msgstr "翻译器为 file，但未指定翻译文件：请用 --translate-load（或 --translate-storage）和翻译日志启动"
+
+msgid "the Translator is file, but --translate-load gave nothing: {files}"
+msgstr "翻译器为 file，但 --translate-load 没有读到任何内容：{files}"
+
+msgid "last translation failed: {error}"
+msgstr "上次翻译失败：{error}"
+
+msgid "the number the random generator started from (read-only); set EMUERA_SEED=N before starting for repeatable runs; RANDOMIZE / INITRAND in the game change it"
+msgstr "随机数生成器起始的数字（只读）；如需可重复的运行，请在启动前设置 EMUERA_SEED=N；游戏中的 RANDOMIZE / INITRAND 会改变它"
+
+msgid "the seed at startup (read-only); never changes even when the game calls RANDOMIZE or INITRAND"
+msgstr "启动时的种子（只读）；即使游戏调用 RANDOMIZE 或 INITRAND 也不会改变"
+
+msgid "↑↓ choose  ←→ / Enter change  Esc close"
+msgstr "↑↓ 选择  ←→ / Enter 更改  Esc 关闭"
+
+msgid "emuera-tty settings"
+msgstr "emuera-tty 设置"
+
+msgid "memory"
+msgstr "内存"
+
+msgid "translating {queued}, failed {failed}, cached {cached}"
+msgstr "翻译中 {queued}，失败 {failed}，已缓存 {cached}"
+
+msgid "settings"
+msgstr "设置"
+
+msgid "working"
+msgstr "处理中"
+
+msgid "can't write {file}: {error}"
+msgstr "无法写入 {file}：{error}"
+
+msgid "Infinite loop detected"
+msgstr "检测到无限循环"
+
+msgid "Confirm exit"
+msgstr "确认退出"
+
+msgid "Exit anyway"
+msgstr "仍然退出"
+
+msgid "Wait for the line to finish"
+msgstr "等待该行结束"
+
+msgid "Now running line {line} of {file} (@{func}).\n{ms} ms have passed since the last input.\nStop the script? (unsaved progress is lost)"
+msgstr "正在运行 {file} 的第 {line} 行（@{func}）。\n距上次输入已过去 {ms} 毫秒。\n要停止脚本吗？（未保存的进度会丢失）"
+
+msgid "Are you sure? You may also wait for the line to finish (lines may occasionally freeze up)."
+msgstr "确定吗？你也可以等待该行结束（行偶尔会卡住）。"
+
+msgid "stopped by the player: a possible infinite loop"
+msgstr "被玩家停止：可能是无限循环"

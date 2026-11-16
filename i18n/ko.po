@@ -5,3 +5,1259 @@ msgid ""
 msgstr ""
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "can't work out where to extract (HOME not set?)"
+msgstr "압축을 풀 위치를 정할 수 없습니다(HOME이 설정되지 않았나요?)"
+
+msgid "no Emuera game (a folder with CSV/ and ERB/) in this archive"
+msgstr "이 압축 파일에 Emuera 게임(CSV/와 ERB/가 있는 폴더)이 없습니다"
+
+msgid "not a readable zip: {error}"
+msgstr "읽을 수 있는 zip이 아닙니다: {error}"
+
+msgid "not a readable tar: {error}"
+msgstr "읽을 수 있는 tar가 아닙니다: {error}"
+
+msgid "this archive type needs bsdtar, tar or 7z installed (e.g. `sudo apt install libarchive-tools p7zip-full`)"
+msgstr "이 형식의 압축 파일에는 bsdtar, tar 또는 7z가 필요합니다(예: `sudo apt install libarchive-tools p7zip-full`)"
+
+msgid "extracting {archive} failed ({status})"
+msgstr "{archive} 압축 풀기 실패({status})"
+
+msgid "Environment"
+msgstr "환경"
+
+msgid "Display"
+msgstr "표시"
+
+msgid "Font"
+msgstr "글꼴"
+
+msgid "System2"
+msgstr "시스템2"
+
+msgid "Clipboard"
+msgstr "클립보드"
+
+msgid "Make autosaves"
+msgstr "자동 저장하기"
+
+msgid "Use keyboard macros (F1…F12; off: other Fn keys take over)"
+msgstr "키보드 매크로 사용(F1…F12, 끄면 다른 기능이 Fn 키를 사용)"
+
+msgid "Lines in history log"
+msgstr "기록 로그 줄 수"
+
+msgid "Number of save slots"
+msgstr "세이브 슬롯 수"
+
+msgid "Milliseconds for infinite loop warning"
+msgstr "무한 루프 경고까지의 밀리초"
+
+msgid "Disable infinite loop detection (useful for games with intentional long-running functions)"
+msgstr "무한 루프 감지 끄기(일부러 오래 실행되는 함수가 있는 게임용)"
+
+msgid "PRINTC items per line"
+msgstr "한 줄의 PRINTC 항목 수"
+
+msgid "PRINTC item width"
+msgstr "PRINTC 항목 너비"
+
+msgid "Don't break lines inside a button"
+msgstr "버튼 중간에서 줄을 바꾸지 않기"
+
+msgid "Text colour"
+msgstr "글자색"
+
+msgid "Selected button colour"
+msgstr "선택한 버튼 색"
+
+msgid "Font (for text drawn into pictures)"
+msgstr "글꼴(그림에 그리는 글자용)"
+
+msgid "Compress save data"
+msgstr "세이브 데이터 압축"
+
+msgid "Copy printed text to the clipboard"
+msgstr "출력한 글자를 클립보드에 복사"
+
+msgid "Only new lines"
+msgstr "새 줄만"
+
+msgid "Lines copied (when not only new ones)"
+msgstr "복사할 줄 수(새 줄만이 아닐 때)"
+
+msgid "Lines remembered"
+msgstr "기억할 줄 수"
+
+msgid "Minimum time between copies (ms)"
+msgstr "복사 최소 간격(밀리초)"
+
+msgid "Replace pictures (<> tags) …"
+msgstr "그림(<> 태그)을 바꾸기…"
+
+msgid "… with this text"
+msgstr "…이 글자로"
+
+msgid "Forget lines when the game clears the screen"
+msgstr "게임이 화면을 지우면 줄을 잊기"
+
+msgid "Copy on a left click"
+msgstr "왼쪽 클릭으로 복사"
+
+msgid "Copy on a middle click"
+msgstr "가운데 클릭으로 복사"
+
+msgid "Copy on a double click"
+msgstr "더블 클릭으로 복사"
+
+msgid "Copy at a WAIT"
+msgstr "WAIT에서 복사"
+
+msgid "Copy at an input"
+msgstr "입력 대기에서 복사"
+
+msgid "YES or NO"
+msgstr "YES 또는 NO"
+
+msgid "a number from {lo} to {hi}"
+msgstr "{lo}~{hi} 사이의 숫자"
+
+msgid "R,G,B (0-255 each) or #RRGGBB"
+msgstr "R,G,B(각 0-255) 또는 #RRGGBB"
+
+msgid "note: {n} ERB/ERH files in subfolders not loaded: the game's config doesn't turn on サブディレクトリを検索する (Search subfolders), so Emuera skips them too"
+msgstr "참고: 하위 폴더의 ERB/ERH 파일 {n}개를 불러오지 않았습니다. 게임 설정에서 サブディレクトリを検索する(하위 폴더 검색)가 꺼져 있어 Emuera도 건너뜁니다"
+
+msgid "{dir}: no CSV directory found"
+msgstr "{dir}: CSV 폴더를 찾을 수 없습니다"
+
+msgid "this game's settings ask for names that differ only in letter case to be different; emuera-tty always ignores case"
+msgstr "이 게임의 설정은 대소문자만 다른 이름을 구별하도록 요구하지만, emuera-tty는 항상 대소문자를 무시합니다"
+
+msgid "inside tmux, pictures in Ghostty or kitty need `set -g allow-passthrough all` (in ~/.tmux.conf, then `tmux source-file ~/.tmux.conf`); `--gfx none` plays without pictures"
+msgstr "tmux 안에서 Ghostty나 kitty에 그림을 보이려면 `set -g allow-passthrough all`이 필요합니다(~/.tmux.conf에 쓰고 `tmux source-file ~/.tmux.conf`). `--gfx none`이면 그림 없이 플레이합니다"
+
+msgid "terminal init failed ({error}); falling back to headless"
+msgstr "터미널 초기화 실패({error}). headless로 계속합니다"
+
+msgid "backed up {n} files to {dir}"
+msgstr "파일 {n}개를 {dir}에 백업했습니다"
+
+msgid "saves in {dir}:"
+msgstr "{dir}의 세이브:"
+
+msgid "{n} backups in {dir}"
+msgstr "{dir}의 백업 {n}개"
+
+msgid "Extracting {archive}…"
+msgstr "{archive} 압축 푸는 중…"
+
+msgid "Extracting {archive}… {n} files"
+msgstr "{archive} 압축 푸는 중… 파일 {n}개"
+
+msgid "Game folder: {dir}"
+msgstr "게임 폴더: {dir}"
+
+msgid "no game folder given (pass GAME_DIR, or run in a terminal to pick one)"
+msgstr "게임 폴더가 지정되지 않았습니다(GAME_DIR을 넘기거나, 터미널에서 실행해 고르세요)"
+
+msgid "no translator found: install Ollama, LibreTranslate, translateLocally, Argos Translate or translate-shell (or curl, for DeepL)"
+msgstr "번역기를 찾을 수 없습니다: Ollama, LibreTranslate, translateLocally, Argos Translate 또는 translate-shell을 설치하세요(DeepL은 curl)"
+
+msgid "translate-shell (trans) isn't installed: get it from your package manager or translate-shell's site"
+msgstr "translate-shell(trans)이 설치되어 있지 않습니다: 패키지 관리자나 translate-shell 사이트에서 받으세요"
+
+msgid "DeepL needs curl (or DeepL's deepl tool and DEEPL_AUTH_KEY)"
+msgstr "DeepL에는 curl(또는 DeepL의 deepl 도구와 DEEPL_AUTH_KEY)이 필요합니다"
+
+msgid "Argos Translate isn't installed: pipx install argostranslate, then argospm install translate-ja_en"
+msgstr "Argos Translate가 설치되어 있지 않습니다: pipx install argostranslate 후 argospm install translate-ja_en"
+
+msgid "no translator on this computer: install Ollama, LibreTranslate, translateLocally or argos-translate (or set EMUERA_TRANSLATE_CMD), or choose translate-shell / DeepL"
+msgstr "이 컴퓨터에 번역기가 없습니다: Ollama, LibreTranslate, translateLocally 또는 argos-translate를 설치하거나(EMUERA_TRANSLATE_CMD 설정도 가능) translate-shell / DeepL을 고르세요"
+
+msgid "your command ({program})"
+msgstr "사용자 명령({program})"
+
+msgid "translate-shell (online)"
+msgstr "translate-shell(온라인)"
+
+msgid "DeepL, no key (online, unofficial)"
+msgstr "DeepL, 키 없음(온라인, 비공식)"
+
+msgid "DeepL's tool (online)"
+msgstr "DeepL 도구(온라인)"
+
+msgid "Ollama didn't answer"
+msgstr "Ollama가 응답하지 않습니다"
+
+msgid "Ollama gave no translation"
+msgstr "Ollama가 번역을 주지 않았습니다"
+
+msgid "LibreTranslate didn't answer"
+msgstr "LibreTranslate가 응답하지 않습니다"
+
+msgid "LibreTranslate gave no translation"
+msgstr "LibreTranslate가 번역을 주지 않았습니다"
+
+msgid "empty translation"
+msgstr "번역이 비어 있습니다"
+
+msgid "DeepL is limiting requests without a key: wait a while, or set DEEPL_AUTH_KEY"
+msgstr "DeepL이 키 없는 요청을 제한하고 있습니다: 잠시 기다리거나 DEEPL_AUTH_KEY를 설정하세요"
+
+msgid "DeepL is limiting requests: wait a while"
+msgstr "DeepL이 요청을 제한하고 있습니다: 잠시 기다리세요"
+
+msgid "DeepL refused the key in DEEPL_AUTH_KEY"
+msgstr "DeepL이 DEEPL_AUTH_KEY의 키를 거부했습니다"
+
+msgid "DeepL: this key's character quota is used up"
+msgstr "DeepL: 이 키의 글자 수 한도를 다 썼습니다"
+
+msgid "DeepL answered HTTP {status}"
+msgstr "DeepL이 HTTP {status}로 응답했습니다"
+
+msgid "translator failed ({status})"
+msgstr "번역기 실패({status})"
+
+msgid "Argos stopped (is argostranslate installed for that Python?)"
+msgstr "Argos가 멈췄습니다(그 Python에 argostranslate가 설치되어 있나요?)"
+
+msgid "{n} lines"
+msgstr "{n}줄"
+
+msgid "({n} for other languages)"
+msgstr "(다른 언어 {n})"
+
+msgid "Game debugging enabled; [IF_DEBUG] blocks and ;#; lines WILL run"
+msgstr "게임 디버그 사용: [IF_DEBUG] 블록과 ;#; 줄이 실행됩니다"
+
+msgid "VM-level debugging/breakpoints enabled; select this option to show a list of what files/functions have an attached breakpoint"
+msgstr "VM 수준 디버그/중단점 사용: 이 항목을 고르면 중단점이 있는 파일/함수 목록을 보여 줍니다"
+
+msgid "Emuera game"
+msgstr "Emuera 게임"
+
+msgid "(folder missing)"
+msgstr "(폴더 없음)"
+
+msgid "last played"
+msgstr "마지막 플레이"
+
+msgid "(NEW)"
+msgstr "(새로 추가)"
+
+msgid "Add a game (folder or archive)…"
+msgstr "게임 추가(폴더 또는 압축 파일)…"
+
+msgid "Clone a game from a git repository…"
+msgstr "git 저장소에서 게임 복제…"
+
+msgid "Settings"
+msgstr "설정"
+
+msgid "Test dialog boxes…"
+msgstr "대화 상자 테스트…"
+
+msgid "(next start)"
+msgstr "(다음 실행 시)"
+
+msgid "Back"
+msgstr "뒤로"
+
+msgid "this game"
+msgstr "이 게임"
+
+msgid "Play {game}"
+msgstr "{game} 플레이"
+
+msgid "archive, {size}"
+msgstr "압축 파일, {size}"
+
+msgid "your games"
+msgstr "내 게임"
+
+msgid "Enter to play · a add a game · u update (git) · U update all · d remove from the list · s settings"
+msgstr "Enter 플레이 · a 게임 추가 · u 업데이트(git) · U 모두 업데이트 · d 목록에서 제거 · s 설정"
+
+msgid "Choose an Emuera game folder or archive"
+msgstr "Emuera 게임 폴더나 압축 파일을 고르세요"
+
+msgid "(★ = game, ▣ = archive)"
+msgstr "(★ = 게임, ▣ = 압축 파일)"
+
+msgid "(empty)"
+msgstr "(비어 있음)"
+
+msgid "g git output  ↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "g git 출력  ↑↓ 이동  Enter 플레이  a 추가  u 업데이트  U 모두 업데이트  d 제거  s 설정  q 종료"
+
+msgid "↑↓ move  Enter play  a add  u update  U update all  d remove  s settings  q quit"
+msgstr "↑↓ 이동  Enter 플레이  a 추가  u 업데이트  U 모두 업데이트  d 제거  s 설정  q 종료"
+
+msgid "↑↓ move  ←/→ or Enter change  Esc back"
+msgstr "↑↓ 이동  ←/→ 또는 Enter 변경  Esc 뒤로"
+
+msgid "↑↓ move  Enter details  Esc back"
+msgstr "↑↓ 이동  Enter 자세히  Esc 뒤로"
+
+msgid "↑↓ move  Enter download  Esc back"
+msgstr "↑↓ 이동  Enter 다운로드  Esc 뒤로"
+
+msgid "↑↓ move  Enter add/open  → open  ← up  ~ home  . hidden  Esc back"
+msgstr "↑↓ 이동  Enter 추가/열기  → 열기  ← 위로  ~ 홈  . 숨김 파일  Esc 뒤로"
+
+msgid "↑↓ move  Enter play/open  → open  ← up  ~ home  . hidden  q quit"
+msgstr "↑↓ 이동  Enter 플레이/열기  → 열기  ← 위로  ~ 홈  . 숨김 파일  q 종료"
+
+msgid "Removed {game} from the list (its files are still there)."
+msgstr "{game}을(를) 목록에서 제거했습니다(파일은 그대로 있습니다)."
+
+msgid "This game isn't a git checkout: nothing to update from."
+msgstr "이 게임은 git 체크아웃이 아니라서 업데이트할 원본이 없습니다."
+
+msgid "Updating {game}"
+msgstr "{game} 업데이트 중"
+
+msgid "Already up to date."
+msgstr "이미 최신입니다."
+
+msgid "Updated: {what}."
+msgstr "업데이트함: {what}."
+
+msgid "Update failed: {why}"
+msgstr "업데이트 실패: {why}"
+
+msgid "None of these games is a git checkout: nothing to update from."
+msgstr "git 체크아웃인 게임이 없어 업데이트할 원본이 없습니다."
+
+msgid "Updating {i} of {n}: {game}"
+msgstr "{n}개 중 {i}번째 업데이트 중: {game}"
+
+msgid "updated {games}"
+msgstr "업데이트함 {games}"
+
+msgid "{n} already up to date"
+msgstr "{n}개는 이미 최신"
+
+msgid "failed {games}"
+msgstr "실패 {games}"
+
+msgid "Update all: {result}."
+msgstr "모두 업데이트: {result}."
+
+msgid "Full git output"
+msgstr "git 전체 출력"
+
+msgid "lines {from}-{to} of {total}"
+msgstr "{total}줄 중 {from}-{to}줄"
+
+msgid "↑↓ PgUp PgDn Home End scroll  q / Esc / Enter / g close"
+msgstr "↑↓ PgUp PgDn Home End 스크롤  q / Esc / Enter / g 닫기"
+
+msgid "↑↓←→ choose  Enter pick  Esc cancel"
+msgstr "↑↓←→ 선택  Enter 결정  Esc 취소"
+
+msgid "←→ choose  Enter pick  Esc cancel"
+msgstr "←→ 선택  Enter 결정  Esc 취소"
+
+msgid "Enter accept  Esc cancel  Ctrl-U clear"
+msgstr "Enter 확인  Esc 취소  Ctrl-U 지우기"
+
+msgid "Enter use the [default]  Tab edit it  Esc cancel"
+msgstr "Enter [기본값] 사용  Tab 편집  Esc 취소"
+
+msgid "git isn't installed (or isn't on PATH): can't clone."
+msgstr "git이 설치되어 있지 않아(또는 PATH에 없어) 복제할 수 없습니다."
+
+msgid "Clone cancelled."
+msgstr "복제를 취소했습니다."
+
+msgid "Repository to clone (URL or path)"
+msgstr "복제할 저장소(URL 또는 경로)"
+
+msgid "Can't tell a folder name from \"{url}\"."
+msgstr "\"{url}\"에서 폴더 이름을 정할 수 없습니다."
+
+msgid "Folder to store it in (it gets its own \"{name}\" subfolder)"
+msgstr "저장할 폴더(그 안에 \"{name}\" 하위 폴더가 생깁니다)"
+
+msgid "Branch to use (optional, empty = the repository's default)"
+msgstr "사용할 브랜치(선택, 비우면 저장소 기본값)"
+
+msgid "Depth (optional, 1 = latest commit only, empty = all)"
+msgstr "깊이(선택, 1 = 최신 커밋만, 비우면 전체)"
+
+msgid "The depth must be a whole number of 1 or more (or empty for the full history)."
+msgstr "깊이는 1 이상의 정수여야 합니다(전체 기록이면 비워 두세요)."
+
+msgid "{folder} already exists and isn't empty."
+msgstr "{folder}이(가) 이미 있고 비어 있지 않습니다."
+
+msgid "Can't create {folder}: {error}"
+msgstr "{folder}을(를) 만들 수 없습니다: {error}"
+
+msgid "Cloning {repo}"
+msgstr "{repo} 복제 중"
+
+msgid "Esc / Ctrl-C: cancel the clone"
+msgstr "Esc / Ctrl-C: 복제 취소"
+
+msgid "Clone cancelled: nothing was added (g: git output)."
+msgstr "복제 취소: 아무것도 추가하지 않았습니다(g: git 출력)."
+
+msgid "Remove the half-cloned \"{name}\" folder? (y/N)"
+msgstr "반쯤 복제된 \"{name}\" 폴더를 지울까요? (y/N)"
+
+msgid "Clone cancelled: the half-cloned folder was removed, nothing was added (g: git output)."
+msgstr "복제 취소: 반쯤 복제된 폴더를 지웠고 아무것도 추가하지 않았습니다(g: git 출력)."
+
+msgid "Clone cancelled: nothing was added; the half-cloned folder is still at {folder}."
+msgstr "복제 취소: 아무것도 추가하지 않았습니다. 반쯤 복제된 폴더는 {folder}에 남아 있습니다."
+
+msgid "Cloned into {folder}, but no Emuera game (CSV and ERB folders) is in it, so it wasn't added."
+msgstr "{folder}에 복제했지만 Emuera 게임(CSV와 ERB 폴더)이 없어 추가하지 않았습니다."
+
+msgid "depth {n}"
+msgstr "깊이 {n}"
+
+msgid "Cloned {game}{at}: NEW, Enter to play (g: git output)."
+msgstr "{game}{at} 복제 완료: 새로 추가, Enter로 플레이(g: git 출력)."
+
+msgid "Added {game} — Enter to play."
+msgstr "{game} 추가 완료 — Enter로 플레이."
+
+msgid "{folder} is gone (d removes it from the list)"
+msgstr "{folder}이(가) 없습니다(d로 목록에서 제거)"
+
+msgid "Nothing here: no folders or archives."
+msgstr "여기에는 아무것도 없습니다: 폴더도 압축 파일도 없습니다."
+
+msgid "Extracting {archive}"
+msgstr "{archive} 압축 푸는 중"
+
+msgid "{n} files"
+msgstr "파일 {n}개"
+
+msgid "can't find this program: {error}"
+msgstr "이 프로그램을 찾을 수 없습니다: {error}"
+
+msgid "{file} is already installed."
+msgstr "{file}은(는) 이미 설치되어 있습니다."
+
+msgid "Installed {file}."
+msgstr "{file}을(를) 설치했습니다."
+
+msgid "Manual page: {file} (man emuera-tty)."
+msgstr "매뉴얼 페이지: {file}(man emuera-tty)."
+
+msgid "(manual page not installed: {error})"
+msgstr "(매뉴얼 페이지가 설치되지 않았습니다: {error})"
+
+msgid "{dir} is not on your PATH; add it with (then open a new terminal):"
+msgstr "{dir}이(가) PATH에 없습니다. 다음으로 추가하세요(그다음 새 터미널을 여세요):"
+
+msgid "{dir} is not on your PATH; add this to ~/.bashrc or ~/.profile:"
+msgstr "{dir}이(가) PATH에 없습니다. ~/.bashrc나 ~/.profile에 이것을 추가하세요:"
+
+msgid "Removed {file}."
+msgstr "{file}을(를) 제거했습니다."
+
+msgid "{file} is not installed."
+msgstr "{file}은(는) 설치되어 있지 않습니다."
+
+msgid "Removed {dir} (settings and the game list); the next start will ask for a game folder."
+msgstr "{dir}(설정과 게임 목록)을 제거했습니다. 다음 실행 때 게임 폴더를 묻습니다."
+
+msgid "Nothing to reset."
+msgstr "초기화할 것이 없습니다."
+
+msgid "{command} failed ({status})"
+msgstr "{command} 실패({status})"
+
+msgid "Clone failed: {why}"
+msgstr "복제 실패: {why}"
+
+msgid "git clone didn't work"
+msgstr "git clone이 실패했습니다"
+
+msgid "detached"
+msgstr "detached"
+
+msgid "Pictures (git lfs pull) failed: {error}"
+msgstr "그림(git lfs pull) 실패: {error}"
+
+msgid "Its pictures are in Git LFS: install git-lfs and update again."
+msgstr "그림이 Git LFS에 있습니다: git-lfs를 설치하고 다시 업데이트하세요."
+
+msgid "git pull didn't work"
+msgstr "git pull이 실패했습니다"
+
+msgid "1 new commit"
+msgstr "새 커밋 1개"
+
+msgid "{n} new commits"
+msgstr "새 커밋 {n}개"
+
+msgid "slot {n}"
+msgstr "슬롯 {n}"
+
+msgid "global"
+msgstr "전역"
+
+msgid "no saves in {dir}"
+msgstr "{dir}에 세이브가 없습니다"
+
+msgid "that is the game's own save folder"
+msgstr "그것은 게임 자체의 세이브 폴더입니다"
+
+msgid "that is the same slot"
+msgstr "같은 슬롯입니다"
+
+msgid "that is the save itself"
+msgstr "그 세이브 자체입니다"
+
+msgid "{file} is not an Emuera save"
+msgstr "{file}은(는) Emuera 세이브가 아닙니다"
+
+msgid "that is the game's own global.sav"
+msgstr "그것은 게임 자체의 global.sav입니다"
+
+msgid "Language"
+msgstr "언어"
+
+msgid "the language of emuera-tty's own menus and messages, not the game's (auto: the system's)"
+msgstr "게임이 아닌 emuera-tty 자체 메뉴와 메시지의 언어(auto: 시스템 언어)"
+
+msgid "Images"
+msgstr "그림"
+
+msgid "how pictures are drawn (auto: whatever the terminal supports)"
+msgstr "그림을 그리는 방식(auto: 터미널이 지원하는 것)"
+
+msgid "Colours"
+msgstr "색"
+
+msgid "colour depth sent to the terminal"
+msgstr "터미널에 보내는 색 깊이"
+
+msgid "Readable colours"
+msgstr "읽기 쉬운 색"
+
+msgid "lighten coloured text too dark to read (e.g. blue in time stop)"
+msgstr "너무 어두워 읽기 힘든 색 글자를 밝게(예: 시간 정지 중의 파란색)"
+
+msgid "Wide symbols"
+msgstr "넓은 기호"
+
+msgid "how box drawing / symbols get Emuera's two columns (auto: measured)"
+msgstr "괘선/기호가 Emuera의 두 칸을 차지하는 방식(auto: 측정)"
+
+msgid "Backslash as ¥"
+msgstr "백슬래시를 ¥로"
+
+msgid "draw \\ as ¥ as Japanese fonts do (auto: when the game's font is one, as Emuera's default MS Gothic)"
+msgstr "일본어 글꼴처럼 \\를 ¥로 그리기(auto: 게임 글꼴이 일본어 글꼴일 때, Emuera 기본인 MS Gothic 등)"
+
+msgid "Greek and Cyrillic"
+msgstr "그리스 문자와 키릴 문자"
+
+msgid "two columns each, as Emuera's MS Gothic draws them, or one (auto: as the game's font, but words in those scripts narrow)"
+msgstr "각각 두 칸(Emuera의 MS Gothic이 그리는 대로) 또는 한 칸(auto: 게임 글꼴대로, 단 그 문자의 단어는 좁게)"
+
+msgid "Copy to clipboard"
+msgstr "클립보드에 복사"
+
+msgid "put printed text on the clipboard (OSC 52); game: as emuera.config says"
+msgstr "출력한 글자를 클립보드에 넣기(OSC 52). game: emuera.config대로"
+
+msgid "Bottom bar details"
+msgstr "아래 줄 자세히"
+
+msgid "the hovered button's value and the running function"
+msgstr "가리킨 버튼의 값과 실행 중인 함수"
+
+msgid "Show memory"
+msgstr "메모리 표시"
+
+msgid "show the memory in use in the bottom row (it is always on this page's title)"
+msgstr "사용 중인 메모리를 맨 아래 줄에 표시(이 페이지 제목에는 항상 표시)"
+
+msgid "Translator"
+msgstr "번역기"
+
+msgid "off: the game shows as it prints itself; auto: whichever is there (this computer's first); local: Ollama, LibreTranslate… only; translate-shell, DeepL: online; file: only the translations read with --translate-load"
+msgstr "off: 게임이 출력한 그대로. auto: 있는 것(이 컴퓨터의 것 우선). local: Ollama, LibreTranslate…만. translate-shell, DeepL: 온라인. file: --translate-load로 읽은 번역만"
+
+msgid "Translate to"
+msgstr "번역할 언어"
+
+msgid "the language to show the game in (needs a Translator other than off)"
+msgstr "게임을 보여 줄 언어(off가 아닌 번역기 필요)"
+
+msgid "Translate from"
+msgstr "원래 언어"
+
+msgid "the game's language: auto takes Japanese lines from Japanese and English ones from English"
+msgstr "게임의 언어: auto는 일본어 줄은 일본어로, 영어 줄은 영어로 봅니다"
+
+msgid "Translate what"
+msgstr "번역 대상"
+
+msgid "dialog: what characters say; all: menus and labels too (never maps); auto: all unless into English"
+msgstr "dialog: 캐릭터의 대사. all: 메뉴와 라벨도(맵 제외). auto: 영어로 번역할 때가 아니면 all"
+
+msgid "Sound"
+msgstr "소리"
+
+msgid "PLAYSOUND / PLAYBGM through mpv, ffplay… (auto: not over SSH)"
+msgstr "PLAYSOUND / PLAYBGM을 mpv, ffplay… 로 재생(auto: SSH에서는 재생 안 함)"
+
+msgid "Keyboard pointer"
+msgstr "키보드 포인터"
+
+msgid "cursor keys move a pointer, Insert or Shift+Enter click (PgUp/PgDn scroll); auto: on a text console (Linux, Hurd) without a mouse"
+msgstr "방향키로 포인터 이동, Insert나 Shift+Enter로 클릭(PgUp/PgDn 스크롤). auto: 마우스 없는 텍스트 콘솔(Linux, Hurd)에서"
+
+msgid "Gamepad"
+msgstr "게임패드"
+
+msgid "Steam Deck, Xbox, PlayStation… pads: d-pad between buttons, stick moves, A click, B skip, X/Y Enter, Start settings, LB/RB page"
+msgstr "Steam Deck, Xbox, PlayStation… 패드: 십자키로 버튼 사이 이동, 스틱으로 이동, A 클릭, B 건너뛰기, X/Y Enter, Start 설정, LB/RB 페이지"
+
+msgid "Wheel scrolls"
+msgstr "휠 스크롤"
+
+msgid "lines per mouse-wheel step"
+msgstr "마우스 휠 한 칸당 줄 수"
+
+msgid "Scroll to end on keyboard input"
+msgstr "키 입력 시 끝으로 스크롤"
+
+msgid "any key press while scrolled back jumps to the end (off: only mouse clicks and Enter do)"
+msgstr "되돌아보는 중에 아무 키나 누르면 끝으로 이동(끄면: 마우스 클릭과 Enter만)"
+
+msgid "Decode last used pictures"
+msgstr "지난번 그림 디코딩"
+
+msgid "decode pictures the game used last time in the background at start (auto: on unless headless)"
+msgstr "시작할 때 게임이 지난번에 쓴 그림을 백그라운드에서 디코딩(auto: headless가 아니면 켬)"
+
+msgid "Console mouse"
+msgstr "콘솔 마우스"
+
+msgid "gpm / /dev/input/mice on the Linux console"
+msgstr "Linux 콘솔의 gpm / /dev/input/mice"
+
+msgid "retro: ASCII through terminfo, for old or dumb terminals"
+msgstr "retro: terminfo를 통한 ASCII, 오래된 터미널이나 dumb 터미널용"
+
+msgid "Target EE version"
+msgstr "대상 EE 버전"
+
+msgid "which Emuera-EE version to emulate (EEv56: baseline; EEv56-anontw: EEv56 plus AnonTW fixes from Shakes4cc; EEv57: official EEv57)"
+msgstr "흉내 낼 Emuera-EE 버전(EEv56: 기준. EEv56-anontw: EEv56에 Shakes4cc의 AnonTW 수정 추가. EEv57: 공식 EEv57)"
+
+msgid "wide, narrow, single or osc66: how box drawing and symbols get Emuera's two columns"
+msgstr "wide, narrow, single 또는 osc66: 괘선과 기호가 Emuera의 두 칸을 차지하는 방식"
+
+msgid "comma-separated list of function:line breakpoints (debugger)"
+msgstr "쉼표로 구분한 함수:줄 중단점 목록(디버거)"
+
+msgid "milliseconds since 1970 (UTC) the game's clock starts from, moving 1 ms per reading (reproducible runs)"
+msgstr "게임 시계가 시작하는 1970년(UTC) 이후 밀리초, 읽을 때마다 1밀리초씩 진행(재현 가능한 실행)"
+
+msgid "MB compiled functions may take (default: 1/16 of the memory); the least recently called are dropped"
+msgstr "컴파일된 함수가 쓸 수 있는 MB(기본: 메모리의 1/16). 가장 오래 호출되지 않은 것부터 버립니다"
+
+msgid "truecolor, 256 or 16: the colour depth, when detection guesses wrong"
+msgstr "truecolor, 256 또는 16: 감지가 틀릴 때의 색 깊이"
+
+msgid "any value: print each frame drawn (size and picture keys) to stderr (debugging)"
+msgstr "아무 값: 그린 프레임마다(크기와 그림 키) stderr에 출력(디버그)"
+
+msgid "1: completely disable infinite loop detection, ignoring the timeout (useful for games with intentional long-running functions)"
+msgstr "1: 시간 제한을 무시하고 무한 루프 감지를 완전히 끔(일부러 오래 실행되는 함수가 있는 게임용)"
+
+msgid "MB graphics buffers may take unpacked (default: 1/8 of the memory)"
+msgstr "풀어 둔 그래픽 버퍼가 쓸 수 있는 MB(기본: 메모리의 1/8)"
+
+msgid "any value: enable game debugger at start"
+msgstr "아무 값: 시작할 때 게임 디버거 사용"
+
+msgid "off: don't read gamepads; /dev/input/eventN: read just that device as a pad"
+msgstr "off: 게임패드를 읽지 않음. /dev/input/eventN: 그 장치만 패드로 읽음"
+
+msgid "path of the gpm socket (default /dev/gpmctl), for testing the Linux-console mouse"
+msgstr "gpm 소켓 경로(기본 /dev/gpmctl), Linux 콘솔 마우스 테스트용"
+
+msgid "the virtual console number the gpm mouse is read for (testing)"
+msgstr "gpm 마우스를 읽을 가상 콘솔 번호(테스트용)"
+
+msgid "EEv56, EEv56-anontw or EEv57: which Emuera-EE version to emulate for compatibility (default: EEv56)"
+msgstr "EEv56, EEv56-anontw 또는 EEv57: 호환성을 위해 흉내 낼 Emuera-EE 버전(기본: EEv56)"
+
+msgid "ms before infinite loop warning (0 = disabled, default: 5000)"
+msgstr "무한 루프 경고까지의 밀리초(0 = 끔, 기본: 5000)"
+
+msgid "STMT||STMT: statements run just before the EMUERA_INJECT_AT-th input (debugging)"
+msgstr "STMT||STMT: EMUERA_INJECT_AT번째 입력 바로 전에 실행할 문(디버그)"
+
+msgid "the input number EMUERA_INJECT runs before"
+msgstr "EMUERA_INJECT를 실행할 입력 번호"
+
+msgid "ja, zh-Hans, zh-Hant, ko or en: the interface language; x-cjk, x-arab, x-cyrl, x-deva, x-avst: every message in that script, to check the layout"
+msgstr "ja, zh-Hans, zh-Hant, ko 또는 en: 인터페이스 언어. x-cjk, x-arab, x-cyrl, x-deva, x-avst: 모든 메시지를 그 문자로(레이아웃 확인용)"
+
+msgid "host:port of the LibreTranslate server (default 127.0.0.1:5000)"
+msgstr "LibreTranslate 서버의 host:port(기본 127.0.0.1:5000)"
+
+msgid "any value, with --check: point at statements the parser may have split wrongly, and string >= / <= (Emuera evaluates them as <)"
+msgstr "아무 값, --check와 함께: 파서가 잘못 나눴을 수 있는 문과 문자열 >= / <=(Emuera는 <로 계산)를 짚어 줌"
+
+msgid "1, with --headless: print the values of the buttons on screen before each input"
+msgstr "1, --headless와 함께: 입력마다 그 전에 화면의 버튼 값을 출력"
+
+msgid "emuera: format log output like Emuera.exe (for headless mode)"
+msgstr "emuera: 로그 출력을 Emuera.exe 형식으로(headless 모드용)"
+
+msgid "0 skips measuring how wide the terminal draws ambiguous characters"
+msgstr "0: 터미널이 폭이 모호한 문자를 얼마나 넓게 그리는지 재지 않음"
+
+msgid "file the report of what the memory holds is written to, at every input"
+msgstr "입력마다 메모리 내용 보고서를 쓰는 파일"
+
+msgid "off or term: no console mouse; mice: read /dev/input/mice even outside the Linux console"
+msgstr "off 또는 term: 콘솔 마우스 없음. mice: Linux 콘솔 밖에서도 /dev/input/mice를 읽음"
+
+msgid "file the mouse events are logged to (finding out why a pointer misbehaves)"
+msgstr "마우스 이벤트를 기록할 파일(포인터가 이상한 이유 찾기)"
+
+msgid "all: compile every function at load instead of on its first call"
+msgstr "all: 첫 호출 때가 아니라 불러올 때 모든 함수를 컴파일"
+
+msgid "MB decoded picture files may take (default: 1/8 of the memory)"
+msgstr "디코딩한 그림 파일이 쓸 수 있는 MB(기본: 메모리의 1/8)"
+
+msgid "file for the native profile (builds with --features profile; written on a clean exit)"
+msgstr "네이티브 프로파일 파일(--features profile 빌드만, 정상 종료 시 기록)"
+
+msgid "file kept updated with which ERB function runs, sampled every millisecond"
+msgstr "실행 중인 ERB 함수를 1밀리초마다 기록해 갱신하는 파일"
+
+msgid "colour override for headless mode (e.g. 'fg=255,255,255 bg=0,0,0')"
+msgstr "headless 모드의 색 덮어쓰기(예: 'fg=255,255,255 bg=0,0,0')"
+
+msgid "0: don't save history log to global.sav"
+msgstr "0: 기록 로그를 global.sav에 저장하지 않음"
+
+msgid "number the random generator starts from (reproducible runs)"
+msgstr "난수 생성기의 시작 값(재현 가능한 실행)"
+
+msgid "on or off: play the game's sounds (default: yes, except over SSH)"
+msgstr "on 또는 off: 게임 소리 재생(기본: 예, SSH 제외)"
+
+msgid "the sound player: mpv, ffplay, mplayer, afplay, pw-play, paplay, aplay or powershell"
+msgstr "소리 재생기: mpv, ffplay, mplayer, afplay, pw-play, paplay, aplay 또는 powershell"
+
+msgid "stack of the script thread in MB (default 512, or the most the system allows)"
+msgstr "스크립트 스레드 스택 크기(MB, 기본 512 또는 시스템이 허용하는 최대)"
+
+msgid "cap on the threads used for loading and picture decoding"
+msgstr "불러오기와 그림 디코딩에 쓰는 스레드 수 상한"
+
+msgid "1: print how long each loading phase takes and the memory in use"
+msgstr "1: 불러오기 단계마다 걸린 시간과 사용 중인 메모리를 출력"
+
+msgid "log calls to functions whose name contains this, with timestamps, to stderr"
+msgstr "이름에 이것이 들어간 함수의 호출을 시각과 함께 stderr에 기록"
+
+msgid "a command that reads a line on stdin and prints its translation (instead of the built-in translators)"
+msgstr "표준 입력에서 한 줄을 읽어 번역을 출력하는 명령(내장 번역기 대신)"
+
+msgid "the Ollama or translateLocally model used for translating"
+msgstr "번역에 쓰는 Ollama 또는 translateLocally 모델"
+
+msgid "the engine translate-shell (trans) uses (default: Google)"
+msgstr "translate-shell(trans)이 쓰는 엔진(기본: Google)"
+
+msgid "1: enable internal TTY testing hooks"
+msgstr "1: 내부 TTY 테스트 훅 사용"
+
+msgid "any value: enable VM debugger at start"
+msgstr "아무 값: 시작할 때 VM 디버거 사용"
+
+msgid "1 / 0: decode last session's pictures in the background at start (default: on, off headless)"
+msgstr "1 / 0: 시작할 때 지난 세션의 그림을 백그라운드에서 디코딩(기본: 켬, headless에서는 끔)"
+
+msgid "default for --gfx: kitty, iterm, sixel, fb or none"
+msgstr "--gfx의 기본값: kitty, iterm, sixel, fb 또는 none"
+
+msgid "Variable watch"
+msgstr "변수 감시"
+
+msgid "Stack trace"
+msgstr "스택 추적"
+
+msgid "Console"
+msgstr "콘솔"
+
+msgid "Expression (empty: remove):"
+msgstr "식(비우면 제거):"
+
+msgid "Debug  (Emuera's debug window)"
+msgstr "디버그  (Emuera의 디버그 창)"
+
+msgid "(new: Enter)"
+msgstr "(새로: Enter)"
+
+msgid "Tab tab  ↑↓ choose  Enter edit  a add  d remove  r refresh  Esc close"
+msgstr "Tab 탭  ↑↓ 선택  Enter 편집  a 추가  d 제거  r 새로 고침  Esc 닫기"
+
+msgid "Tab tab  ↑↓ PgUp PgDn scroll  r refresh  Esc close"
+msgstr "Tab 탭  ↑↓ PgUp PgDn 스크롤  r 새로 고침  Esc 닫기"
+
+msgid "Tab tab  Enter run  ↑↓ history  PgUp PgDn scroll  Esc close"
+msgstr "Tab 탭  Enter 실행  ↑↓ 기록  PgUp PgDn 스크롤  Esc 닫기"
+
+msgid "Normal users shouldn't need these: they are mostly for debugging and testing. ● set  ○ not set. Enter: what a variable does. They are read when emuera-tty starts, so set them in the shell before launching."
+msgstr "일반 사용자에게는 필요 없습니다. 주로 디버그와 테스트용입니다. ● 설정됨  ○ 설정 안 됨. Enter: 변수 설명. emuera-tty가 시작할 때 읽으므로 실행 전에 셸에서 설정하세요."
+
+msgid "(not set)"
+msgstr "(설정 안 됨)"
+
+msgid "Environment variables (EMUERA_*): for debugging, not normal use"
+msgstr "환경 변수(EMUERA_*): 디버그용, 평소에는 쓰지 않음"
+
+msgid "{setting}: the game fixes this one (CSV/_fixed.config)"
+msgstr "{setting}: 이 항목은 게임이 고정합니다(CSV/_fixed.config)"
+
+msgid "A number from {lo} to {hi} (empty: the game's setting):"
+msgstr "{lo}~{hi} 사이의 숫자(비우면 게임 설정):"
+
+msgid "R,G,B or #RRGGBB (empty: the game's setting):"
+msgstr "R,G,B 또는 #RRGGBB(비우면 게임 설정):"
+
+msgid "Text (empty: the game's setting):"
+msgstr "글자(비우면 게임 설정):"
+
+msgid "Game settings  (Emuera's settings window)"
+msgstr "게임 설정  (Emuera의 설정 창)"
+
+msgctxt "setting source"
+msgid "game"
+msgstr "게임"
+
+msgctxt "setting source"
+msgid "changed"
+msgstr "변경됨"
+
+msgctxt "setting source"
+msgid "fixed"
+msgstr "고정"
+
+msgid "←→ tab  ↑↓ choose  Enter change  +/- step  d game's value  Esc back"
+msgstr "←→ 탭  ↑↓ 선택  Enter 변경  +/- 증감  d 게임 값  Esc 뒤로"
+
+msgid "Saved in the game's emuera.config, which Emuera.exe reads too."
+msgstr "게임의 emuera.config에 저장했습니다. Emuera.exe도 이 파일을 읽습니다."
+
+msgid "(no saves yet)"
+msgstr "(아직 세이브 없음)"
+
+msgid "Back up all saves now"
+msgstr "지금 모든 세이브 백업"
+
+msgid "Restore a backup…"
+msgstr "백업 복원…"
+
+msgid "Import a save file…"
+msgstr "세이브 파일 가져오기…"
+
+msgid "Enter: save actions   saves in {dir}"
+msgstr "Enter: 세이브 작업   세이브 위치 {dir}"
+
+msgid "Saves"
+msgstr "세이브"
+
+msgid "Replace the saves with {backup}? (the current ones are backed up first)"
+msgstr "세이브를 {backup}(으)로 바꿀까요? (현재 세이브는 먼저 백업합니다)"
+
+msgid "restored {n} files; load one from the game's load menu"
+msgstr "파일 {n}개를 복원했습니다. 게임의 불러오기 메뉴에서 불러오세요"
+
+msgid "Import a save"
+msgstr "세이브 가져오기"
+
+msgid "Into slot:"
+msgstr "가져올 슬롯:"
+
+msgid "imported as {file}"
+msgstr "{file}(으)로 가져왔습니다"
+
+msgid "Copy to slot…"
+msgstr "슬롯으로 복사…"
+
+msgid "Move to slot…"
+msgstr "슬롯으로 이동…"
+
+msgid "Export to a file…"
+msgstr "파일로 내보내기…"
+
+msgid "Delete"
+msgstr "삭제"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "a deleted or overwritten save is kept in the backups"
+msgstr "삭제하거나 덮어쓴 세이브는 백업에 남습니다"
+
+msgid "To slot:"
+msgstr "대상 슬롯:"
+
+msgid "Slot {n} has a save. Overwrite it?"
+msgstr "슬롯 {n}에 세이브가 있습니다. 덮어쓸까요?"
+
+msgid "moved {save} to slot {n}"
+msgstr "{save}을(를) 슬롯 {n}(으)로 옮겼습니다"
+
+msgid "copied {save} to slot {n}"
+msgstr "{save}을(를) 슬롯 {n}(으)로 복사했습니다"
+
+msgid "Export {save}"
+msgstr "{save} 내보내기"
+
+msgid "Export {save} to {dir}"
+msgstr "{save}을(를) {dir}(으)로 내보내기"
+
+msgid "File name:"
+msgstr "파일 이름:"
+
+msgid "{file} exists. Overwrite it?"
+msgstr "{file}이(가) 이미 있습니다. 덮어쓸까요?"
+
+msgid "exported to {file}"
+msgstr "{file}(으)로 내보냈습니다"
+
+msgid "Delete {save}?"
+msgstr "{save}을(를) 삭제할까요?"
+
+msgid "deleted {save} (a copy is in {dir})"
+msgstr "{save}을(를) 삭제했습니다(사본은 {dir}에 있습니다)"
+
+msgid "({n} files)"
+msgstr "(파일 {n}개)"
+
+msgid "(no backups yet)"
+msgstr "(아직 백업 없음)"
+
+msgid "backups go to {dir}"
+msgstr "백업은 {dir}에 만들어집니다"
+
+msgid "in {dir}"
+msgstr "{dir} 안"
+
+msgid "Another folder…"
+msgstr "다른 폴더…"
+
+msgid "Restore a backup"
+msgstr "백업 복원"
+
+msgid "Restore saves from a folder"
+msgstr "폴더에서 세이브 복원"
+
+msgid "Enter open/pick  ← up  ~ home  . hidden  / type a path  Esc back"
+msgstr "Enter 열기/선택  ← 위로  ~ 홈  . 숨김 파일  / 경로 입력  Esc 뒤로"
+
+msgid "Folder or file:"
+msgstr "폴더 또는 파일:"
+
+msgid "no such folder: {dir}"
+msgstr "그런 폴더가 없습니다: {dir}"
+
+msgid "Yes"
+msgstr "예"
+
+msgid "No"
+msgstr "아니요"
+
+msgid "↑↓ choose  Enter pick  Esc back"
+msgstr "↑↓ 선택  Enter 결정  Esc 뒤로"
+
+msgid "Export to this folder…"
+msgstr "이 폴더로 내보내기…"
+
+msgid "(nothing to restore here: no saveNN.sav or global.sav)"
+msgstr "(여기에는 복원할 것이 없습니다: saveNN.sav도 global.sav도 없음)"
+
+msgid "Restore the save in this folder"
+msgstr "이 폴더의 세이브 복원"
+
+msgid "Restore the {n} saves in this folder"
+msgstr "이 폴더의 세이브 {n}개 복원"
+
+msgid "(a new folder: made when the save is written)"
+msgstr "(새 폴더: 세이브를 쓸 때 만들어집니다)"
+
+msgid "(can't read this folder: {error})"
+msgstr "(이 폴더를 읽을 수 없습니다: {error})"
+
+msgid "(not an Emuera save)"
+msgstr "(Emuera 세이브가 아님)"
+
+msgid "(no folders or save files here)"
+msgstr "(여기에는 폴더도 세이브 파일도 없습니다)"
+
+msgid "no mouse ({error}): install gpm, or add yourself to the input group"
+msgstr "마우스 없음({error}): gpm을 설치하거나 자신을 input 그룹에 추가하세요"
+
+msgid "; fb disabled here: not an actual vt (expected 'linux', 'fbterm*', 'hurd' or 'sun-*' in $TERM)"
+msgstr "; 여기서는 fb 사용 안 함: 실제 가상 터미널이 아닙니다($TERM은 'linux', 'fbterm*', 'hurd', 'sun-*' 중 하나여야 함)"
+
+msgid " (/dev/fb0 needs the video group)"
+msgstr " (/dev/fb0에는 video 그룹이 필요)"
+
+msgid "; framebuffer unavailable: {error}{hint}"
+msgstr "; 프레임버퍼를 쓸 수 없음: {error}{hint}"
+
+msgid "graphics backend: {name}"
+msgstr "그래픽 백엔드: {name}"
+
+msgid "; inside GNU screen there are no pictures (tmux can show them)"
+msgstr "; GNU screen 안에서는 그림을 보일 수 없습니다(tmux는 가능)"
+
+msgid "; inside tmux, kitty-graphics terminals (Ghostty, kitty) need `set -g allow-passthrough all` for pictures"
+msgstr "; tmux 안에서 kitty 그래픽 터미널(Ghostty, kitty)에 그림을 보이려면 `set -g allow-passthrough all`이 필요합니다"
+
+msgid "F{n} stored"
+msgstr "F{n} 저장됨"
+
+msgid "scroll -{n}"
+msgstr "스크롤 -{n}"
+
+msgid "Back to the title screen? Unsaved progress is lost."
+msgstr "타이틀 화면으로 돌아갈까요? 저장하지 않은 진행은 사라집니다."
+
+msgid "Restart the game? Unsaved progress is lost."
+msgstr "게임을 다시 시작할까요? 저장하지 않은 진행은 사라집니다."
+
+msgid "Restart the game in debug mode? Unsaved progress is lost."
+msgstr "디버그 모드로 게임을 다시 시작할까요? 저장하지 않은 진행은 사라집니다."
+
+msgid "Restart the game without debug mode? Unsaved progress is lost."
+msgstr "디버그 모드 없이 게임을 다시 시작할까요? 저장하지 않은 진행은 사라집니다."
+
+msgid "Random seed"
+msgstr "난수 시드"
+
+msgid "(read-only)"
+msgstr "(읽기 전용)"
+
+msgid "Initial seed"
+msgstr "처음 시드"
+
+msgid "Environment variables…  (the EMUERA_* ones emuera-tty reads)"
+msgstr "환경 변수…  (emuera-tty가 읽는 EMUERA_* 변수)"
+
+msgid "Game settings…  (Emuera's settings window: emuera.config)"
+msgstr "게임 설정…  (Emuera의 설정 창: emuera.config)"
+
+msgid "Manage saves…  (copy, export, back up, restore)"
+msgstr "세이브 관리…  (복사, 내보내기, 백업, 복원)"
+
+msgid "Test the translator…  (translates a sample line)"
+msgstr "번역기 테스트…  (예문 한 줄 번역)"
+
+msgid "Clear the translation cache  (translate the screen again)"
+msgstr "번역 캐시 지우기  (화면을 다시 번역)"
+
+msgid "Export translation cache…  (save translations to a file)"
+msgstr "번역 캐시 내보내기…  (번역을 파일로 저장)"
+
+msgid "Clear the picture cache  (frees decoded sprites; they load again when shown)"
+msgstr "그림 캐시 지우기  (디코딩한 스프라이트를 해제, 보일 때 다시 불러옴)"
+
+msgid "Recolor…  (draw a colour of the game's as another)"
+msgstr "색 바꾸기…  (게임의 한 색을 다른 색으로 그림)"
+
+msgid "Back to the title"
+msgstr "타이틀로 돌아가기"
+
+msgid "Restart the game"
+msgstr "게임 다시 시작"
+
+msgid "Restart without debug mode"
+msgstr "디버그 모드 없이 다시 시작"
+
+msgid "Restart in debug mode  ([IF_DEBUG] and ;#; lines run)"
+msgstr "디버그 모드로 다시 시작  ([IF_DEBUG]와 ;#; 줄 실행)"
+
+msgid "Reload ERB files"
+msgstr "ERB 파일 다시 불러오기"
+
+msgid "Switch game…  (unsaved progress is lost)"
+msgstr "게임 바꾸기…  (저장하지 않은 진행은 사라집니다)"
+
+msgid "Quit emuera-tty"
+msgstr "emuera-tty 종료"
+
+msgid "Close"
+msgstr "닫기"
+
+msgid "works ({secs} s, {what}): {result}"
+msgstr "작동함({secs}초, {what}): {result}"
+
+msgid "failed ({secs} s, {what}): {error}"
+msgstr "실패({secs}초, {what}): {error}"
+
+msgid "testing {what}… {secs} s"
+msgstr "{what} 테스트 중… {secs}초"
+
+msgid "{what} stopped"
+msgstr "{what} 멈춤"
+
+msgid "sound on"
+msgstr "소리 켬"
+
+msgid "sound off"
+msgstr "소리 끔"
+
+msgid "{setting} takes effect the next time emuera-tty starts"
+msgstr "{setting}은(는) 다음에 emuera-tty를 시작할 때 적용됩니다"
+
+msgid "Restarts the game with the same initial seed. This is primarily for debugging in reproducible runs; restart normally if you aren't doing any of that."
+msgstr "같은 처음 시드로 게임을 다시 시작합니다. 주로 재현 가능한 실행에서의 디버그용입니다. 그런 경우가 아니면 평소대로 다시 시작하세요."
+
+msgid "restart cancelled"
+msgstr "다시 시작 취소"
+
+msgid "initial seed copied to clipboard (click again quickly to restart with this seed)"
+msgstr "처음 시드를 클립보드에 복사했습니다(빨리 한 번 더 클릭하면 이 시드로 다시 시작)"
+
+msgid "the seed can't be changed here: set EMUERA_SEED=N before starting emuera-tty"
+msgstr "여기서는 시드를 바꿀 수 없습니다: emuera-tty 시작 전에 EMUERA_SEED=N을 설정하세요"
+
+msgid "no game folder known here"
+msgstr "여기서 알 수 있는 게임 폴더가 없습니다"
+
+msgid "the Translator is off: choose one to test it"
+msgstr "번역기가 꺼져 있습니다: 테스트하려면 하나를 고르세요"
+
+msgid "the Translator is file: no translator is used, so there is nothing to test"
+msgstr "번역기가 file입니다: 번역기를 쓰지 않으므로 테스트할 것이 없습니다"
+
+msgid "testing {what}…"
+msgstr "{what} 테스트 중…"
+
+msgid "translation cache cleared ({lines} lines): what is on screen is translated again"
+msgstr "번역 캐시를 지웠습니다({lines}줄): 화면의 내용을 다시 번역합니다"
+
+msgid "translation is off: no cache to clear"
+msgstr "번역이 꺼져 있습니다: 지울 캐시가 없습니다"
+
+msgid "picture cache cleared ({mb} MB freed)"
+msgstr "그림 캐시를 지웠습니다({mb} MB 해제)"
+
+msgid "from:to pairs of hex colours, comma separated (e.g. 01183c:111d3b turns AnonTW's time-stop navy into a softer blue; empty: none)"
+msgstr "쉼표로 구분한 16진 색 원래:새 쌍(예: 01183c:111d3b는 AnonTW 시간 정지의 남색을 부드러운 파란색으로. 비우면 없음)"
+
+msgid "Recolor"
+msgstr "색 바꾸기"
+
+msgid "recolouring off"
+msgstr "색 바꾸기 끔"
+
+msgid "no colour pairs understood in \"{value}\" (write from:to, e.g. 01183c:111d3b)"
+msgstr "\"{value}\"에서 알아볼 수 있는 색 쌍이 없습니다(원래:새 형식으로, 예: 01183c:111d3b)"
+
+msgid "1 colour recoloured (the game still sees its own colours)"
+msgstr "1가지 색을 바꿨습니다(게임에는 원래 색 그대로입니다)"
+
+msgid "{n} colours recoloured (the game still sees its own colours)"
+msgstr "{n}가지 색을 바꿨습니다(게임에는 원래 색 그대로입니다)"
+
+msgid "the game shows as it prints itself"
+msgstr "게임이 출력한 그대로"
+
+msgid "the Translator is file: no translator is used"
+msgstr "번역기가 file입니다: 번역기를 쓰지 않습니다"
+
+msgctxt "translating"
+msgid "the game"
+msgstr "게임"
+
+msgctxt "translating"
+msgid "dialog"
+msgstr "대사"
+
+msgid "translating {what} into {lang} from {files}, else with {engine}"
+msgstr "{what}을(를) {lang}(으)로 번역 중: {files}에서, 없으면 {engine}(으)로"
+
+msgid "translating {what} into {lang} with {engine}"
+msgstr "{what}을(를) {lang}(으)로 번역 중: {engine}(으)로"
+
+msgid "translating {what} into {lang} with {engine} (--translate-load: {files})"
+msgstr "{what}을(를) {lang}(으)로 번역 중: {engine}(으)로(--translate-load: {files})"
+
+msgid "translating {what} into {lang} from {files} (no translator)"
+msgstr "{what}을(를) {lang}(으)로 번역 중: {files}에서(번역기 없음)"
+
+msgid "the Translator is file, but no translation file was given: start with --translate-load (or --translate-storage) and a translation log"
+msgstr "번역기가 file이지만 번역 파일이 지정되지 않았습니다: --translate-load(또는 --translate-storage)와 번역 로그를 붙여 시작하세요"
+
+msgid "the Translator is file, but --translate-load gave nothing: {files}"
+msgstr "번역기가 file이지만 --translate-load에서 아무것도 읽지 못했습니다: {files}"
+
+msgid "last translation failed: {error}"
+msgstr "지난 번역 실패: {error}"
+
+msgid "the number the random generator started from (read-only); set EMUERA_SEED=N before starting for repeatable runs; RANDOMIZE / INITRAND in the game change it"
+msgstr "난수 생성기가 시작한 값(읽기 전용). 반복 가능한 실행에는 시작 전에 EMUERA_SEED=N을 설정하세요. 게임의 RANDOMIZE / INITRAND가 바꿉니다"
+
+msgid "the seed at startup (read-only); never changes even when the game calls RANDOMIZE or INITRAND"
+msgstr "시작 시의 시드(읽기 전용). 게임이 RANDOMIZE나 INITRAND를 불러도 바뀌지 않습니다"
+
+msgid "↑↓ choose  ←→ / Enter change  Esc close"
+msgstr "↑↓ 선택  ←→ / Enter 변경  Esc 닫기"
+
+msgid "emuera-tty settings"
+msgstr "emuera-tty 설정"
+
+msgid "memory"
+msgstr "메모리"
+
+msgid "translating {queued}, failed {failed}, cached {cached}"
+msgstr "번역 중 {queued}, 실패 {failed}, 캐시 {cached}"
+
+msgid "settings"
+msgstr "설정"
+
+msgid "working"
+msgstr "작업 중"
+
+msgid "can't write {file}: {error}"
+msgstr "{file}에 쓸 수 없습니다: {error}"
+
+msgid "Infinite loop detected"
+msgstr "무한 루프 감지"
+
+msgid "Confirm exit"
+msgstr "종료 확인"
+
+msgid "Exit anyway"
+msgstr "그래도 종료"
+
+msgid "Wait for the line to finish"
+msgstr "줄이 끝나기를 기다림"
+
+msgid "Now running line {line} of {file} (@{func}).\n{ms} ms have passed since the last input.\nStop the script? (unsaved progress is lost)"
+msgstr "{file}의 {line}번째 줄(@{func})을 실행 중입니다.\n마지막 입력 후 {ms}밀리초가 지났습니다.\n스크립트를 멈출까요? (저장하지 않은 진행은 사라집니다)"
+
+msgid "Are you sure? You may also wait for the line to finish (lines may occasionally freeze up)."
+msgstr "정말인가요? 줄이 끝나기를 기다릴 수도 있습니다(줄이 가끔 멈출 수 있습니다)."
+
+msgid "stopped by the player: a possible infinite loop"
+msgstr "플레이어가 멈춤: 무한 루프일 수 있음"

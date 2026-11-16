@@ -1,8 +1,10 @@
 emuera-tty's own menus and messages (the settings, launcher, save manager,
 prompts and its errors; never the game's text) can be translated without
-touching the code. Japanese, Simplified Chinese, Traditional Chinese and
-Korean have a catalogue waiting to be filled in; until a message is
-translated, it shows in English.
+touching the code. They are translated into Japanese, Simplified Chinese,
+Traditional Chinese and Korean (all but the `--help` text). The
+translations were written with an AI (Claude) and haven't been reviewed
+by native speakers, so corrections are welcome. A message nobody has
+translated yet shows in English.
 
 - **The files:** `i18n/emuera-tty.pot` lists every message (it is made from
   the source, so it is always complete); each language has its own

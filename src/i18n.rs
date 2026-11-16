@@ -901,9 +901,10 @@ msgstr "未確認"
         install("zh-Hans", "msgid \"Settings\"\nmsgstr \"设置\"\n");
         assert_eq!(t!("Settings"), "设置");
         assert_eq!(tc!("menu", "Open"), "Open");
-        // an empty catalogue (the shipped ones, for now) and English: English
+        // a shipped catalogue, and English
         set_language("ko");
-        assert_eq!(t!("Settings"), "Settings");
+        assert_eq!(t!("Settings"), "설정");
+        assert!(t!("Untranslated") == "Untranslated");
         set_language("en");
         assert_eq!(language(), "en");
         assert_eq!(t!("{n} saves", n = 3), "3 saves");
