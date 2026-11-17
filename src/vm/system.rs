@@ -89,6 +89,7 @@ impl Vm {
     pub fn run_state(&mut self, st: &str) -> VmResult<String> {
         // like Emuera, each system phase starts with SKIPDISP off
         self.con.skip_disp = false;
+        self.con.debug.phase = st.trim_start_matches('_').to_string();
         match st {
             "TITLE" => {
                 if self.call_opt("SYSTEM_TITLE")? {

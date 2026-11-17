@@ -165,12 +165,12 @@ impl Mcp {
                     text += &format!("\n--- printed to the game's console:\n{}", printed.trim_end());
                 }
                 if trace {
+                    if !con.debug.phase.is_empty() {
+                        text += &format!("\n--- game phase: {}", con.debug.phase);
+                    }
                     text += &format!("\n{}", self.status(con));
                 }
-                // a debug command's errors come back as its output: the
-                // ones the VM gives are marked like Emuera's messages
-                let is_error =
-                    !trace && (out.ends_with("命令は使用できません") || out.ends_with("解釈できない行です") || out.contains("Error") || out.contains("エラー"));
+                let is_error = !trace && con.debug.failed;
                 let text = text.trim_start_matches('\n');
                 self.tool_reply(&id, if text.is_empty() { "(done, no output)" } else { text }, is_error);
             }
@@ -225,6 +225,8 @@ impl Mcp {
                             let n = args.get("lines").and_then(|v| if let Json::Num(n) = v { Some(*n as usize) } else { None }).unwrap_or(40).max(1);
                             let from = con.lines.len().saturating_sub(n);
                             let mut text: String = con.lines[from..].iter().map(|l| Console::line_text(l) + "\n").collect();
+                            // (seen now: the next `input` answers with what follows)
+                            self.buf.clear();
                             text += &self.status(con);
                             self.tool_reply(&id, &text, false);
                         }
@@ -431,5 +433,5 @@ const TOOLS: &str = r#"[
 {"name":"input","description":"Answer the game's input and run until its next one; returns what was printed meanwhile, what it waits for next, and the buttons. For a number input give the number; a button's value clicks it; at a mouse/key input (INPUTMOUSEKEY) key:Enter, key:Esc, key:Up, key:F1 or key:CODE press keys.","inputSchema":{"type":"object","properties":{"value":{"type":"string","description":"what to type, or a button's value"},"stop_at_wait":{"type":"boolean","description":"stop at each WAIT instead of passing it (default false)"},"timeout":{"type":"boolean","description":"let a timed input run out instead of answering it"}},"required":["value"]}},
 {"name":"eval","description":"Evaluate an ERB expression in the game's current state and return its value: variables (FLAG:3, CFLAG:MASTER:10, NAME:TARGET, LOCAL@FUNC), arithmetic, built-in functions and the game's #FUNCTIONs.","inputSchema":{"type":"object","properties":{"expression":{"type":"string"}},"required":["expression"]}},
 {"name":"run","description":"Run one ERB statement now, as Emuera's debug console does: assignments (FLAG:3 = 5, STR:0 = text, NAME:1 '= \"Ann\"), CALL FUNC(args), PRINTL, ADDCHARA… Flow control, inputs and WAITs are refused. Returns what it printed.","inputSchema":{"type":"object","properties":{"statement":{"type":"string"}},"required":["statement"]}},
-{"name":"state","description":"Where the script is: the line running, the call stack (Emuera's debug window format), what the game waits for and the buttons.","inputSchema":{"type":"object","properties":{}}}
+{"name":"state","description":"Where the script is: the line running, the call stack (Emuera's debug window format; none at the engine's own SHOP/TRAIN menus), the game phase (TITLE, FIRST, SHOP, TRAIN…), what the game waits for and the buttons.","inputSchema":{"type":"object","properties":{}}}
 ]"#;

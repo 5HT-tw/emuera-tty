@@ -163,6 +163,10 @@ pub struct DebugView {
     pub log: String,
     /// commands entered in the console, oldest first
     pub history: Vec<String>,
+    /// the last debug command failed (its message is in `log`)
+    pub failed: bool,
+    /// the system phase running (TITLE, SHOP, TRAIN…), for `--mcp`
+    pub phase: String,
 }
 
 pub struct Console {

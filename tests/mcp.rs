@@ -95,11 +95,24 @@ fn tools_drive_the_game() {
 fn stop_at_wait_and_bad_requests() {
     let a = session(
         &game("wait", "@SYSTEM_TITLE\nPRINTL one\nWAIT\nPRINTL two\nWAIT\nPRINTL three\nINPUT\n"),
-        &[r#""method":"nope""#, &call("input", r#"{"value":"","stop_at_wait":true}"#), &call("input", r#"{"value":""}"#)],
+        &[
+            r#""method":"nope""#,
+            &call("input", r#"{"value":"","stop_at_wait":true}"#),
+            &call("input", r#"{"value":""}"#),
+            &call("eval", r#"{"expression":"NO_SUCH_THING"}"#),
+            &call("state", "{}"),
+            &call("screen", "{}"),
+            &call("input", r#"{"value":"5"}"#),
+        ],
     );
     assert!(a[1].contains(r#""code":-32601"#), "{}", a[1]);
     // (the game started at its first WAIT, which the first input answers)
     // stopping at the next WAIT, then running on to the INPUT
     assert!(a[2].contains("two") && a[2].contains("(WAIT)") && !a[2].contains("three"), "{}", a[2]);
     assert!(a[3].contains("three") && a[3].contains("(INPUT)") && !a[3].contains("WAIT passed"), "{}", a[3]);
+    // an error is flagged; state names the system phase
+    assert!(a[4].contains(r#""isError":true"#), "{}", a[4]);
+    assert!(a[5].contains("--- game phase: TITLE"), "{}", a[5]);
+    // what `screen` showed isn't repeated by the next input's answer
+    assert!(a[7].contains("--- waiting for") && !a[7].contains("three"), "{}", a[7]);
 }

@@ -84,12 +84,12 @@ Other options work alongside `--mcp`:
 
 | Tool | Arguments | What it does |
 |---|---|---|
-| `screen` | `lines` (default 40) | The last lines of the console, then what the game waits for and the live buttons |
+| `screen` | `lines` (default 40) | The last lines of the console, then what the game waits for and the live buttons. What it showed isn't repeated in the next `input`'s answer |
 | `buttons` | — | The buttons the current input accepts: each one's value and the text it shows |
 | `input` | `value`; `stop_at_wait`, `timeout` (optional) | Answers the input and runs until the next one. Returns everything printed meanwhile, then what the game waits for and its buttons |
 | `eval` | `expression` | The value of an ERB expression: `FLAG:3`, `CFLAG:MASTER:10`, `NAME:TARGET`, `LOCAL@FUNC`, arithmetic, built-in functions, the game's `#FUNCTION`s |
 | `run` | `statement` | Runs one ERB statement as Emuera's debug console does (`FLAG:3 = 5`, `CALL FUNC(1)`, `PRINTL text`, `ADDCHARA 5`), and returns what it printed |
-| `state` | — | The line running and the call stack (Emuera's debug window format, with Japanese labels), what the game waits for, and the buttons |
+| `state` | — | The line running and the call stack (Emuera's debug window format, with Japanese labels), the game's phase (`TITLE`, `FIRST`, `SHOP`, `TRAIN`…), what the game waits for, and the buttons. At an input of the engine's own menus (the SHOP loop's command input) no script function is running, so the trace says なし (none) and the phase tells where the game is |
 
 Answers end with a status block, for example:
 

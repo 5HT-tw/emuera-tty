@@ -113,7 +113,9 @@ impl Vm {
         }
         self.con.debug.history.push(com.to_string());
         self.debug_print(com, true);
-        if let Err(e) = self.debug_run(com, false) {
+        let r = self.debug_run(com, false);
+        self.con.debug.failed = r.is_err();
+        if let Err(e) = r {
             self.debug_print(&e, true);
         }
     }
