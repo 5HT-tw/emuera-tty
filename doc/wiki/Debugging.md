@@ -35,6 +35,9 @@ it starts, each in red followed by the line it is about, as Emuera does.
 
 ## The debug panel
 
+(For AI agents, `--mcp` gives the same watch, stack-trace and console
+commands as MCP tools: see [AI agents (MCP)](AI-Agents-MCP).)
+
 Emuera's debug window, for games run in debug mode (`--game-debug`, or
 *Restart in debug mode* in the settings). At any input, **Ctrl-D** (or
 `@DEBUG` typed at the input) opens it over the game; Esc or Ctrl-D closes

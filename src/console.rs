@@ -556,6 +556,43 @@ impl Console {
         out
     }
 
+    /// The live buttons in screen order, each with the text it shows (a
+    /// picture as `[img:NAME]`); one entry per value, its pieces joined.
+    pub fn button_labels(&self) -> Vec<(Value, String)> {
+        let start = self.lines.iter().rposition(|l| l.gen != self.gen && l.gen != self.valid_gen).map_or(0, |i| i + 1);
+        let mut out: Vec<(Value, String)> = Vec::new();
+        fn walk(segs: &[Seg], out: &mut Vec<(Value, String)>) {
+            for s in segs {
+                let (v, text) = match s {
+                    Seg::Text { button: Some(v), text, .. } => (v, text.clone()),
+                    Seg::Image { button: Some(v), name, .. } => (v, format!("[img:{}]", name)),
+                    Seg::Rect { button: Some(v), .. } => (v, "■".to_string()),
+                    Seg::Div { lines, .. } => {
+                        for l in lines {
+                            walk(&l.segs, out);
+                        }
+                        continue;
+                    }
+                    _ => continue,
+                };
+                if is_tip_area(v) {
+                    continue;
+                }
+                match out.iter_mut().find(|(o, _)| o == v) {
+                    Some((_, t)) => t.push_str(&text),
+                    None => out.push((v.clone(), text)),
+                }
+            }
+        }
+        for l in &self.lines[start..] {
+            walk(&l.segs, &mut out);
+        }
+        for (_, t) in out.iter_mut() {
+            *t = t.trim().to_string();
+        }
+        out
+    }
+
     fn collect_buttons(segs: &[Seg], out: &mut Vec<Value>) {
         for s in segs {
             match s {

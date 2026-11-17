@@ -33,6 +33,9 @@ thousands of random choices through them without errors. What it has
 - A game library with archives and `git pull` updates, a **game
   downloader** (the games of the eraGames wiki), a settings page, save
   management, and readable script errors with the call stack.
+- An **MCP server** (`--mcp`), so AI agents (Claude Code, Codex,
+  OpenCode…) can play a game for QA: read the screen and buttons, answer
+  inputs, evaluate expressions and change variables.
 - Menus and messages in English, Japanese, Simplified and Traditional
   Chinese, Korean or Spanish.
 - **Gamepads** on Linux, the **Steam Deck** included (see
@@ -100,7 +103,7 @@ for pictures and Japanese text, [pick a terminal](https://github.com/astartes-ga
 | [Translation](https://github.com/astartes-gaming/emuera-tty/wiki/Translation) | [Debugging](https://github.com/astartes-gaming/emuera-tty/wiki/Debugging) |
 | [Gamepads and the Steam Deck](https://github.com/astartes-gaming/emuera-tty/wiki/Gamepads-and-Steam-Deck) | [Development](https://github.com/astartes-gaming/emuera-tty/wiki/Development) |
 | [Terminals](https://github.com/astartes-gaming/emuera-tty/wiki/Terminals) | [Roadmap](https://github.com/astartes-gaming/emuera-tty/wiki/Roadmap) |
-| [Troubleshooting](https://github.com/astartes-gaming/emuera-tty/wiki/Troubleshooting) | |
+| [Troubleshooting](https://github.com/astartes-gaming/emuera-tty/wiki/Troubleshooting) | [AI agents (MCP)](https://github.com/astartes-gaming/emuera-tty/wiki/AI-Agents-MCP) |
 
 ## Development
 

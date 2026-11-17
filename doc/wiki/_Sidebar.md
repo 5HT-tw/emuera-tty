@@ -18,6 +18,7 @@
 - [Compatibility](Compatibility)
 - [Implemented](Implemented)
 - [Debugging](Debugging)
+- [AI agents (MCP)](AI-Agents-MCP)
 - [Development](Development)
 - [Translating emuera-tty](Translating-emuera-tty)
 - [Roadmap](Roadmap)

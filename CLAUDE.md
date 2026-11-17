@@ -176,6 +176,9 @@ with a very large stack.
   (text, buttons, images) to a scrollback; frontends lay it out and wrap.
   Buttons are live only for lines printed since the last input.
 - **Frontends (`frontend.rs` trait).** `Headless` (stdin/stdout),
+  `mcp::Mcp` (`--mcp`: an MCP server on stdin/stdout for AI agents; its
+  `eval` / `run` / `state` tools reach the VM as `DebugAction`s through
+  `InputResult::Debug` / `RawInput::Debug`; `tests/mcp.rs`),
   `tty::Tty` (full-screen TUI: layout, mouse, colour downgrade, Emuera's
   two-column width rules in `char_cells`; `tty/gamecfg.rs` is the copy of
   Emuera's settings window, `tty/saves.rs` the save manager), `retro.rs`

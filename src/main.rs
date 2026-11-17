@@ -34,6 +34,7 @@ mod lint;
 mod loadcheck;
 mod loader;
 mod macros;
+mod mcp;
 #[cfg(target_os = "linux")]
 mod mice;
 #[cfg(not(target_os = "linux"))]
@@ -67,6 +68,8 @@ struct Opts {
     /// --choose: open the picker even if a game is remembered
     choose: bool,
     headless: bool,
+    /// --mcp: the game as an MCP server on stdin/stdout (implies headless)
+    mcp: bool,
     gfx: String,
     strict: bool,
     check: bool,
@@ -124,6 +127,7 @@ fn usage_exit(code: i32) -> ! {
          \x20 --gfx auto|kitty|iterm|sixel|fb|none image backend (default auto)\n\
          \x20 --headless                       plain stdin/stdout mode (scripts, tests)\n\
          \x20 --echo                           echo inputs in headless mode\n\
+         \x20 --mcp                            serve the game to AI agents (Model Context Protocol on stdin/stdout)\n\
          \x20 --check                          parse the game and report errors only\n\
          \x20 --strict                         unknown commands are errors\n\
          \x20 --game-debug                    enable [IF_DEBUG] / ;#; lines\n\
@@ -170,7 +174,7 @@ fn usage_exit(code: i32) -> ! {
          \x20 a file of key=value lines; # comments; repeat keys allowed for translate-load\n\
          \x20 and translation-filter; booleans are set by presence (e.g. strict=1)\n\
          \x20 excluded: install, uninstall, clone, reset-data, saves, backup-saves,\n\
-         \x20 manual, headless, check")
+         \x20 manual, headless, mcp, check")
     );
     std::process::exit(code)
 }
@@ -180,7 +184,7 @@ fn usage() -> ! {
 }
 
 /// Keys that are not allowed in a launch flags file.
-const LAUNCH_FLAGS_EXCLUDE: &[&str] = &["install", "uninstall", "clone", "reset-data", "saves", "backup-saves", "manual", "headless", "check"];
+const LAUNCH_FLAGS_EXCLUDE: &[&str] = &["install", "uninstall", "clone", "reset-data", "saves", "backup-saves", "manual", "headless", "mcp", "check"];
 
 /// Parse a launch flags file and apply its contents to `o`.
 /// Returns true if the file was read successfully, false on error (with error printed).
@@ -280,6 +284,7 @@ fn parse_args() -> Opts {
         clone: None,
         choose: false,
         headless: false,
+        mcp: false,
         gfx: "auto".into(),
         strict: false,
         check: false,
@@ -331,6 +336,10 @@ fn parse_args() -> Opts {
         }
         match a.as_str() {
             "--headless" => o.headless = true,
+            "--mcp" => {
+                o.mcp = true;
+                o.headless = true;
+            }
             "--strict" => o.strict = true,
             "--check" => o.check = true,
             "--game-debug" => o.game_debug = true,
@@ -697,7 +706,9 @@ fn run(o: Opts) -> i32 {
     }
     let use_retro = !o.headless
         && (o.serial.is_some() || o.retro.is_some() || st.get("frontend") == "retro" || (st.get("frontend") != "ansi" && retro::wanted_for(&term_env)));
-    let fe: Box<dyn frontend::Frontend> = if o.headless {
+    let fe: Box<dyn frontend::Frontend> = if o.mcp {
+        Box::new(mcp::Mcp::new())
+    } else if o.headless {
         Box::new(frontend::Headless::new(o.echo))
     } else if use_retro {
         let port = match &o.serial {
@@ -750,6 +761,10 @@ fn run(o: Opts) -> i32 {
     let rename = csv.rename.clone();
     let mut vm = vm::Vm::new(prog, csv, res, fe, game.clone(), cfg.clone());
     // Emuera's -Debug: the debug panel (Ctrl-D) and DEBUGPRINT
+    // (--mcp: its eval / run / state go through the debug console)
+    if o.mcp && !o.game_debug {
+        vm.debug_start();
+    }
     if o.game_debug {
         vm.debug_start();
         // the load warnings, in the game's console as Emuera prints them

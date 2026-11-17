@@ -57,6 +57,8 @@ pub enum RawInput {
     Quit,
     /// an Emuera-Anchor hotkey for the VM
     Hotkey(Hotkey),
+    /// a debug request (`--mcp`): the VM runs it and asks again
+    Debug(DebugAction),
 }
 
 /// A typed character as a Windows key code (letters upper-case, Shift

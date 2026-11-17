@@ -248,6 +248,23 @@ once and the end of input quits.
 .B \-\-echo
 Echo the inputs in headless mode.
 .TP
+.B \-\-mcp
+Run the game as a Model Context Protocol server on stdin and stdout, for
+AI agent harnesses (Claude Code, Codex, OpenCode…). As in headless mode
+there is no screen or sound; the game stops at every input and the
+client answers it. Its tools are \fBscreen\fR (the recent lines),
+\fBbuttons\fR (the live buttons and their values), \fBinput\fR (answer
+the input and run to the next one; WAITs pass by themselves unless
+\fBstop_at_wait\fR is true; at INPUTMOUSEKEY a button's value clicks it
+and \fBkey:Enter\fR, \fBkey:Esc\fR, \fBkey:F1\fR… press keys),
+\fBeval\fR (an ERB expression's value), \fBrun\fR (one statement, as
+Emuera's debug console runs it) and \fBstate\fR (the line running and
+the call stack). Give it a copy of the game: it saves as usual, and
+\fBrun\fR can change anything. Example, for Claude Code:
+.B claude mcp add emuera \-\- emuera\-tty
+.I game
+.BR \-\-mcp .
+.TP
 .B \-\-check
 Load the game, compile every function, report parse errors (also, as in
 Emuera, statements a \fB#FUNCTION\fR may not use) and exit.
@@ -281,7 +298,7 @@ accumulate. Boolean keys (\fBstrict\fR, \fBgame-debug\fR, \fBvm-debug\fR,
 that set environment variables (\fBcolors\fR, \fBambiguous\fR,
 \fBlibretranslate\fR) do so when read from the file. Excluded keys (ignored):
 \fBinstall\fR, \fBuninstall\fR, \fBclone\fR, \fBreset-data\fR, \fBsaves\fR,
-\fBbackup-saves\fR, \fBmanual\fR, \fBheadless\fR, \fBcheck\fR.
+\fBbackup-saves\fR, \fBmanual\fR, \fBheadless\fR, \fBmcp\fR, \fBcheck\fR.
 .SS Interactive Debugger Commands
 When the debugger stops, a prompt \fB(emu-debug)> \fR appears.
 Commands accept an optional numeric argument for multi-step:

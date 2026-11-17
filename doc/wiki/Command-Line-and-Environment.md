@@ -11,6 +11,7 @@ emuera-tty [GAME_DIR | GIT_URL] [options]
 | `--gfx auto\|kitty\|iterm\|sixel\|fb\|none` | image backend (also `EMUERA_GFX`) |
 | `--check` | parse the game, list errors, exit |
 | `--headless` | plain stdin/stdout mode (scripts, tests); `--echo` shows typed input |
+| `--mcp` | serve the game to AI agents as an MCP server on stdin/stdout (see [AI agents (MCP)](AI-Agents-MCP)) |
 | `--strict` | unimplemented commands are errors instead of warnings |
 | `--game-debug` | enable `[IF_DEBUG]` blocks and `;#;` lines |
 | `--vm-debug` | enable interactive debugger (breakpoints, step, watches) |
@@ -55,7 +56,7 @@ accumulated.
 Keys that are **not allowed** in a launch flags file (they are ignored):
 
 `install`, `uninstall`, `clone`, `reset-data`, `saves`, `backup-saves`,
-`manual`, `headless`, `check`
+`manual`, `headless`, `mcp`, `check`
 
 All other command-line options (without the leading `--`) are accepted.
 Boolean flags (`strict`, `game-debug`, `vm-debug`, `echo`, `choose`) are

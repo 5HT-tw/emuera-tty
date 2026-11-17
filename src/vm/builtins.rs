@@ -1131,6 +1131,7 @@ impl Vm {
                     };
                     match r {
                         RawInput::Hotkey(h) => self.hotkey(h)?,
+                        RawInput::Debug(d) => self.debug_action(d),
                         r => break r,
                     }
                 };
@@ -1142,7 +1143,7 @@ impl Vm {
                 }
                 match r {
                     RawInput::Quit => return Err(Ctrl::Quit),
-                    RawInput::Timeout | RawInput::Hotkey(_) => self.set_global_i("RESULT", 0, 4),
+                    RawInput::Timeout | RawInput::Hotkey(_) | RawInput::Debug(_) => self.set_global_i("RESULT", 0, 4),
                     RawInput::Key { code, data } => {
                         self.set_global_i("RESULT", 0, 3);
                         self.set_global_i("RESULT", 1, code);
