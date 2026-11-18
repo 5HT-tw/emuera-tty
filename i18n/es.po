@@ -1261,3 +1261,12 @@ msgstr "¿Seguro? También puedes esperar a que termine la línea (a veces las l
 
 msgid "stopped by the player: a possible infinite loop"
 msgstr "detenido por el jugador: un posible bucle infinito"
+
+msgid "Tab completion for {shells} in {dir} (zsh: add {zdir} to fpath)."
+msgstr "Autocompletado con Tab para {shells} en {dir} (zsh: añade {zdir} a fpath)."
+
+msgid "Tab completion"
+msgstr "Autocompletar con Tab"
+
+msgid "at an input, Tab completes what is typed to a button's value (by its start or a word of the button's text) or an @ command; Tab again shows the next one"
+msgstr "al pedir una entrada, Tab completa lo escrito con el valor de un botón (por su comienzo o una palabra del texto del botón) o un comando @; otro Tab muestra el siguiente"

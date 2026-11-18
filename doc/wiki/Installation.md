@@ -126,6 +126,24 @@ emuera-tty --manual       # the manual (man emuera-tty works once installed)
 `share/man/man1` beside the program's folder (`~/.local/share/man/man1`),
 where `man` finds it.
 
+### Shell completion
+
+`--install` also installs Tab completion for emuera-tty's options, their
+values (`--gfx k` → `--gfx kitty`) and game folders. The scripts go in
+`share/` beside the program's folder:
+
+- **bash:** `~/.local/share/bash-completion/completions/emuera-tty`.
+  It loads by itself where the `bash-completion` package is installed.
+- **fish:** `~/.local/share/fish/vendor_completions.d/emuera-tty.fish`,
+  which fish loads by itself.
+- **zsh:** `~/.local/share/zsh/site-functions/_emuera-tty`. Add this to
+  `~/.zshrc`, before `compinit`:
+  `fpath=(~/.local/share/zsh/site-functions $fpath)`.
+
+Without installing, `emuera-tty --completions bash` (or `zsh`, `fish`)
+prints the script. For example, add this line to `~/.bashrc`:
+`source <(emuera-tty --completions bash)`.
+
 `--upgrade` keeps its own copy of the source in
 `~/.local/share/emuera-tty/src` and needs `git` and `cargo`. Settings live
 in `~/.config/emuera-tty/`; delete that folder (or use `--reset-data`) to

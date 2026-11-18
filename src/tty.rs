@@ -25,6 +25,7 @@ use std::io::{self, Write};
 use std::time::{Duration, Instant};
 use unicode_width::{UnicodeWidthChar, UnicodeWidthStr};
 
+mod complete;
 mod debugpanel;
 mod envvars;
 mod gamecfg;
@@ -718,6 +719,10 @@ pub struct Tty {
     pub wheel: usize,
     /// "Scroll to end on keyboard input": any key press while scrolled back jumps to the end
     scroll_end_on_key: bool,
+    /// the "Tab completion" setting: Tab completes the input box
+    pub tab_complete: bool,
+    /// where Tab completion is in its list of matches
+    completion: complete::Cycle,
     /// the "Backslash as ¥" setting: auto, on, off
     pub yen_mode: String,
     /// draw `\` in game text as ¥ on this screen (see `backslash_is_yen`)
@@ -1126,6 +1131,8 @@ impl Tty {
             recolor: Vec::new(),
             wheel: 3,
             scroll_end_on_key: false,
+            tab_complete: false,
+            completion: Default::default(),
             yen_mode: "auto".into(),
             yen: false,
             letters_mode: "auto".into(),
@@ -3550,6 +3557,7 @@ impl Tty {
                 self.wheel_chosen = true;
             }
             "scroll_end_on_key" => self.scroll_end_on_key = v == "on",
+            "tab_complete" => self.tab_complete = v == "on",
             "yen" => {
                 self.yen_mode = v.to_string();
                 self.redraw_all.set(true);
@@ -4702,6 +4710,15 @@ impl Frontend for Tty {
                     con.print_ex("[skip]", false);
                     con.newline();
                     return InputResult::Skip(String::new());
+                }
+                // "Tab completion": the box is completed to a button's value
+                // or an @ command; Tab again shows the next match
+                Key::Skip if self.tab_complete && !req.one => {
+                    let buttons: Vec<(String, String)> = con.button_labels().into_iter().map(|(v, l)| (v.to_string(), l)).collect();
+                    if let Some(s) = self.completion.next(self.line.text(), &buttons) {
+                        self.line.set(&s);
+                        redraw = true;
+                    }
                 }
                 // Emuera's macro keys (MainWindow): Fn puts its macro in
                 // the input box, Shift+Fn stores what is typed there; at a

@@ -27,6 +27,7 @@ where marked, apply to the running game:
 | Translate what | auto, dialog, all | characters' dialog, or all text; auto: all unless into English |
 | Sound | auto, on, off | PLAYSOUND / PLAYBGM; `auto`: not over SSH |
 | Wheel scrolls | 3, 1, 5, 10 | lines per wheel step |
+| Tab completion | off, on | at an input, Tab completes what is typed to a button's value (by the value's start or a word of the button's text) or an `@` command; Tab again shows the next match. Off by default; Tab at a WAIT skips messages either way |
 | Console mouse | auto, off | gpm / `/dev/input/mice` (next start) |
 | Display | auto, ansi, retro | `retro`: the ASCII terminfo frontend (next start) |
 | Target EE version | EEv56, EEv56-anontw, EEv57 | which Emuera-EE version to emulate for compatibility; `EEv56`: baseline (original emuera-tty behavior); `EEv56-anontw`: EEv56 plus AnonTW fixes from Shakes4cc (string >=/<= fix, CHKDATA version in RESULTS[1], encoding improvements); `EEv57`: official EEv57 (includes string operator fix, CHKDATA version, encoding improvements) |

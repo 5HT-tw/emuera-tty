@@ -138,6 +138,13 @@ pub const ITEMS: &[Item] = &[
     },
     Item { key: "wheel", label: n!("Wheel scrolls"), choices: &["3", "1", "5", "10"], live: true, help: n!("lines per mouse-wheel step") },
     Item {
+        key: "tab_complete",
+        label: n!("Tab completion"),
+        choices: &["off", "on"],
+        live: true,
+        help: n!("at an input, Tab completes what is typed to a button's value (by its start or a word of the button's text) or an @ command; Tab again shows the next one"),
+    },
+    Item {
         key: "scroll_end_on_key",
         label: n!("Scroll to end on keyboard input"),
         choices: &["off", "on"],

@@ -2689,6 +2689,26 @@ fn install_from(exe: &Path) -> Result<String, String> {
         Ok(None) => {}
         Err(e) => msg += &format!("\n{}", t!("(manual page not installed: {error})", error = e)),
     }
+    let mut shells = Vec::new();
+    for (shell, p) in crate::completions::install_paths(&dir) {
+        let ok =
+            p.parent().is_some_and(|d| std::fs::create_dir_all(d).is_ok()) && crate::completions::script(shell).is_some_and(|s| std::fs::write(&p, s).is_ok());
+        if ok {
+            shells.push(shell);
+        }
+    }
+    if !shells.is_empty() {
+        let share = dir.parent().map(|p| p.join("share")).unwrap_or_default();
+        msg += &format!(
+            "\n{}",
+            t!(
+                "Tab completion for {shells} in {dir} (zsh: add {zdir} to fpath).",
+                shells = shells.join(", "),
+                dir = share.display(),
+                zdir = share.join("zsh/site-functions").display()
+            )
+        );
+    }
     if !on_path {
         if cfg!(windows) {
             msg += &format!(
@@ -2758,6 +2778,11 @@ pub fn uninstall() -> Result<String, String> {
         Ok(()) => {
             if let Some(m) = dest.parent().and_then(man_path) {
                 let _ = std::fs::remove_file(m);
+            }
+            if let Some(bin) = dest.parent() {
+                for (_, p) in crate::completions::install_paths(bin) {
+                    let _ = std::fs::remove_file(p);
+                }
             }
             Ok(t!("Removed {file}.", file = dest.display()))
         }

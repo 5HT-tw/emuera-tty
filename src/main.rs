@@ -14,6 +14,7 @@ mod archive;
 mod ast;
 mod atomic64;
 mod clipboard;
+mod completions;
 mod config_names;
 mod console;
 mod csvdata;
@@ -169,6 +170,7 @@ fn usage_exit(code: i32) -> ! {
          \x20 --uninstall                      remove the installed copy\n\
          \x20 --reset-data                     forget settings and the game library; saves are kept\n\
          \x20 --manual                         the full manual (also: man emuera-tty once installed)\n\
+         \x20 --completions bash|zsh|fish      print a shell completion script (--install installs them)\n\
          \n\
          launch flags file (--launch-flags):\n\
          \x20 a file of key=value lines; # comments; repeat keys allowed for translate-load\n\
@@ -349,6 +351,19 @@ fn parse_args() -> Opts {
             "--launch-flags" => {
                 let path = it.next().unwrap_or_else(|| usage());
                 o.launch_flags.push(PathBuf::from(path));
+            }
+            "--completions" => {
+                let shell = it.next().unwrap_or_else(|| usage());
+                match completions::script(&shell) {
+                    Some(s) => {
+                        print!("{}", s);
+                        std::process::exit(0)
+                    }
+                    None => {
+                        eprintln!("emuera-tty: --completions bash, zsh or fish");
+                        std::process::exit(2)
+                    }
+                }
             }
             "--saves" => o.saves = Some("list"),
             "--backup-saves" => o.saves = Some("backup"),
@@ -735,6 +750,7 @@ fn run(o: Opts) -> i32 {
                 t.contrast = st.contrast_ratio();
                 t.set_recolor(&std::env::var("EMUERA_RECOLOR").unwrap_or_else(|_| st.get("recolor").to_string()));
                 t.wheel = st.get("wheel").parse().unwrap_or(3);
+                t.tab_complete = st.get("tab_complete") == "on";
                 // (else the game's スクロール行数 may set it)
                 t.wheel_chosen = st.is_set("wheel");
                 t.yen_mode = st.get("yen").to_string();

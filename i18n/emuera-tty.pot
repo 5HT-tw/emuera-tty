@@ -227,6 +227,7 @@ msgid ""
 "  --uninstall                      remove the installed copy\n"
 "  --reset-data                     forget settings and the game library; saves are kept\n"
 "  --manual                         the full manual (also: man emuera-tty once installed)\n"
+"  --completions bash|zsh|fish      print a shell completion script (--install installs them)\n"
 "\n"
 "launch flags file (--launch-flags):\n"
 "  a file of key=value lines; # comments; repeat keys allowed for translate-load\n"
@@ -722,6 +723,11 @@ msgstr ""
 
 #: src/picker.rs
 #, no-c-format
+msgid "Tab completion for {shells} in {dir} (zsh: add {zdir} to fpath)."
+msgstr ""
+
+#: src/picker.rs
+#, no-c-format
 msgid "{dir} is not on your PATH; add it with (then open a new terminal):"
 msgstr ""
 
@@ -966,6 +972,14 @@ msgstr ""
 
 #: src/settings.rs
 msgid "lines per mouse-wheel step"
+msgstr ""
+
+#: src/settings.rs
+msgid "Tab completion"
+msgstr ""
+
+#: src/settings.rs
+msgid "at an input, Tab completes what is typed to a button's value (by its start or a word of the button's text) or an @ command; Tab again shows the next one"
 msgstr ""
 
 #: src/settings.rs

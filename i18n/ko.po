@@ -1261,3 +1261,12 @@ msgstr "정말인가요? 줄이 끝나기를 기다릴 수도 있습니다(줄�
 
 msgid "stopped by the player: a possible infinite loop"
 msgstr "플레이어가 멈춤: 무한 루프일 수 있음"
+
+msgid "Tab completion for {shells} in {dir} (zsh: add {zdir} to fpath)."
+msgstr "{shells}의 Tab 자동 완성을 {dir}에 설치했습니다(zsh: fpath에 {zdir} 추가)."
+
+msgid "Tab completion"
+msgstr "Tab 자동 완성"
+
+msgid "at an input, Tab completes what is typed to a button's value (by its start or a word of the button's text) or an @ command; Tab again shows the next one"
+msgstr "입력할 때 Tab을 누르면 입력한 내용을 버튼의 값(값의 시작이나 버튼 글자의 단어로 찾음) 또는 @ 명령으로 완성합니다. Tab을 다시 누르면 다음 후보"

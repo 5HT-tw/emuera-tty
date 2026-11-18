@@ -1261,3 +1261,12 @@ msgstr "よろしいですか？ 行が終わるのを待つこともできま�
 
 msgid "stopped by the player: a possible infinite loop"
 msgstr "プレイヤーが止めました: 無限ループの可能性"
+
+msgid "Tab completion for {shells} in {dir} (zsh: add {zdir} to fpath)."
+msgstr "{shells} の Tab 補完を {dir} に入れました（zsh: fpath に {zdir} を追加）。"
+
+msgid "Tab completion"
+msgstr "Tab 補完"
+
+msgid "at an input, Tab completes what is typed to a button's value (by its start or a word of the button's text) or an @ command; Tab again shows the next one"
+msgstr "入力欄で Tab を押すと、入力中の文字をボタンの値（値の先頭かボタンの文字の単語で探す）か @ コマンドに補完します。もう一度 Tab で次の候補"

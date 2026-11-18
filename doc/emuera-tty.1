@@ -68,6 +68,12 @@ Continue where the game waits
 Continue and skip the text that follows until the game asks for a choice
 (Emuera's message skip). It never picks a choice; a left click does.
 .TP
+.B Tab
+At an input, with the \fBTab completion\fR setting on (off by default):
+complete what is typed to a button's value, found by the start of the
+value or a word of the button's text, or to an \fB@\fR command; Tab again
+shows the next match. The game sees only the input, as if typed.
+.TP
 .BR \(<- ", " \(-> ", " Home ", " End ", " Delete ", " Backspace
 Edit the line being typed.
 .TP
@@ -453,15 +459,30 @@ The LibreTranslate server (default 127.0.0.1:5000). Overrides
 .SS Setup
 .TP
 .B \-\-install
-Copy this program into a folder on your PATH, and this page into the
+Copy this program into a folder on your PATH, this page into the
 matching
-.IR share/man/man1 .
+.IR share/man/man1 ,
+and the shell completion scripts into
+.I share/bash\-completion/completions
+and
+.I share/fish/vendor_completions.d
+(found there by bash-completion and fish) and
+.I share/zsh/site\-functions
+(add it to zsh's
+.BR fpath ).
 .TP
 .B \-\-upgrade
 Fetch the latest source with git, build it with cargo and install it.
 .TP
 .B \-\-uninstall
-Remove the installed copy and this page.
+Remove the installed copy, this page and the completion scripts.
+.TP
+.BI \-\-completions " bash|zsh|fish"
+Print the shell's completion script for emuera-tty's options, their
+values and game folders, e.g.
+.B source <(emuera\-tty \-\-completions bash)
+in
+.IR ~/.bashrc .
 .TP
 .B \-\-reset\-data
 Forget emuera-tty's settings and game library. Saves are not touched.

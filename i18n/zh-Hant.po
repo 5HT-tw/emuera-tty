@@ -1261,3 +1261,12 @@ msgstr "確定嗎？你也可以等待該行結束（行偶爾會卡住）。"
 
 msgid "stopped by the player: a possible infinite loop"
 msgstr "被玩家停止：可能是無限迴圈"
+
+msgid "Tab completion for {shells} in {dir} (zsh: add {zdir} to fpath)."
+msgstr "已將 {shells} 的 Tab 補全裝到 {dir}（zsh：把 {zdir} 加入 fpath）。"
+
+msgid "Tab completion"
+msgstr "Tab 補全"
+
+msgid "at an input, Tab completes what is typed to a button's value (by its start or a word of the button's text) or an @ command; Tab again shows the next one"
+msgstr "在輸入處按 Tab，把已輸入的內容補全為按鈕的值（依值的開頭或按鈕文字中的詞尋找）或 @ 指令；再按 Tab 顯示下一個"

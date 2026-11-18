@@ -30,6 +30,7 @@ emuera-tty [GAME_DIR | GIT_URL] [options]
 | `--saves` / `--backup-saves` | list the game's saves / back them all up |
 | `--install` / `--upgrade` / `--uninstall` / `--reset-data` | see the guide |
 | `--manual` | the full manual page |
+| `--completions bash\|zsh\|fish` | print a shell completion script (`--install` installs them; see [Installation](Installation#shell-completion)) |
 
 `--colors`, `--ambiguous` and `--libretranslate` set the matching
 environment variable for the run, so they win over the variable and over

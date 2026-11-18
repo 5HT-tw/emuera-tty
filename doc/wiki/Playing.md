@@ -18,6 +18,11 @@ Emuera games are menus of numbered choices like `[100] Wake Up`.
   ↑ / ↓ go through your last 100 inputs, as in Emuera: typed ones and
   buttons clicked alike. One brought back is shown selected, so typing
   replaces it and ← / → edit it.
+- **Tab completion** (a setting, off by default): at an input, Tab
+  completes what you typed to a button's value. `1` gives `100`, `101`…
+  in turn, and `wak` gives the value of the *Wake Up* button. It also
+  completes `@` commands (`@re` → `@REBOOT`). The game only sees the
+  input, as if you had typed it.
 - **Macros**: one typed line can answer several questions, and F1…F12 keep lines for
   later; see [Macros](#macros) below.
 - **Scroll back** through earlier text: PgUp / PgDn, Ctrl+↑ / ↓ (or
