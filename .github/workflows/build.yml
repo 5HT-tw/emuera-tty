@@ -36,6 +36,31 @@ jobs:
       - name: Tests
         run: cargo test --release --no-fail-fast
 
+  # the Android app's engine library (src/android.rs) still compiles for both
+  # of its CPUs, and its file paths can't lead out of the games (the APK itself
+  # needs Google's toolchain: android/build.sh, by hand)
+  android:
+    name: android
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Add the targets
+        run: rustup target add aarch64-linux-android armv7-linux-androideabi
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: android
+      - name: Check the engine library
+        run: |
+          cargo check --release --lib --target aarch64-linux-android
+          cargo check --release --lib --target armv7-linux-androideabi
+      - name: Paths test
+        working-directory: android
+        run: |
+          curl -fsSLo /tmp/kotlin.zip https://github.com/JetBrains/kotlin/releases/download/v2.2.0/kotlin-compiler-2.2.0.zip
+          unzip -q /tmp/kotlin.zip -d /tmp
+          /tmp/kotlinc/bin/kotlinc -nowarn kotlin/Paths.kt tools/paths_test.kt -include-runtime -d /tmp/paths.jar
+          java -cp /tmp/paths.jar io.github.astartes_gaming.emuera.Paths_testKt
+
   build:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
