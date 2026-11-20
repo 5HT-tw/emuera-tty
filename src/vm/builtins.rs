@@ -1925,7 +1925,7 @@ impl Vm {
         } else if names("一行の高さ", "Line height", "LineHeight") {
             int(self.con.line_height as i64)
         } else if names("ウィンドウ幅", "Window width", "WindowX") {
-            int((self.con.width as f32 * self.con.font_size / 2.0) as i64)
+            int(((self.fe.window_cols().unwrap_or(self.con.width + 1) - 1) as f32 * self.con.font_size / 2.0) as i64)
         } else if names("PRINTCを並べる数", "Items per line for PRINTC", "PrintCPerLine") {
             int(self.con.printc_per_line as i64)
         } else if names("PRINTCの文字数", "Number of Item characters for PRINTC", "PrintCLength") {
@@ -4082,7 +4082,7 @@ impl Vm {
                 }
             }
             "GETDOINGFUNCTION" => s(self.frames.last().map(|f| f.func.name.to_string()).unwrap_or_default()),
-            "CLIENTWIDTH" => i(((self.con.width + 1) as f32 * self.con.font_size / 2.0) as i64),
+            "CLIENTWIDTH" => i((self.fe.window_cols().unwrap_or(self.con.width + 1) as f32 * self.con.font_size / 2.0) as i64),
             "CLIENTHEIGHT" => i((self.fe.rows() as f32 * self.con.line_height) as i64),
             "EXISTFILE" => {
                 let p = self.as_(a, 0, "")?;
@@ -4275,6 +4275,7 @@ impl Vm {
                     } else {
                         s.se_volume = v;
                     }
+                    s.volumes_changed();
                 }
                 i(0)
             }

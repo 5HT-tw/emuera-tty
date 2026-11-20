@@ -652,10 +652,12 @@ impl Vm {
 
     /// Read the game's settings again (changed on the settings page).
     pub fn reload_config(&mut self) {
-        self.cfg = std::sync::Arc::new(crate::emuconfig::Values::read(&self.game_dir));
+        let cfg = crate::emuconfig::Values::read(&self.game_dir);
+        let apply = cfg.after(&self.cfg);
+        self.cfg = std::sync::Arc::new(cfg);
         self.chara_no_target = self.cfg.bool("キャラクタ変数の引数を補完しない");
         self.compat_rand = self.cfg.bool("擬似変数RANDの仕様をeramakerに合わせる");
-        crate::emuconfig::load(&self.cfg, &mut self.con, &mut self.text_exts, &mut self.save_opts);
+        crate::emuconfig::load(&apply, &mut self.con, &mut self.text_exts, &mut self.save_opts);
     }
 
     /// Is `name` a `#DIM CONST` without indices, here (the function's own

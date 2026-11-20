@@ -1,10 +1,11 @@
-//! emuera-tty: run Emuera (ERB) games in a terminal.
-//!
-//! Startup: parse options, read CSVs (`csvdata`), parse every .ERH then
-//! .ERB file (`parser`), load image resources, pick a frontend (full-screen
-//! `tty` or `--headless`), read the game's config files, and hand over to
-//! the VM's system loop on a thread with a large stack (ERB code can
-//! recurse deeply, and each ERB call is a Rust call).
+// emuera-tty: run Emuera (ERB) games in a terminal.
+//
+// Startup: parse options, read CSVs (`csvdata`), parse every .ERH then
+// .ERB file (`parser`), load image resources, pick a frontend (full-screen
+// `tty` or `--headless`), read the game's config files, and hand over to
+// the VM's system loop on a thread with a large stack (ERB code can
+// recurse deeply, and each ERB call is a Rust call).
+// (Plain comments: lib.rs include!s this file, where inner docs aren't allowed.)
 
 // first: its `t!` / `tc!` macros are used by the modules below
 #[macro_use]
@@ -281,7 +282,14 @@ fn parse_launch_flags_inner(o: &mut Opts, path: &str, visited: &mut std::collect
 
 /// Parse `std::env::args` (exits with usage on unknown options).
 fn parse_args() -> Opts {
-    let mut o = Opts {
+    let mut o = default_opts();
+    parse_args_into(&mut o);
+    o
+}
+
+/// The options when none are given.
+fn default_opts() -> Opts {
+    Opts {
         game: None,
         clone: None,
         choose: false,
@@ -308,7 +316,10 @@ fn parse_args() -> Opts {
         colors: None,
         ambiguous: None,
         libretranslate: None,
-    };
+    }
+}
+
+fn parse_args_into(o: &mut Opts) {
     let mut storage: Option<PathBuf> = None;
     let mut it = std::env::args().skip(1);
     while let Some(a) = it.next() {
@@ -429,7 +440,7 @@ fn parse_args() -> Opts {
     // Process launch flags files in order (later files win over earlier)
     let launch_flags = o.launch_flags.to_vec();
     for path in launch_flags {
-        parse_launch_flags(&mut o, &path.to_string_lossy());
+        parse_launch_flags(o, &path.to_string_lossy());
     }
     // Apply launch flags file values as env vars (they win over saved settings)
     if let Some(c) = &o.colors {
@@ -452,7 +463,6 @@ fn parse_args() -> Opts {
     if !o.vm_debug {
         o.vm_debug = std::env::var("EMUERA_VM_DEBUG").is_ok();
     }
-    o
 }
 
 /// Read and parse the game's ERH / ERB files (on all cores): the program
@@ -721,7 +731,10 @@ fn run(o: Opts) -> i32 {
     }
     let use_retro = !o.headless
         && (o.serial.is_some() || o.retro.is_some() || st.get("frontend") == "retro" || (st.get("frontend") != "ansi" && retro::wanted_for(&term_env)));
-    let fe: Box<dyn frontend::Frontend> = if o.mcp {
+    let external = frontend::EXTERNAL.lock().unwrap().take();
+    let fe: Box<dyn frontend::Frontend> = if let Some(fe) = external {
+        fe
+    } else if o.mcp {
         Box::new(mcp::Mcp::new())
     } else if o.headless {
         Box::new(frontend::Headless::new(o.echo))
@@ -803,13 +816,13 @@ fn run(o: Opts) -> i32 {
         // (font_size/2 px) that fit in its drawable width, the window less
         // max(2, font_size/6) px (Config.DrawableWidth, getStBar: 940 px at
         // 16 is 117, which eratohoreverse's title checks for)
-        if o.headless {
+        if o.headless || cfg!(target_os = "android") {
             let fs = vm.con.font_size;
             let shift = ((fs as i64) / 6).max(2) as f32;
             let n = ((px - shift) / (fs / 2.0).max(1.0)) as usize;
             // (cols less one is the width, as on a terminal)
             vm.fe.set_cols(n + 1);
-            vm.con.width = n.max(20);
+            vm.con.width = vm.fe.cols().saturating_sub(1).max(20);
         }
     }
     vm.strict = o.strict;

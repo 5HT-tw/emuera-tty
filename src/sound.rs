@@ -11,6 +11,9 @@
 //! MIDI files go to FluidSynth, with the game's `soundfont.sf2` if it has
 //! one. Games made for Emuera-Anchor with eraMidi (eratohoReverse) get its
 //! music the way eraMidi finds it: see [`eramidi_song`].
+//!
+//! Android has no such programs: its app plays them all with MediaPlayer
+//! (`GameAudio.kt`), which can change the volume of what's playing.
 
 use std::path::{Path, PathBuf};
 use std::process::{Child, Command, Stdio};
@@ -246,7 +249,7 @@ pub struct Sound {
 impl Sound {
     /// None when the system has no player at all.
     pub fn new(player: Option<Player>, midi: Option<Player>) -> Option<Sound> {
-        if player.is_none() && midi.is_none() {
+        if player.is_none() && midi.is_none() && !cfg!(target_os = "android") {
             return None;
         }
         Some(Sound { player, midi, se: (0..10).map(|_| None).collect(), bgm: None, bgm_file: None, on: true, se_volume: 100, bgm_volume: 100 })
@@ -282,6 +285,7 @@ impl Sound {
     }
 
     /// PLAYSOUND: play `f` `times` times on a free channel.
+    #[cfg(not(target_os = "android"))]
     pub fn play_se(&mut self, f: &Path, times: u32) {
         let Some(player) = self.player_for(f).filter(|_| self.on && self.se_volume > 0).cloned() else { return };
         let k = self.se.iter().position(|v| v.as_ref().is_none_or(|v| !v.playing())).unwrap_or(0);
@@ -292,6 +296,7 @@ impl Sound {
     }
 
     /// STOPSOUND
+    #[cfg(not(target_os = "android"))]
     pub fn stop_se(&mut self) {
         for v in self.se.iter_mut().filter_map(|v| v.take()) {
             v.stop();
@@ -299,6 +304,7 @@ impl Sound {
     }
 
     /// PLAYBGM: `f`, looped until STOPBGM or the next PLAYBGM.
+    #[cfg(not(target_os = "android"))]
     pub fn play_bgm(&mut self, f: &Path) {
         self.stop_bgm();
         self.bgm_file = Some(f.to_path_buf());
@@ -306,11 +312,47 @@ impl Sound {
         self.bgm = Some(Voice::start(&player, f, self.bgm_volume, None));
     }
 
+    #[cfg(not(target_os = "android"))]
     pub fn stop_bgm(&mut self) {
         self.bgm_file = None;
         if let Some(v) = self.bgm.take() {
             v.stop();
         }
+    }
+
+    /// SETSOUNDVOLUME / SETBGMVOLUME: players can't be turned down while they play.
+    #[cfg(not(target_os = "android"))]
+    pub fn volumes_changed(&self) {}
+}
+
+#[cfg(target_os = "android")]
+impl Sound {
+    pub fn play_se(&mut self, f: &Path, times: u32) {
+        if self.on && self.se_volume > 0 {
+            crate::android::play_audio(f, self.se_volume, times.max(1));
+        }
+    }
+
+    pub fn stop_se(&mut self) {
+        crate::android::stop_audio(false);
+    }
+
+    pub fn play_bgm(&mut self, f: &Path) {
+        self.stop_bgm();
+        self.bgm_file = Some(f.to_path_buf());
+        // (even at volume 0: it can be turned up while it plays)
+        if self.on {
+            crate::android::play_audio(f, self.bgm_volume, 0);
+        }
+    }
+
+    pub fn stop_bgm(&mut self) {
+        self.bgm_file = None;
+        crate::android::stop_audio(true);
+    }
+
+    pub fn volumes_changed(&self) {
+        crate::android::set_audio_volumes(self.se_volume, self.bgm_volume);
     }
 }
 
