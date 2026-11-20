@@ -117,6 +117,24 @@ pub fn trim_memory() {
     unsafe {
         libc::malloc_trim(0);
     }
+    // bionic's equivalent. Looked up at run time: mallopt only exists from Android 8.
+    #[cfg(target_os = "android")]
+    {
+        type Mallopt = unsafe extern "C" fn(i32, i32) -> i32;
+        static MALLOPT: std::sync::OnceLock<Option<Mallopt>> = std::sync::OnceLock::new();
+        let f = MALLOPT.get_or_init(|| unsafe {
+            let p = libc::dlsym(libc::RTLD_DEFAULT, c"mallopt".as_ptr());
+            (!p.is_null()).then(|| std::mem::transmute::<*mut libc::c_void, Mallopt>(p))
+        });
+        if let Some(f) = f {
+            // M_PURGE_ALL (Android 14+) returns more than M_PURGE, but older systems reject it
+            unsafe {
+                if f(-104, 0) == 0 {
+                    f(-101, 0);
+                }
+            }
+        }
+    }
 }
 
 /// A memory budget in bytes: `env` (in MB) if set, else the machine's

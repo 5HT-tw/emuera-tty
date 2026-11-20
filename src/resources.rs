@@ -88,6 +88,10 @@ pub struct Resources {
     file_tick: u64,
     /// the bytes whole decoded files may take
     file_budget: usize,
+    /// when each entry of `cropped` was last used (`file_tick`), and the bytes they may
+    /// take (`EMUERA_CUTS_MB`; 0: no limit, the default)
+    cut_used: HashMap<String, u64>,
+    cut_budget: usize,
     /// files being decoded in the background (see `start_warmup`)
     warm: Option<Warmup>,
     /// the files this session decoded, for the next warm-up
@@ -549,8 +553,8 @@ fn font_for(name: &str) -> Option<std::sync::Arc<ab_glyph::FontVec>> {
     found
 }
 
-/// Without fontconfig (Windows, macOS): the usual Japanese system fonts,
-/// the requested one first.
+/// Without fontconfig (Windows, macOS, Android): the usual Japanese system
+/// fonts, the requested one first.
 fn system_font_file(name: &str) -> Option<ab_glyph::FontVec> {
     let n = name.to_lowercase().replace([' ', '　'], "");
     let mut c: Vec<(PathBuf, u32)> = Vec::new();
@@ -584,6 +588,11 @@ fn system_font_file(name: &str) -> Option<ab_glyph::FontVec> {
         ] {
             c.push((f.into(), 0));
         }
+    } else if cfg!(target_os = "android") {
+        // shortcut: this reads the whole 32 MB file into memory, for games that draw text into pictures; map it instead if that matters on small phones.
+        // (the first face is the Japanese one)
+        c.push(("/system/fonts/NotoSansCJK-Regular.ttc".into(), 0));
+        c.push(("/system/fonts/Roboto-Regular.ttf".into(), 0));
     }
     c.into_iter().find_map(|(f, i)| ab_glyph::FontVec::try_from_vec_and_index(std::fs::read(f).ok()?, i).ok())
 }
@@ -616,7 +625,8 @@ pub fn text_size(text: &str, name: &str, size: f32) -> (i64, i64) {
     let sf = font.as_scaled(em_scale(&*font, size));
     let w: f32 =
         if fixed_pitch(name) { text.chars().map(|c| fixed_advance(c, size)).sum() } else { text.chars().map(|c| sf.h_advance(font.glyph_id(c))).sum() };
-    (w.ceil() as i64, sf.height().ceil() as i64)
+    let h = if fixed_pitch(name) && cfg!(target_os = "android") { size } else { sf.height() };
+    (w.ceil() as i64, h.ceil() as i64)
 }
 
 /// The scale that makes the em square `size` pixels (GDI+'s font size).
@@ -641,23 +651,31 @@ pub fn draw_text(img: &mut RgbaImage, text: &str, (x, y): (i32, i32), name: &str
     let scale = em_scale(&*font, size);
     let sf = font.as_scaled(scale);
     let mut pen_x = x as f32;
-    let base = y as f32 + sf.ascent();
-    let (by, bq) = (base.floor(), ((base - base.floor()) * 4.0).round().min(3.0));
     let fixed = fixed_pitch(name);
+    // (Android's one Japanese font has a much taller line than MS Gothic, which games measure
+    // by: its text would sit low, and fall off the bottom of a picture)
+    let ascent = if fixed && cfg!(target_os = "android") { size * 0.86 } else { sf.ascent() };
+    let base = y as f32 + ascent;
+    let (by, bq) = (base.floor(), ((base - base.floor()) * 4.0).round().min(3.0));
     for ch in text.chars() {
         let id = font.glyph_id(ch);
-        // fixed pitch: the game's grid, each glyph centred in its cell
-        let (glyph_x, adv) = if fixed {
-            let adv = fixed_advance(ch, size);
-            (pen_x + (adv - sf.h_advance(id)) / 2.0, adv)
+        // fixed pitch: the game's grid, each glyph centred in its cell, or squeezed into it
+        // if wider (a proportional font's `m`: Android has no Japanese fixed-pitch font)
+        let (glyph_x, adv, glyph_scale) = if fixed {
+            let (adv, natural) = (fixed_advance(ch, size), sf.h_advance(id));
+            if natural > adv {
+                (pen_x, adv, ab_glyph::PxScale { x: scale.x * adv / natural, y: scale.y })
+            } else {
+                (pen_x + (adv - natural) / 2.0, adv, scale)
+            }
         } else {
-            (pen_x, sf.h_advance(id))
+            (pen_x, sf.h_advance(id), scale)
         };
         let (px0, xq) = (glyph_x.floor(), ((glyph_x - glyph_x.floor()) * 4.0).round().min(3.0));
         pen_x += adv;
         let key = (name.to_string(), size.to_bits(), id.0, xq as u8, bq as u8);
         let mask = GLYPHS.with(|g| g.borrow().get(&key).cloned()).or_else(|| {
-            let g = id.with_scale_and_position(scale, ab_glyph::point(xq / 4.0, bq / 4.0));
+            let g = id.with_scale_and_position(glyph_scale, ab_glyph::point(xq / 4.0, bq / 4.0));
             let o = font.outline_glyph(g)?;
             let b = o.px_bounds();
             let (w, h) = (b.width().max(0.0) as u32, b.height().max(0.0) as u32);
@@ -903,7 +921,9 @@ pub fn blit_part(dst: &mut RgbaImage, part: &RgbaImage, (dx, dy, dw, dh): (i32, 
 impl Resources {
     /// Read every sprite CSV under `dir` (images are not decoded yet).
     pub fn load(dir: Option<&Path>) -> Resources {
-        let mut r = Resources { gbuf_budget: gbuf_budget(), file_budget: crate::sys::memory_budget("EMUERA_PICTURES_MB", 8), ..Resources::default() };
+        let cut_budget = std::env::var("EMUERA_CUTS_MB").ok().and_then(|v| v.trim().parse::<usize>().ok()).map_or(0, |mb| mb << 20);
+        let mut r =
+            Resources { gbuf_budget: gbuf_budget(), file_budget: crate::sys::memory_budget("EMUERA_PICTURES_MB", 8), cut_budget, ..Resources::default() };
         let Some(dir) = dir else { return r };
         for csv in walk(dir, &["csv"]) {
             let base = csv.parent().unwrap_or(dir).to_path_buf();
@@ -1464,7 +1484,10 @@ impl Resources {
         }
         let key = name.to_uppercase();
         if let Some(v) = self.cropped.get(&key) {
-            return v.clone();
+            let v = v.clone();
+            self.file_tick += 1;
+            self.cut_used.insert(key, self.file_tick);
+            return v;
         }
         if let Some(&(gid, x, y, w, h)) = self.g_sprites.get(&key) {
             // the buffer's rectangle as it is now (cached until it changes)
@@ -1472,7 +1495,7 @@ impl Resources {
             let mut out = RgbaImage::new(w.unsigned_abs().max(1), h.unsigned_abs().max(1));
             draw_image(&mut out, &g.img(), (0, 0, w.abs().max(1), h.abs().max(1)), (x, y, w.abs(), h.abs()), None);
             let out = Some(Rc::new(out));
-            self.cropped.insert(key, out.clone());
+            self.keep_cut(key, out.clone());
             return out;
         }
         let sp = self.sprites.get(&key)?.clone();
@@ -1487,8 +1510,33 @@ impl Resources {
                 Rc::new(image::imageops::crop_imm(&*img, x, y, w, h).to_image())
             }
         });
-        self.cropped.insert(key, out.clone());
+        self.keep_cut(key, out.clone());
         out
+    }
+
+    /// Remembers a cut sprite, within `cut_budget` (the least recently used go first). It's
+    /// only a cache: a sprite that went is cut again when next needed.
+    fn keep_cut(&mut self, key: String, out: Option<Rc<RgbaImage>>) {
+        self.file_tick += 1;
+        self.cut_used.insert(key.clone(), self.file_tick);
+        self.cropped.insert(key.clone(), out);
+        if self.cut_budget == 0 {
+            return;
+        }
+        let size = |i: &Option<Rc<RgbaImage>>| i.as_ref().map_or(0, |i| i.as_raw().len());
+        let mut total: usize = self.cropped.values().map(size).sum();
+        if total <= self.cut_budget {
+            return;
+        }
+        let mut lru: Vec<(u64, String)> = self.cut_used.iter().filter(|(k, _)| **k != key).map(|(k, t)| (*t, k.clone())).collect();
+        lru.sort_unstable();
+        for (_, k) in lru {
+            if total <= self.cut_budget {
+                break;
+            }
+            total -= self.cropped.remove(&k).as_ref().map_or(0, size);
+            self.cut_used.remove(&k);
+        }
     }
 
     pub fn sprite_size(&mut self, name: &str) -> Option<(u32, u32)> {

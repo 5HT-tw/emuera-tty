@@ -5,7 +5,7 @@
 //! `CSV/` and `ERB/`, possibly a few levels down) is played. A marker file
 //! records the archive's size and modification time; when the archive
 //! changes (a newer release under the same name) it is extracted again and
-//! the player's `sav/` folder is carried over to the new copy.
+//! the player's saves are carried over to the new copy ([`keep_saves`]).
 //!
 //! zip, tar and tar.gz are read in-process. Entries are written one by one
 //! with their paths checked: absolute paths and `..` are skipped, as are
@@ -95,12 +95,8 @@ pub fn extract_game(archive: &Path, progress: &mut dyn FnMut(usize)) -> Result<P
         }
     };
     // keep the player's saves from an earlier extraction
-    if let Some(old_sav) = find_game(&dest).map(|g| g.join("sav")).filter(|s| s.is_dir()) {
-        let new_sav = game.join("sav");
-        if new_sav.exists() {
-            let _ = fs::rename(&new_sav, game.join("sav.from-archive"));
-        }
-        fs::rename(&old_sav, &new_sav).map_err(|e| format!("keeping saves {}: {}", old_sav.display(), e))?;
+    if let Some(old) = find_game(&dest) {
+        keep_saves(&old, &game)?;
     }
     let rel = game.strip_prefix(&tmp).unwrap_or(Path::new("")).to_path_buf();
     if dest.exists() {
@@ -109,6 +105,123 @@ pub fn extract_game(archive: &Path, progress: &mut dyn FnMut(usize)) -> Result<P
     fs::rename(&tmp, &dest).map_err(|e| format!("{}: {}", dest.display(), e))?;
     let _ = fs::write(dest.join(MARKER), &stamp);
     Ok(dest.join(rel))
+}
+
+/// A save by its name, in the game's own folder: `Vm::save_dir` is that folder unless the
+/// game's config turns on the sav folder. saveNN.sav, global.sav, SAVETEXT's txtNN.txt and
+/// GSAVE's imgNNNN.png.
+fn is_root_save(name: &str) -> bool {
+    let name = name.to_ascii_lowercase();
+    let numbered = |prefix: &str, ext: &str| {
+        name.strip_prefix(prefix).and_then(|n| n.strip_suffix(ext)).is_some_and(|n| !n.is_empty() && n.bytes().all(|b| b.is_ascii_digit()))
+    };
+    name.ends_with(".sav") || numbered("txt", ".txt") || numbered("img", ".png")
+}
+
+/// The player's files in a game's old copy, each with its place in the new one. `dat/` also
+/// holds the game's own data (AnonTW's XML files), so only SAVECHARA's files are taken from it.
+// shortcut: SAVETEXT with a file name can write anywhere in the game and looks like the game's own files, so those stay behind; carry them too if a game turns out to need it.
+fn save_moves(old: &Path, new: &Path) -> io::Result<Vec<(PathBuf, PathBuf)>> {
+    let mut moves = vec![];
+    if old.join("sav").is_dir() {
+        moves.push((old.join("sav"), new.join("sav")));
+    }
+    let mut add = |dir: &str, is_save: fn(&str) -> bool| -> io::Result<()> {
+        if old.join(dir).is_dir() {
+            for e in fs::read_dir(old.join(dir))? {
+                let e = e?;
+                if e.file_type()?.is_file() && is_save(&e.file_name().to_string_lossy()) {
+                    moves.push((e.path(), new.join(dir).join(e.file_name())));
+                }
+            }
+        }
+        Ok(())
+    };
+    add("", is_root_save)?;
+    add("dat", |n| n.starts_with("chara_") && n.ends_with(".dat"))?;
+    Ok(moves)
+}
+
+/// Moves one save into the new copy. Whatever is there came with the archive: it's kept aside.
+fn move_save(from: &Path, to: &Path) -> io::Result<()> {
+    if let Some(d) = to.parent() {
+        fs::create_dir_all(d)?;
+    }
+    if to.exists() {
+        let mut aside = to.as_os_str().to_owned();
+        aside.push(".from-archive");
+        let _ = fs::remove_dir_all(&aside);
+        fs::rename(to, &aside)?;
+    }
+    fs::rename(from, to)
+}
+
+/// Carries the player's saves from a game's old copy over to its new one. It can run again
+/// over what a run that died left behind: whatever has moved is no longer in `old`.
+pub fn keep_saves(old: &Path, new: &Path) -> Result<(), String> {
+    let moves = save_moves(old, new).map_err(|e| format!("keeping saves {}: {}", old.display(), e))?;
+    for (i, (from, to)) in moves.iter().enumerate() {
+        if let Err(e) = move_save(from, to) {
+            // the new copy may be about to be thrown away: saves mustn't stay in it
+            for (from, to) in &moves[..i] {
+                let _ = fs::rename(to, from);
+            }
+            return Err(format!("keeping saves {}: {}", from.display(), e));
+        }
+    }
+    Ok(())
+}
+
+/// Moves the game found in `tmp` to `games/name`, and carries over the player's saves if
+/// the game was there before. Only touches the old copy once the new one is in place,
+/// and `.old-` folders are what `recover_imports` looks for if the app dies halfway.
+#[cfg(any(target_os = "android", test))]
+pub fn finish_import(tmp: &Path, games: &Path, name: &str) -> Result<(), String> {
+    let game = find_game(tmp).ok_or("no game here: expected a folder holding CSV and ERB folders")?;
+    let dest = games.join(name);
+    let old = games.join(format!(".old-{}", name));
+    let had_old = dest.exists();
+    if had_old {
+        // a failed import may have left saves here: they go forward before this is deleted
+        if old.exists() {
+            keep_saves(&old, &dest)?;
+        }
+        let _ = fs::remove_dir_all(&old);
+        fs::rename(&dest, &old).map_err(|e| e.to_string())?;
+    }
+    if let Err(e) = fs::rename(&game, &dest) {
+        if had_old {
+            let _ = fs::rename(&old, &dest);
+        }
+        return Err(e.to_string());
+    }
+    if had_old {
+        keep_saves(&old, &dest)?;
+        let _ = fs::remove_dir_all(&old);
+    }
+    let _ = fs::remove_dir_all(tmp);
+    Ok(())
+}
+
+/// Cleans up after an import the app didn't live through. Nothing here may lose saves: an
+/// `.old-` folder may hold the only copy, so it goes away only once they're safe.
+#[cfg(any(target_os = "android", test))]
+pub fn recover_imports(games: &Path) {
+    let Ok(rd) = fs::read_dir(games) else { return };
+    for e in rd.flatten() {
+        let n = e.file_name().to_string_lossy().to_string();
+        if n.starts_with(".import-") {
+            let _ = fs::remove_dir_all(e.path());
+        } else if let Some(name) = n.strip_prefix(".old-") {
+            let dest = games.join(name);
+            if !dest.exists() {
+                // died between the two renames: the old game is still the game
+                let _ = fs::rename(e.path(), &dest);
+            } else if keep_saves(&e.path(), &dest).is_ok() {
+                let _ = fs::remove_dir_all(e.path());
+            }
+        }
+    }
 }
 
 /// Decode an entry name: UTF-8, else Shift_JIS.
@@ -155,6 +268,18 @@ fn unpack(archive: &Path, to: &Path, progress: &mut dyn FnMut(usize)) -> Result<
         Some(".tar") => untar(io::BufReader::new(open()?), to, progress),
         Some(".tar.gz") | Some(".tgz") => untar(flate2::read::MultiGzDecoder::new(io::BufReader::new(open()?)), to, progress),
         _ => external(archive, to),
+    }
+}
+
+/// Unpacks an already opened archive of a type read in-process (`suffix` as from
+/// [`suffix`]): the Android app gets a file descriptor from the system, not a path.
+#[cfg(target_os = "android")]
+pub fn unpack_file(f: fs::File, suffix: &str, to: &Path, progress: &mut dyn FnMut(usize)) -> Result<(), String> {
+    match suffix {
+        ".zip" => unzip(f, to, progress),
+        ".tar" => untar(io::BufReader::new(f), to, progress),
+        ".tar.gz" | ".tgz" => untar(flate2::read::MultiGzDecoder::new(io::BufReader::new(f)), to, progress),
+        other => Err(format!("{} archives can't be read here", other)),
     }
 }
 
@@ -272,5 +397,128 @@ mod tests {
         let (raw, _, _) = encoding_rs::SHIFT_JIS.encode("口上/霊夢.ERB");
         assert_eq!(decode_name(&raw), "口上/霊夢.ERB");
         assert_eq!(decode_name("ok.txt".as_bytes()), "ok.txt");
+    }
+
+    fn tmp(tag: &str) -> PathBuf {
+        let d = std::env::temp_dir().join(format!("emuera-archive-{}-{}", tag, std::process::id()));
+        let _ = fs::remove_dir_all(&d);
+        fs::create_dir_all(&d).unwrap();
+        d
+    }
+
+    fn put(root: &Path, files: &[(&str, &str)]) {
+        for (p, text) in files {
+            let p = root.join(p);
+            fs::create_dir_all(p.parent().unwrap()).unwrap();
+            fs::write(p, text).unwrap();
+        }
+    }
+
+    fn read(root: &Path, p: &str) -> String {
+        fs::read_to_string(root.join(p)).unwrap_or_else(|_| format!("{} is missing", p))
+    }
+
+    const GAME: &[(&str, &str)] = &[("CSV/A.CSV", ""), ("ERB/A.ERB", "")];
+
+    #[test]
+    fn reimport_keeps_saves_outside_the_sav_folder() {
+        let d = tmp("root");
+        let (games, g, new) = (d.join("games"), d.join("games/g"), d.join("new"));
+        let saves = ["save00.sav", "global.sav", "txt00.txt", "img0001.png", "dat/chara_a.dat"];
+        put(&g, GAME);
+        put(&g, &[("ERB/OLD.ERB", "old"), ("README.txt", "old"), ("dat/schema.xml", "old")]);
+        put(&g, &saves.map(|f| (f, "mine")));
+        put(&new, GAME);
+        put(&new, &[("dat/schema.xml", "new")]);
+        finish_import(&new, &games, "g").unwrap();
+        for f in saves {
+            assert_eq!(read(&g, f), "mine");
+        }
+        // the old game itself is gone, and the new one's data wins
+        assert_eq!(read(&g, "dat/schema.xml"), "new");
+        assert!(!g.join("ERB/OLD.ERB").exists());
+        assert!(!g.join("README.txt").exists());
+        assert!(!games.join(".old-g").exists());
+        fs::remove_dir_all(&d).unwrap();
+    }
+
+    #[test]
+    fn saves_that_came_with_the_archive_go_aside() {
+        let d = tmp("aside");
+        let (games, g, new) = (d.join("games"), d.join("games/g"), d.join("new"));
+        let saves = ["sav/save00.sav", "global.sav", "dat/chara_a.dat"];
+        put(&g, GAME);
+        put(&g, &saves.map(|f| (f, "mine")));
+        put(&new, GAME);
+        put(&new, &saves.map(|f| (f, "author")));
+        finish_import(&new, &games, "g").unwrap();
+        for f in saves {
+            assert_eq!(read(&g, f), "mine");
+        }
+        assert_eq!(read(&g, "sav.from-archive/save00.sav"), "author");
+        assert_eq!(read(&g, "global.sav.from-archive"), "author");
+        assert_eq!(read(&g, "dat/chara_a.dat.from-archive"), "author");
+        fs::remove_dir_all(&d).unwrap();
+    }
+
+    #[test]
+    fn dying_midway_loses_nothing() {
+        let games = tmp("died");
+        // keeping saves stopped halfway
+        put(&games.join("g"), GAME);
+        put(&games.join("g"), &[("save01.sav", "mine")]);
+        put(&games.join(".old-g"), &[("save02.sav", "mine"), ("sav/save03.sav", "mine")]);
+        // between the two renames
+        put(&games.join(".old-h"), GAME);
+        put(&games.join(".old-h"), &[("global.sav", "mine")]);
+        put(&games.join(".import-g"), &[("half.txt", "")]);
+        recover_imports(&games);
+        for f in ["g/save01.sav", "g/save02.sav", "g/sav/save03.sav", "h/global.sav"] {
+            assert_eq!(read(&games, f), "mine");
+        }
+        for leftover in [".old-g", ".old-h", ".import-g"] {
+            assert!(!games.join(leftover).exists());
+        }
+        fs::remove_dir_all(&games).unwrap();
+    }
+
+    #[test]
+    fn retrying_a_failed_import_keeps_what_it_left() {
+        let d = tmp("retry");
+        let (games, new) = (d.join("games"), d.join("new"));
+        put(&games.join("g"), GAME);
+        put(&games.join(".old-g"), &[("global.sav", "mine")]);
+        put(&new, GAME);
+        finish_import(&new, &games, "g").unwrap();
+        assert_eq!(read(&games, "g/global.sav"), "mine");
+        assert!(!games.join(".old-g").exists());
+        fs::remove_dir_all(&d).unwrap();
+    }
+
+    #[test]
+    fn a_failed_move_puts_saves_back() {
+        let d = tmp("failed");
+        let (old, new) = (d.join("old"), d.join("new"));
+        let saves = ["sav/save00.sav", "global.sav", "dat/chara_a.dat"];
+        put(&old, &saves.map(|f| (f, "mine")));
+        // a file where the folder for the last save has to go
+        put(&new, &[("dat", "")]);
+        assert!(keep_saves(&old, &new).is_err());
+        for f in saves {
+            assert_eq!(read(&old, f), "mine");
+        }
+        assert!(!new.join("sav").exists());
+        assert!(!new.join("global.sav").exists());
+        fs::remove_dir_all(&d).unwrap();
+    }
+
+    #[test]
+    fn root_save_names() {
+        for yes in ["save00.sav", "save100.sav", "global.sav", "SAVE00.SAV", "txt00.txt", "img0001.png"] {
+            assert!(is_root_save(yes), "{}", yes);
+        }
+        for no in ["README.txt", "txt.txt", "txtA.txt", "notes.txt", "img.png", "logo.png", "macro.txt"] {
+            assert!(!is_root_save(no), "{}", no);
+        }
     }
 }

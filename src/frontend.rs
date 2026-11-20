@@ -73,6 +73,24 @@ pub fn char_keycode(c: char) -> (i64, i64) {
     }
 }
 
+/// An ordinary input's answer as INPUTMOUSEKEY's: a typed number counts as clicking
+/// that button, Enter / other text as key presses.
+pub fn raw_from_input(r: InputResult) -> RawInput {
+    match r {
+        InputResult::Quit => RawInput::Quit,
+        InputResult::Hotkey(h) => RawInput::Hotkey(h),
+        // (only the TUI has a debug panel, and it handles its own)
+        InputResult::Timeout | InputResult::Debug(_) => RawInput::Timeout,
+        InputResult::Text(t) | InputResult::Line(t) | InputResult::Skip(t) => match t.trim().parse::<i64>() {
+            Ok(v) => RawInput::Click { btn: 0, cell: (0, 0), button: Some(crate::vm::value::Value::Int(v)) },
+            Err(_) => {
+                let (code, data) = t.chars().next().map(char_keycode).unwrap_or((13, 13));
+                RawInput::Key { code, data }
+            }
+        },
+    }
+}
+
 #[derive(Debug, Clone, PartialEq)]
 pub enum InputResult {
     Text(String),
@@ -154,23 +172,10 @@ pub trait Frontend {
         self.flush(con, res);
     }
     /// INPUTMOUSEKEY: wait for a click, a wheel step or a key, or the
-    /// timeout. Without a mouse: a typed number counts as clicking that
-    /// button, Enter / other text as key presses.
+    /// timeout. Without a mouse: see [`raw_from_input`].
     fn input_raw(&mut self, con: &mut Console, res: &mut Resources, timeout_ms: Option<u64>) -> RawInput {
         let req = InputReq { kind: InputKind::Str, one: false, timeout_ms, stop_skip: false };
-        match self.input(con, res, &req) {
-            InputResult::Quit => RawInput::Quit,
-            InputResult::Hotkey(h) => RawInput::Hotkey(h),
-            // (only the TUI has a debug panel, and it handles its own)
-            InputResult::Timeout | InputResult::Debug(_) => RawInput::Timeout,
-            InputResult::Text(t) | InputResult::Line(t) | InputResult::Skip(t) => match t.trim().parse::<i64>() {
-                Ok(v) => RawInput::Click { btn: 0, cell: (0, 0), button: Some(crate::vm::value::Value::Int(v)) },
-                Err(_) => {
-                    let (code, data) = t.chars().next().map(char_keycode).unwrap_or((13, 13));
-                    RawInput::Key { code, data }
-                }
-            },
-        }
+        raw_from_input(self.input(con, res, &req))
     }
     /// Where the mouse is (0-based column, row), if the frontend knows.
     fn mouse_cell(&self) -> Option<(usize, usize)> {
@@ -196,6 +201,11 @@ pub trait Frontend {
     /// MOUSEB: the value of the button under the pointer ("" for none).
     fn hover_value(&self) -> String {
         String::new()
+    }
+    /// The width in half-width cells the game's window has, if the text
+    /// wraps to something else (the player's text size on Android).
+    fn window_cols(&self) -> Option<usize> {
+        None
     }
     /// GETKEY (`triggered` false: held now) / GETKEYTRIGGERED (pressed
     /// since asked last), by Windows key code (1 left button, 2 right…).
@@ -230,6 +240,10 @@ pub trait Frontend {
         }
     }
 }
+
+/// A frontend supplied by whoever embeds the engine (the Android app): used
+/// in place of the one the options would pick.
+pub static EXTERNAL: std::sync::Mutex<Option<Box<dyn Frontend + Send>>> = std::sync::Mutex::new(None);
 
 /// Line-oriented frontend for tests / pipes: prints plain text, reads stdin.
 /// Line-oriented frontend: prints finished lines to stdout, reads answers
