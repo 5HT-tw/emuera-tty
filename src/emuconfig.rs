@@ -296,6 +296,20 @@ impl Values {
         }
     }
 
+    /// What a running game applies on reading the files again, as [`load`]
+    /// applies only the lines there are: these lines, after the default of
+    /// each setting on the page that `before` had and these don't, so that
+    /// one taken out of emuera.config goes back rather than staying as it was.
+    pub fn after(&self, before: &Values) -> Values {
+        let mut lines: Vec<(String, String)> = ITEMS
+            .iter()
+            .filter(|it| before.vals.contains_key(it.jp) && !self.vals.contains_key(it.jp))
+            .map(|it| (it.jp.to_string(), it.default.to_string()))
+            .collect();
+        lines.extend(self.lines.iter().cloned());
+        Values { vals: self.vals.clone(), path: self.path.clone(), english: self.english, lines }
+    }
+
     /// Set a value in emuera.config (None: take it out, back to the
     /// game's default). Other lines of the file stay as they are.
     pub fn set(&mut self, it: &Item, value: Option<&str>) -> Result<(), String> {
@@ -366,6 +380,20 @@ pub fn normalize(it: &Item, s: &str) -> Result<String, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn a_setting_taken_out_goes_back_on_reading_again() {
+        let d = std::env::temp_dir().join(format!("emuera-cfg-out-{}", std::process::id()));
+        std::fs::create_dir_all(d.join("CSV")).unwrap();
+        std::fs::write(d.join("CSV/_default.config"), "PRINTCを並べる数:5\n").unwrap();
+        std::fs::write(d.join("emuera.config"), "表示するセーブデータ数:30\r\nPRINTCを並べる数:4\r\n").unwrap();
+        let before = Values::read(&d);
+        std::fs::write(d.join("emuera.config"), "").unwrap();
+        let after = Values::read(&d).after(&before);
+        // Emuera's default for the save slots, and the game's own PRINTC, not the player's old values
+        assert_eq!(after.lines(), [("表示するセーブデータ数".to_string(), "20".to_string()), ("PRINTCを並べる数".to_string(), "5".to_string())]);
+        std::fs::remove_dir_all(&d).ok();
+    }
 
     #[test]
     fn edit_keeps_the_file() {
