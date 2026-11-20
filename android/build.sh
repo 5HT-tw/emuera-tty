@@ -44,7 +44,7 @@ build_lib() {
   # rust-lld directly: the NDK's own clang is an x86-64 program
   export "CARGO_TARGET_${env_target}_LINKER=rust-lld"
   export "CARGO_TARGET_${env_target}_RUSTFLAGS=-C linker-flavor=ld.lld -C link-arg=$dir/$MIN_SDK/crtbegin_so.o -C link-arg=$dir/$MIN_SDK/crtend_so.o -L native=$dir/$MIN_SDK -L native=$dir -L native=$CLANG_LIB/$rtdir -C link-arg=-z -C link-arg=max-page-size=16384 -C link-arg=--hash-style=gnu"
-  (cd "$E" && CARGO_TARGET_DIR="$B/target" cargo +stable build --lib --profile "$PROFILE" --target "$target" 2>&1 | grep -E '^(warning: unused|error|  *-->|  = note: .*(error|undefined)|.*rust-lld:)|Finished' | cut -c1-220 | tail -30)
+  (cd "$E" && CARGO_TARGET_DIR="$B/target" cargo +stable rustc --lib --crate-type cdylib --profile "$PROFILE" --target "$target" 2>&1 | grep -E '^(warning: unused|error|  *-->|  = note: .*(error|undefined)|.*rust-lld:)|Finished' | cut -c1-220 | tail -30)
   local so="$B/target/$target/$PROFILE/libemuera.so"
   [ -f "$so" ] || { echo "no library for $abi" >&2; exit 1; }
   mkdir -p "$B/apk/lib/$abi"
