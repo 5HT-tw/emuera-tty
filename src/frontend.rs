@@ -231,6 +231,11 @@ pub trait Frontend {
     }
 }
 
+/// EMUERA_BENCH=1: the VM publishes the script call stack here before each
+/// input, and `Headless` prints it with the timing marker (for bench/erbbench).
+pub static BENCH_ON: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+pub static BENCH_STACK: std::sync::Mutex<String> = std::sync::Mutex::new(String::new());
+
 /// Line-oriented frontend for tests / pipes: prints plain text, reads stdin.
 /// Line-oriented frontend: prints finished lines to stdout, reads answers
 /// line by line from stdin; WAITs continue immediately. End of input quits.
@@ -247,6 +252,10 @@ pub struct Headless {
     log_style: bool,
     /// the long-computation note was printed
     loop_noted: bool,
+    /// EMUERA_BENCH=1: print how long the script ran since the last input,
+    /// just before blocking on the next one (for bench/erbbench)
+    bench: bool,
+    input_done: std::time::Instant,
 }
 
 impl Headless {
@@ -260,6 +269,12 @@ impl Headless {
             width: 80,
             log_style: std::env::var("EMUERA_LOG_STYLE").as_deref() == Ok("emuera"),
             loop_noted: false,
+            bench: {
+                let on = std::env::var_os("EMUERA_BENCH").is_some();
+                BENCH_ON.store(on, std::sync::atomic::Ordering::Relaxed);
+                on
+            },
+            input_done: std::time::Instant::now(),
         }
     }
 
@@ -317,8 +332,14 @@ impl Frontend for Headless {
                 println!("[buttons: {}]", vals.join(", "));
             }
         }
+        if self.bench {
+            println!("\u{1}STEP {} {}", self.input_done.elapsed().as_micros(), BENCH_STACK.lock().unwrap());
+            let _ = io::stdout().flush();
+        }
         let mut s = String::new();
-        match self.lines_in.read_line(&mut s) {
+        let read = self.lines_in.read_line(&mut s);
+        self.input_done = std::time::Instant::now();
+        match read {
             Ok(0) | Err(_) => InputResult::Quit,
             Ok(_) => {
                 let s = s.trim_end_matches(['\r', '\n']).to_string();

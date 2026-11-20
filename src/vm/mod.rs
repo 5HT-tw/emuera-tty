@@ -3076,6 +3076,10 @@ impl Vm {
         if !self.macro_queue.is_empty() && self.fe.macro_stop() {
             self.macro_queue.clear();
         }
+        if crate::frontend::BENCH_ON.load(std::sync::atomic::Ordering::Relaxed) {
+            let names: Vec<&str> = self.frames.iter().map(|f| &*f.func.name).collect();
+            *crate::frontend::BENCH_STACK.lock().unwrap() = names.join(">");
+        }
         let r = match self.macro_queue.pop_front() {
             Some(p) => {
                 self.flush();
